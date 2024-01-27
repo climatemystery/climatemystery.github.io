@@ -19,6 +19,32 @@ header {
     padding: 1em 0;
 }
 
+nav {
+    background-color: #333;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+nav li {
+    float: left;
+}
+
+nav a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
 section {
     background-color: white;
     padding: 2em 0;
