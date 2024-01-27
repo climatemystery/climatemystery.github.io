@@ -1,88 +1,102 @@
-<!-- index.html -->
+/* style.css */
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Your Name - Climate Researcher</title>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Your Name</h1>
-            <p>Climate Researcher</p>
-        </div>
-    </header>
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #262626;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#introduction">Introduction</a></li>
-                <li><a href="#professional-info">Professional Info</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#interests-hobbies">Interests & Hobbies</a></li>
-                <li><a href="#media">Media</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
 
-    <div class="container">
-        <section id="introduction">
-            <h2>Introduction</h2>
-            <p>I am a dedicated climate researcher committed to unraveling the intricacies of our planet's climate system.</p>
-        </section>
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 2em 0;
+    opacity: 0; /* Start with header hidden */
+    animation: fadeIn 1s forwards; /* Fade-in animation */
+}
 
-        <section id="professional-info">
-            <h2>Professional Information</h2>
-            <ul>
-                <li>Atmospheric Science</li>
-                <li>Physical Oceanography</li>
-                <li>Climate Change</li>
-            </ul>
-        </section>
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
-        <section id="research">
-            <h2>Research</h2>
-            <p>My research focuses on [brief description of your research projects and interests]. I aim to contribute valuable insights to the understanding of climate change impacts.</p>
-        </section>
+nav {
+    background-color: #333;
+    padding: 1em 0;
+}
 
-        <section id="interests-hobbies">
-            <h2>Interests and Hobbies</h2>
-            <ul>
-                <li>Hiking</li>
-                <li>Bird Watching</li>
-                <li>Chess</li>
-            </ul>
-        </section>
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
 
-        <section id="media">
-            <h2>Media</h2>
-            <p>Explore my interviews and media appearances regarding climate research.</p>
-            <!-- Add media content as needed -->
-        </section>
+nav li {
+    margin: 0 1em;
+}
 
-        <section id="publications">
-            <h2>Publications</h2>
-            <p>Discover my research publications and contributions to the field.</p>
-            <!-- Add publication content as needed -->
-        </section>
+nav a {
+    text-decoration: none;
+    color: #e0e0e0;
+    transition: color 0.3s ease-in-out;
+}
 
-        <section id="contact">
-            <h2>Contact Information</h2>
-            <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/yourusername/">linkedin.com/in/yourusername</a></p>
-            <!-- Add other contact details as needed -->
-        </section>
-    </div>
+nav a:hover {
+    color: #3498db;
+    animation: colorChange 0.5s forwards; /* Color change on hover */
+}
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Your Name - Climate Researcher</p>
-        </div>
-    </footer>
-</body>
-</html>
+@keyframes colorChange {
+    from {
+        color: #e0e0e0;
+    }
+    to {
+        color: #3498db;
+    }
+}
+
+section {
+    background-color: #404040;
+    padding: 2em 1em;
+    margin-bottom: 2em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Start with sections hidden */
+    animation: fadeIn 1s forwards; /* Fade-in animation */
+}
+
+h2 {
+    color: #3498db;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    opacity: 0; /* Start with footer hidden */
+    animation: fadeIn 1s forwards; /* Fade-in animation */
+}
