@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Climate Researcher</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Climate Research Hub</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Climate Researcher</h1>
+            <h1>Climate Research Hub</h1>
             <nav>
                 <ul>
+                    <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#research">Research</a></li>
                     <li><a href="#publications">Publications</a></li>
@@ -22,51 +22,51 @@
         </div>
     </header>
 
-    <section id="about" class="content-section">
+    <section id="home">
         <div class="container">
-            <h2>About Me</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at scelerisque justo. Nulla facilisi. Integer venenatis nisl a odio vehicula, nec semper leo ultricies.</p>
+            <h2>Welcome to Climate Research Hub</h2>
+            <p>Your source for the latest in climate research.</p>
         </div>
     </section>
 
-    <section id="research" class="content-section">
+    <section id="about">
         <div class="container">
-            <h2>Research</h2>
-            <div class="infographics">
-                <div class="infographic">
-                    <img src="images/graph1.png" alt="Graph 1">
-                    <p>Graph 1 description.</p>
-                </div>
-                <div class="infographic">
-                    <img src="images/graph2.png" alt="Graph 2">
-                    <p>Graph 2 description.</p>
-                </div>
-                <!-- Add more infographics as needed -->
-            </div>
+            <h2>About Us</h2>
+            <p>We are dedicated to advancing the understanding of climate change and its impacts.</p>
         </div>
     </section>
 
-    <section id="publications" class="content-section">
+    <section id="research">
+        <div class="container">
+            <h2>Our Research</h2>
+            <canvas id="researchChart"></canvas>
+        </div>
+    </section>
+
+    <section id="publications">
         <div class="container">
             <h2>Publications</h2>
             <ul>
-                <li>Publication 1</li>
-                <li>Publication 2</li>
-                <!-- Add more publications as needed -->
+                <li><a href="#">Publication 1</a></li>
+                <li><a href="#">Publication 2</a></li>
+                <li><a href="#">Publication 3</a></li>
             </ul>
         </div>
     </section>
 
-    <section id="contact" class="content-section">
+    <section id="contact">
         <div class="container">
-            <h2>Contact</h2>
-            <form id="contact-form">
+            <h2>Contact Us</h2>
+            <form>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
+                
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
+                
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" required></textarea>
+                
                 <button type="submit">Send</button>
             </form>
         </div>
@@ -74,10 +74,11 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Climate Researcher. All rights reserved.</p>
+            <p>&copy; 2024 Climate Research Hub. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
