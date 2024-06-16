@@ -1,61 +1,63 @@
 body {
     font-family: Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
 }
 
 header {
     background: #333;
     color: #fff;
-    padding: 20px 0;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #77a8d8 3px solid;
 }
 
-header h1 {
-    text-align: center;
-    margin: 0;
-}
-
-nav ul {
-    list-style: none;
-    text-align: center;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
+header a {
     color: #fff;
     text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
 }
 
-.content-section {
-    padding: 50px 0;
-    text-align: center;
+header ul {
+    padding: 0;
+    list-style: none;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
+header li {
+    display: inline;
+    padding: 0 20px 0 20px;
 }
 
-.infographics {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+header #branding {
+    float: left;
 }
 
-.infographic {
-    flex: 1 1 45%;
-    margin: 10px;
+header nav {
+    float: right;
+    margin-top: 10px;
 }
 
-.infographic img {
-    max-width: 100%;
-    height: auto;
+header .highlight, header .current a {
+    color: #77a8d8;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: #77a8d8;
+    font-weight: bold;
+}
+
+section {
+    padding: 20px 0;
+    border-bottom: #e8491d 1px solid;
 }
 
 footer {
@@ -66,32 +68,17 @@ footer {
 }
 
 form {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
 }
 
 form label {
-    display: block;
-    margin: 10px 0 5px;
+    margin: 5px 0;
 }
 
-form input, form textarea {
-    width: 100%;
+form input, form textarea, form button {
+    margin: 10px 0;
     padding: 10px;
-    margin: 5px 0 10px;
-}
-
-form button {
-    display: block;
     width: 100%;
-    padding: 10px;
-    background: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-form button:hover {
-    background: #555;
+    max-width: 600px;
 }
