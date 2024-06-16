@@ -1,8 +1,10 @@
+/* styles.css */
+
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
 .container {
@@ -16,7 +18,7 @@ header {
     color: #fff;
     padding-top: 30px;
     min-height: 70px;
-    border-bottom: #77a8d8 3px solid;
+    border-bottom: #77aaff 3px solid;
 }
 
 header a {
@@ -46,25 +48,49 @@ header nav {
 }
 
 header .highlight, header .current a {
-    color: #77a8d8;
+    color: #77aaff;
     font-weight: bold;
 }
 
 header a:hover {
-    color: #77a8d8;
+    color: #77aaff;
     font-weight: bold;
 }
 
 section {
-    padding: 20px 0;
-    border-bottom: #e8491d 1px solid;
+    padding: 20px 0 20px 0;
+    border-bottom: #e6e6e6 1px solid;
 }
 
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
+section:last-child {
+    border: none;
+}
+
+#about img {
+    float: left;
+    margin-right: 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project {
+    background: #f4f4f4;
+    padding: 20px;
+    border: 1px solid #ddd;
+    flex: 1;
+    min-width: 300px;
+    max-width: 48%;
+}
+
+.project h3 {
+    margin-top: 0;
 }
 
 form {
@@ -73,12 +99,32 @@ form {
 }
 
 form label {
-    margin: 5px 0;
+    margin-top: 10px;
 }
 
-form input, form textarea, form button {
-    margin: 10px 0;
+form input, form textarea {
     padding: 10px;
-    width: 100%;
-    max-width: 600px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #555;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
 }
