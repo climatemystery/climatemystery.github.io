@@ -3,88 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Climate Dynamics Research</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <title>Climate Research Infographics</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#infographics">Infographics</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Climate Research Infographics</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#infographics">Infographics</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section id="home" class="hero-section">
-        <div class="hero-content">
-            <h1>Welcome to Climate Dynamics Research</h1>
-            <p>Exploring the complexities of climate change and its impacts.</p>
+    <section id="about">
+        <div class="container">
+            <h2>About Our Research</h2>
+            <p>Insert your introductory text here.</p>
         </div>
     </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a climate researcher focused on climate dynamics and their impacts on global weather patterns. My work involves using advanced modeling techniques to understand and predict climate variability.</p>
-    </section>
-
-    <section id="research">
-        <h2>Research Interests</h2>
-        <ul>
-            <li>Climate Dynamics</li>
-            <li>Monsoon Systems</li>
-            <li>Extreme Weather Events</li>
-            <li>Ocean-Atmosphere Interactions</li>
-        </ul>
-    </section>
-
     <section id="infographics">
-        <h2>Infographics</h2>
-        <div class="infographic-gallery">
-            <div class="infographic-item">
-                <img src="infographic1.png" alt="Infographic 1">
-                <p>Infographic 1 description</p>
+        <div class="container">
+            <h2>Featured Infographics</h2>
+            <div class="infographic">
+                <img src="images/infographic1.jpg" alt="Infographic 1">
+                <p>Description of infographic 1.</p>
             </div>
-            <div class="infographic-item">
-                <img src="infographic2.png" alt="Infographic 2">
-                <p>Infographic 2 description</p>
+            <div class="infographic">
+                <img src="images/infographic2.jpg" alt="Infographic 2">
+                <p>Description of infographic 2.</p>
             </div>
             <!-- Add more infographics as needed -->
         </div>
     </section>
 
-    <section id="publications">
-        <h2>Recent Publications</h2>
-        <ul>
-            <li><a href="publication1.pdf">Publication 1</a></li>
-            <li><a href="publication2.pdf">Publication 2</a></li>
-            <!-- Add more publications as needed -->
-        </ul>
-    </section>
-
     <section id="contact">
-        <h2>Contact Me</h2>
-        <form action="https://formspree.io/f/your-form-id" method="POST">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <button type="submit">Send</button>
-        </form>
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Climate Dynamics Research</p>
+        <div class="container">
+            <p>&copy; 2024 Climate Research Infographics. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
