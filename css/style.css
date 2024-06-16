@@ -2,15 +2,16 @@
 
 /* Reset and base styles */
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
 }
 
 .container {
@@ -21,50 +22,59 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #007bff;
     color: #fff;
     padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5rem;
+    text-align: center;
 }
 
 header nav ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: right;
+    text-align: center;
 }
 
 header nav ul li {
     display: inline-block;
-    margin-left: 20px;
-}
-
-header nav ul li:first-child {
-    margin-left: 0;
+    margin: 0 15px;
 }
 
 header nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
 }
 
 header nav ul li a:hover {
     text-decoration: underline;
 }
 
-section {
-    padding: 40px 0;
+.section {
+    padding: 60px 0;
 }
 
 h2 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.research-item {
+    margin-bottom: 40px;
+}
+
+.research-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
 }
 
 .infographic {
@@ -79,31 +89,34 @@ h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.infographic p {
-    font-size: 1rem;
-    color: #666;
-    margin-top: 10px;
+.publications-list {
+    list-style-type: none;
+    margin-top: 20px;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+.publications-list li {
+    margin-bottom: 10px;
 }
 
-footer p {
-    margin: 0;
-    font-size: 0.9rem;
+.publications-list li a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1.2rem;
+}
+
+.publications-list li a:hover {
+    text-decoration: underline;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 form label {
     display: block;
-    margin-bottom: 10px;
-    font-size: 1rem;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
     color: #333;
 }
 
@@ -114,7 +127,7 @@ form textarea {
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 form textarea {
@@ -123,29 +136,46 @@ form textarea {
 }
 
 form button {
-    background-color: #333;
+    background-color: #007bff;
     color: #fff;
     border: none;
     padding: 12px 20px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 form button:hover {
-    background-color: #555;
+    background-color: #0056b3;
 }
 
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-    
-    header nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-    
-    h2 {
-        font-size: 1.8rem;
-    }
+footer {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.social-icons {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.social-icons li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-icons li a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0
