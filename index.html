@@ -3,36 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Climate Research Infographics</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <title>Climate Research | Your Name</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Climate Research Infographics</h1>
+            <h1>Climate Research</h1>
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#research">Research</a></li>
                     <li><a href="#infographics">Infographics</a></li>
+                    <li><a href="#publications">Publications</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="about">
+    <section id="about" class="section">
         <div class="container">
-            <h2>About Our Research</h2>
-            <p>Insert your introductory text here. Describe your research and its importance.</p>
+            <h2>About</h2>
+            <p>Welcome to my climate research website. Here you'll find information about our ongoing projects, publications, and impactful research findings.</p>
         </div>
     </section>
 
-    <section id="infographics">
+    <section id="research" class="section">
         <div class="container">
-            <h2>Featured Infographics</h2>
+            <h2>Our Research</h2>
+            <div class="research-item">
+                <h3>Project Title 1</h3>
+                <p>Description of the project. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="research-item">
+                <h3>Project Title 2</h3>
+                <p>Description of the project. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <!-- Add more research items as needed -->
+        </div>
+    </section>
+
+    <section id="infographics" class="section">
+        <div class="container">
+            <h2>Infographics</h2>
             <div class="infographic">
                 <img src="images/infographic1.jpg" alt="Infographic 1">
                 <p>Description of infographic 1.</p>
@@ -45,15 +62,27 @@
         </div>
     </section>
 
-    <section id="contact">
+    <section id="publications" class="section">
         <div class="container">
-            <h2>Contact Us</h2>
-            <form>
-                <label for="name">Name:</label>
+            <h2>Publications</h2>
+            <ul class="publications-list">
+                <li><a href="#">Publication Title 1</a></li>
+                <li><a href="#">Publication Title 2</a></li>
+                <li><a href="#">Publication Title 3</a></li>
+                <!-- Add more publications with links to PDFs or external sites -->
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact</h2>
+            <form id="contact-form">
+                <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
+                <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
+                <label for="message">Message</label>
                 <textarea id="message" name="message" rows="4" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
@@ -62,10 +91,16 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Climate Research Infographics. All rights reserved.</p>
+            <p>&copy; 2024 Climate Research. All rights reserved.</p>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <!-- Add more social icons as needed -->
+            </ul>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
