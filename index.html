@@ -3,43 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Climate Research Hub</title>
+    <title>Climate Dynamics Researcher</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Climate Research Hub</h1>
+            <h1>Welcome to My Climate Dynamics Research</h1>
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#about">About Me</a></li>
                     <li><a href="#research">Research</a></li>
                     <li><a href="#publications">Publications</a></li>
+                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="home">
-        <div class="container">
-            <h2>Welcome to Climate Research Hub</h2>
-            <p>Your source for the latest in climate research.</p>
-        </div>
-    </section>
-
     <section id="about">
         <div class="container">
-            <h2>About Us</h2>
-            <p>We are dedicated to advancing the understanding of climate change and its impacts.</p>
+            <h2>About Me</h2>
+            <p>Hi, I'm [Your Name], a climate researcher specializing in climate dynamics. My work focuses on understanding the complex interactions between the atmosphere, oceans, and land surfaces to predict and mitigate the impacts of climate change.</p>
+            <img src="profile.jpg" alt="Profile Picture">
         </div>
     </section>
 
     <section id="research">
         <div class="container">
-            <h2>Our Research</h2>
-            <canvas id="researchChart"></canvas>
+            <h2>Research</h2>
+            <p>My research involves studying atmospheric circulation patterns, ocean currents, and their influences on global climate systems. I use advanced modeling techniques and data analysis to explore these dynamics.</p>
+            <div id="research-visuals"></div>
         </div>
     </section>
 
@@ -50,23 +45,44 @@
                 <li><a href="#">Publication 1</a></li>
                 <li><a href="#">Publication 2</a></li>
                 <li><a href="#">Publication 3</a></li>
+                <!-- Add more publications as needed -->
             </ul>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <p>Here are some of the projects I have worked on:</p>
+            <div class="project-grid">
+                <div class="project">
+                    <h3>Project 1</h3>
+                    <p>Description of Project 1</p>
+                </div>
+                <div class="project">
+                    <h3>Project 2</h3>
+                    <p>Description of Project 2</p>
+                </div>
+                <div class="project">
+                    <h3>Project 3</h3>
+                    <p>Description of Project 3</p>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
         </div>
     </section>
 
     <section id="contact">
         <div class="container">
-            <h2>Contact Us</h2>
+            <h2>Contact</h2>
+            <p>If you have any questions or would like to collaborate, please reach out to me.</p>
             <form>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
-                
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-                
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" required></textarea>
-                
                 <button type="submit">Send</button>
             </form>
         </div>
@@ -74,11 +90,10 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Climate Research Hub. All rights reserved.</p>
+            <p>&copy; 2023 [Your Name]. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
