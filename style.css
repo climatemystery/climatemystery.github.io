@@ -1,130 +1,122 @@
-/* styles.css */
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+    background-color: #f4f4f4;
 }
 
 header {
-    background: #333;
-    color: #fff;
-    padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #77aaff 3px solid;
+    background-color: #333;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
 }
 
-header a {
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-}
-
-header ul {
+nav ul {
+    list-style-type: none;
+    margin: 0;
     padding: 0;
-    list-style: none;
 }
 
-header li {
+nav ul li {
     display: inline;
-    padding: 0 20px 0 20px;
+    margin: 0 15px;
 }
 
-header #branding {
-    float: left;
+nav ul li a {
+    color: white;
+    text-decoration: none;
 }
 
-header nav {
-    float: right;
-    margin-top: 10px;
+.hero-section {
+    background: url('hero.jpg') no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
 }
 
-header .highlight, header .current a {
-    color: #77aaff;
-    font-weight: bold;
-}
-
-header a:hover {
-    color: #77aaff;
-    font-weight: bold;
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
 }
 
 section {
-    padding: 20px 0 20px 0;
-    border-bottom: #e6e6e6 1px solid;
+    padding: 2em;
+    background-color: white;
+    margin: 20px;
+    border-radius: 10px;
 }
 
-section:last-child {
-    border: none;
+h2 {
+    text-align: center;
+    color: #333;
 }
 
-#about img {
-    float: left;
-    margin-right: 20px;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-}
-
-.project-grid {
+.infographic-gallery {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
 }
 
-.project {
-    background: #f4f4f4;
-    padding: 20px;
-    border: 1px solid #ddd;
-    flex: 1;
-    min-width: 300px;
-    max-width: 48%;
+.infographic-item {
+    flex: 1 1 calc(33% - 40px);
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
 }
 
-.project h3 {
-    margin-top: 0;
+.infographic-item img {
+    max-width: 100%;
+    border-radius: 10px;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
-form label {
-    margin-top: 10px;
+label {
+    display: block;
+    margin-bottom: 10px;
 }
 
-form input, form textarea {
+input, textarea {
+    width: 100%;
     padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-form button {
-    margin-top: 10px;
+button {
+    display: block;
+    width: 100%;
     padding: 10px;
-    background: #333;
-    color: #fff;
+    background-color: #333;
+    color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-form button:hover {
-    background: #555;
+button:hover {
+    background-color: #555;
 }
 
 footer {
-    background: #333;
-    color: #fff;
     text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
+    padding: 1em 0;
+    background-color: #333;
+    color: white;
 }
