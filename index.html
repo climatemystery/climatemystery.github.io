@@ -3,30 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Portfolio - [Your Name]</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Portfolio - [Your Name]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lora:wght@600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Raleway', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
         }
         header {
-            background-color: #0073e6;
+            background-color: #282c34;
             color: white;
-            padding: 20px 0;
+            padding: 60px 20px;
             text-align: center;
+            position: relative;
         }
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 3em;
+            font-family: 'Lora', serif;
+            animation: fadeIn 2s ease-in-out;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            opacity: 0.7;
+            animation: slideIn 2s ease-in-out;
         }
         nav {
-            background-color: #005bb5;
-            padding: 10px 0;
+            background-color: #444;
             text-align: center;
+            padding: 10px 0;
         }
         nav a {
             color: white;
@@ -40,20 +49,26 @@
         }
         .container {
             max-width: 1100px;
-            margin: 20px auto;
+            margin: 40px auto;
             padding: 0 20px;
         }
         .intro {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
         .intro h2 {
-            font-size: 2em;
-            color: #0073e6;
+            font-size: 2.5em;
+            color: #282c34;
+            font-family: 'Lora', serif;
         }
-        .intro p {
+        .objective {
             font-size: 1.2em;
             color: #555;
+            animation: moveText 10s linear infinite;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            max-width: 100%;
         }
         .research-highlights {
             display: flex;
@@ -74,7 +89,7 @@
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         }
         .research-item h3 {
-            color: #0073e6;
+            color: #282c34;
             font-size: 1.5em;
             margin-bottom: 15px;
         }
@@ -83,21 +98,55 @@
             color: #666;
         }
         footer {
-            background-color: #f4f4f4;
+            background-color: #282c34;
             text-align: center;
             padding: 20px 0;
-            border-top: 1px solid #ddd;
+            color: white;
+            margin-top: 40px;
+            border-top: 3px solid #444;
         }
         footer p {
             margin: 0;
-            color: #555;
+        }
+
+        /* Animations */
+        @keyframes moveText {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes slideIn {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .research-item {
+                width: calc(50% - 40px);
+            }
+        }
+        @media (max-width: 480px) {
+            .research-item {
+                width: 100%;
+                margin: 10px 0;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+            .intro h2 {
+                font-size: 2em;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>[Your Name] - Research Portfolio</h1>
+        <h1>[Your Name]</h1>
+        <p class="objective">Objective: Dedicated to advancing the field of [Your Research Area] with innovative solutions.</p>
     </header>
 
     <nav>
