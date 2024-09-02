@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - [Your Name]</title>
+    <title>Climate Mystery - Understanding Earth's Climate</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lora:wght@600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -18,19 +18,11 @@
             color: white;
             padding: 60px 20px;
             text-align: center;
-            position: relative;
         }
         header h1 {
             margin: 0;
             font-size: 3em;
             font-family: 'Lora', serif;
-            animation: fadeIn 2s ease-in-out;
-        }
-        header p {
-            font-size: 1.2em;
-            margin-top: 10px;
-            opacity: 0.7;
-            animation: slideIn 2s ease-in-out;
         }
         nav {
             background-color: #444;
@@ -52,50 +44,36 @@
             margin: 40px auto;
             padding: 0 20px;
         }
-        .intro {
-            text-align: center;
+        .section {
             margin-bottom: 50px;
         }
-        .intro h2 {
+        .section h2 {
             font-size: 2.5em;
             color: #282c34;
             font-family: 'Lora', serif;
+            text-align: center;
+            margin-bottom: 20px;
         }
-        .objective {
+        .section p {
             font-size: 1.2em;
             color: #555;
-            animation: moveText 10s linear infinite;
-            white-space: nowrap;
-            overflow: hidden;
-            display: inline-block;
-            max-width: 100%;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
-        .research-highlights {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+        .cta-button {
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+            padding: 10px 20px;
+            background-color: #0073e6;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
         }
-        .research-item {
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 20px;
-            padding: 20px;
-            width: calc(33% - 60px);
-            box-sizing: border-box;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .research-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-        }
-        .research-item h3 {
-            color: #282c34;
-            font-size: 1.5em;
-            margin-bottom: 15px;
-        }
-        .research-item p {
-            font-size: 1em;
-            color: #666;
+        .cta-button:hover {
+            background-color: #005bb5;
         }
         footer {
             background-color: #282c34;
@@ -108,79 +86,49 @@
         footer p {
             margin: 0;
         }
-
-        /* Animations */
-        @keyframes moveText {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-        @keyframes slideIn {
-            0% { transform: translateY(20px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
-
-        @media (max-width: 768px) {
-            .research-item {
-                width: calc(50% - 40px);
-            }
-        }
-        @media (max-width: 480px) {
-            .research-item {
-                width: 100%;
-                margin: 10px 0;
-            }
-            header h1 {
-                font-size: 2em;
-            }
-            .intro h2 {
-                font-size: 2em;
-            }
-        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>[Your Name]</h1>
-        <p class="objective">Objective: Dedicated to advancing the field of [Your Research Area] with innovative solutions.</p>
+        <h1>Climate Mystery</h1>
+        <p>Understanding Earth's Climate Through Science</p>
     </header>
 
     <nav>
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
+        <a href="#introduction">Introduction</a>
+        <a href="#mysteries">Climate Mysteries</a>
+        <a href="#learn-more">Learn More</a>
         <a href="#contact">Contact</a>
     </nav>
 
     <div class="container">
-        <section class="intro" id="about">
-            <h2>Welcome to My Research Portfolio</h2>
-            <p>I am [Your Name], a researcher specializing in [Your Research Area]. My work focuses on [Your Main Research Focus]. Here, you can explore my latest research projects, publications, and more.</p>
+
+        <section class="section" id="introduction">
+            <h2>Introduction</h2>
+            <p>Welcome to Climate Mystery, a platform dedicated to uncovering the complexities of Earth's climate. Our mission is to provide insights into how climate works, the factors that influence it, and the mysteries that scientists are still striving to understand.</p>
         </section>
 
-        <section class="research-highlights" id="research">
-            <div class="research-item">
-                <h3>Research Project Title 1</h3>
-                <p>A brief description of your research project, highlighting its significance and outcomes.</p>
-            </div>
-            <div class="research-item">
-                <h3>Research Project Title 2</h3>
-                <p>A brief description of your research project, highlighting its significance and outcomes.</p>
-            </div>
-            <div class="research-item">
-                <h3>Research Project Title 3</h3>
-                <p>A brief description of your research project, highlighting its significance and outcomes.</p>
-            </div>
-            <!-- Add more research items as needed -->
+        <section class="section" id="mysteries">
+            <h2>Climate Mysteries</h2>
+            <p>From the puzzling changes in Earth's historical climate to the unpredictable nature of modern-day weather patterns, climate science is full of mysteries. Here, we explore some of the biggest questions in climate science today:</p>
+            <ul>
+                <li>What causes abrupt climate changes?</li>
+                <li>How do oceans influence climate systems?</li>
+                <li>What role does human activity play in climate change?</li>
+            </ul>
         </section>
+
+        <section class="section" id="learn-more">
+            <h2>Learn More</h2>
+            <p>If you're interested in diving deeper into climate science, explore our resources and publications. We provide detailed analyses, research papers, and educational materials that cover a wide range of topics in climate science.</p>
+            <a href="https://sites.google.com/view/climate-mystery/home" class="cta-button">Visit Our Full Site</a>
+        </section>
+
     </div>
 
     <footer>
-        <p>&copy; 2024 [Your Name]. All Rights Reserved.</p>
+        <p>&copy; 2024 Climate Mystery. All Rights Reserved.</p>
     </footer>
 
 </body>
