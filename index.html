@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Climate Mystery - Understanding Earth's Climate</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lora:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Raleway', sans-serif;
@@ -18,16 +19,30 @@
             color: white;
             padding: 60px 20px;
             text-align: center;
+            position: relative;
         }
         header h1 {
             margin: 0;
             font-size: 3em;
             font-family: 'Lora', serif;
         }
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            opacity: 0.7;
+        }
+        header .header-image {
+            position: absolute;
+            bottom: -30px;
+            right: 20px;
+            width: 100px;
+            opacity: 0.8;
+        }
         nav {
             background-color: #444;
             text-align: center;
             padding: 10px 0;
+            margin-top: 50px;
         }
         nav a {
             color: white;
@@ -60,6 +75,21 @@
             line-height: 1.6;
             margin-bottom: 20px;
         }
+        .section img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section .icon {
+            font-size: 3em;
+            color: #0073e6;
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
+        }
         .cta-button {
             display: block;
             width: fit-content;
@@ -71,6 +101,7 @@
             text-decoration: none;
             font-size: 1.2em;
             border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .cta-button:hover {
             background-color: #005bb5;
@@ -93,6 +124,7 @@
     <header>
         <h1>Climate Mystery</h1>
         <p>Understanding Earth's Climate Through Science</p>
+        <img src="https://via.placeholder.com/100" alt="Earth Image" class="header-image">
     </header>
 
     <nav>
@@ -106,21 +138,26 @@
 
         <section class="section" id="introduction">
             <h2>Introduction</h2>
+            <i class="fas fa-globe icon"></i>
             <p>Welcome to Climate Mystery, a platform dedicated to uncovering the complexities of Earth's climate. Our mission is to provide insights into how climate works, the factors that influence it, and the mysteries that scientists are still striving to understand.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Climate Visualization">
         </section>
 
         <section class="section" id="mysteries">
             <h2>Climate Mysteries</h2>
+            <i class="fas fa-cloud-sun-rain icon"></i>
             <p>From the puzzling changes in Earth's historical climate to the unpredictable nature of modern-day weather patterns, climate science is full of mysteries. Here, we explore some of the biggest questions in climate science today:</p>
             <ul>
                 <li>What causes abrupt climate changes?</li>
                 <li>How do oceans influence climate systems?</li>
                 <li>What role does human activity play in climate change?</li>
             </ul>
+            <img src="https://via.placeholder.com/800x400" alt="Climate Change Image">
         </section>
 
         <section class="section" id="learn-more">
             <h2>Learn More</h2>
+            <i class="fas fa-book-open icon"></i>
             <p>If you're interested in diving deeper into climate science, explore our resources and publications. We provide detailed analyses, research papers, and educational materials that cover a wide range of topics in climate science.</p>
             <a href="https://sites.google.com/view/climate-mystery/home" class="cta-button">Visit Our Full Site</a>
         </section>
