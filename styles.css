@@ -49,3 +49,14 @@ p {
 .links a:hover {
   text-decoration: underline;
 }
+
+
+.pub-highlight {
+  background: #f5f7fa;
+  border-left: 3px solid #0366d6;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
