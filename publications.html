@@ -4,10 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Publications | Climate Mystery</title>
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -55,27 +53,8 @@
       text-decoration: underline;
     }
 
-    /* Highlights Section */
-    .highlights {
-      background: #f5f7fa;
-      border-left: 4px solid #0366d6;
-      padding: 1rem 1.5rem;
-      margin-bottom: 3rem;
-    }
-
-    .highlights h2 {
-      margin-top: 0;
-    }
-
-    .highlights ul {
-      margin-left: 1rem;
-      list-style-type: square;
-    }
-
-    /* Publications List */
     .publication {
       display: flex;
-      justify-content: space-between;
       align-items: flex-start;
       gap: 1rem;
       margin-bottom: 2rem;
@@ -86,10 +65,6 @@
       font-family: 'Merriweather', serif;
     }
 
-    .altmetric-embed {
-      flex: 0 0 auto;
-    }
-
     .pub-details a {
       color: #0366d6;
       text-decoration: underline;
@@ -97,6 +72,19 @@
 
     .pub-details a:hover {
       text-decoration: none;
+    }
+
+    .pub-highlight {
+      background: #f5f7fa;
+      border-left: 4px solid #0366d6;
+      padding: 0.5rem 1rem;
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    .altmetric-embed {
+      margin-top: 0.25rem;
     }
 
     footer {
@@ -123,87 +111,92 @@
   </nav>
 
   <main>
-
-    <!-- Highlights Section -->
-    <section class="highlights">
-      <h2>Highlights & Media</h2>
-      <ul>
-        <li>Feature News Article: <b>The Sakal Newspaper</b></li>
-        <li>Research Spotlight: <b>Nature Climate Change</b></li>
-        <li>News Article: <b>Phys.org</b></li>
-        <li>Research Spotlight: <b>AGU's EOS</b></li>
-        <li>Spotlight in News Article: <b>Meteored (Weather Forecast)</b></li>
-        <li>Highlighted on FAO website on International Mountain Day 2022</li>
-        <li>Spotlighted on CLIVAR website: <a href="https://www.clivar.org/people/pratik-kad" target="_blank">www.clivar.org/people/pratik-kad</a></li>
-      </ul>
-    </section>
-
-    <!-- Publications List -->
-    <section>
-      <div class="publication">
-        <div class="pub-details">
-          Ling Zhang, Zhongshi Zhang, Lu Li, Xiaoling Chen, Xijin Wang, Entao Yu, <b>Pratik Kad</b>, Odd Helge Otterå, Chuncheng Guo, Jianzhong Lu & Mingna Wu. (2025)<br>
-          Paleoflood Modeling Reveals Limited Magnitude of 1931 Yangtze River Flood, the World’s Deadliest on Record.
-          <i>npj Climate and Atmospheric Science</i>.<br>
-          <a href="https://www.nature.com/articles/s41612-025-00908-1" target="_blank">DOI: 10.1038/s41612-025-00908-1</a>
-        </div>
-        <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1038/s41612-025-00908-1" data-altmetric-id="170288049"></span>
+    <!-- Publication 1 -->
+    <div class="publication">
+      <div class="pub-details">
+        Ling Zhang, Zhongshi Zhang, Lu Li, Xiaoling Chen, Xijin Wang, Entao Yu, <b>Pratik Kad</b>, Odd Helge Otterå, Chuncheng Guo, Jianzhong Lu & Mingna Wu. (2025)<br>
+        Paleoflood Modeling Reveals Limited Magnitude of 1931 Yangtze River Flood, the World’s Deadliest on Record.
+        <i>npj Climate and Atmospheric Science</i>.<br>
+        <a href="https://www.nature.com/articles/s41612-025-00908-1" target="_blank">DOI: 10.1038/s41612-025-00908-1</a>
       </div>
+      <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1038/s41612-025-00908-1" data-altmetric-id="170288049"></span>
+    </div>
 
-      <div class="publication">
-        <div class="pub-details">
-          Manuel Blau, <b>Pratik Kad</b>, Jenny Turton and Kyung-Ja Ha. (2025)<br>
-          Heterogeneous Warming Rates and Decline in Snow Persistence across Mountains Worldwide.<br>
-          <a href="https://www.nature.com/articles/s41612-024-00829-5" target="_blank">DOI: 10.1038/s41612-024-00829-5</a>
-        </div>
-        <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1038/s41612-024-00829-5" data-altmetric-id="170288048"></span>
+    <!-- Publication 2 -->
+    <div class="publication">
+      <div class="pub-details">
+        Manuel Blau, <b>Pratik Kad</b>, Jenny Turton and Kyung-Ja Ha. (2025)<br>
+        Heterogeneous Warming Rates and Decline in Snow Persistence across Mountains Worldwide.<br>
+        <a href="https://www.nature.com/articles/s41612-024-00829-5" target="_blank">DOI: 10.1038/s41612-024-00829-5</a>
       </div>
+      <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1038/s41612-024-00829-5" data-altmetric-id="170288048"></span>
+    </div>
 
-      <div class="publication">
-        <div class="pub-details">
-          <b>Pratik Kad</b>, Kyung-Ja Ha. (2023)<br>
-          Recent tangible natural variability of monsoonal orographic rainfall in the Eastern Himalayas.
-          <i>JGR: Atmospheres</i>.<br>
-          <a href="https://doi.org/10.1029/2023JD038759" target="_blank">DOI: 10.1029/2023JD038759</a>
-        </div>
-        <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1029/2023JD038759" data-altmetric-id="156893300"></span>
+    <!-- Publication 3 -->
+    <div class="publication">
+      <div class="pub-details">
+        <b>Pratik Kad</b>, Kyung-Ja Ha.<br>
+        Recent tangible natural variability of monsoonal orographic rainfall in the Eastern Himalayas. (2023)
+        <i>JGR: Atmospheres</i>.<br>
+        <a href="https://doi.org/10.1029/2023JD038759" target="_blank">DOI: 10.1029/2023JD038759</a>
       </div>
+      <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1029/2023JD038759" data-altmetric-id="156893300"></span>
+    </div>
 
-      <div class="publication">
-        <div class="pub-details">
-          <b>Pratik Kad</b>, Kyung-Ja Ha, Sun-Seon Lee, and Jung-Eun Chu. (2023)<br>
-          Mountain precipitation change in CO₂-induced warmer climate.
-          <i>Earth's Future</i>.<br>
-          <a href="https://doi.org/10.1029/2023EF003886" target="_blank">DOI: 10.1029/2023EF003886</a>
-        </div>
-        <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1029/2023EF003886" data-altmetric-id="154713892"></span>
+    <!-- Feature highlight -->
+    <div class="pub-highlight">
+      📰 Featured in The Sakal Newspaper
+    </div>
+
+    <!-- Publication 4 -->
+    <div class="publication">
+      <div class="pub-details">
+        <b>Pratik Kad</b>, Kyung-Ja Ha, Sun-Seon Lee, and Jung-Eun Chu. (2023)<br>
+        Mountain precipitation change in CO₂-induced warmer climate.
+        <i>Earth's Future</i>.<br>
+        <a href="https://doi.org/10.1029/2023EF003886" target="_blank">DOI: 10.1029/2023EF003886</a>
       </div>
+      <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1029/2023EF003886" data-altmetric-id="154713892"></span>
+    </div>
 
-      <div class="publication">
-        <div class="pub-details">
-          <b>Pratik Kad</b>, Manuel Blau, Kyung-Ja Ha, and Jiang Zhu. (2022)<br>
-          Elevation-dependent temperature response in early Eocene using paleoclimate model experiment.
-          <i>Environmental Research Letters</i>.<br>
-          <a href="https://doi.org/10.1088/1748-9326/ac9c74" target="_blank">DOI: 10.1088/1748-9326/ac9c74</a>
+    <!-- Related highlights -->
+    <div class="pub-highlight">
+      ✨ Research spotlighted in Nature Climate Change, Phys.org, AGU's EOS, and Meteored (Weather Forecast)
+    </div>
+
+    <!-- Publication 5 -->
+    <div class="publication">
+      <div class="pub-details">
+        <b>Pratik Kad</b>, Manuel Blau, Kyung-Ja Ha, and Jiang Zhu. (2022)<br>
+        Elevation-dependent temperature response in early Eocene using paleoclimate model experiment.
+        <i>Environmental Research Letters</i>.<br>
+        <a href="https://doi.org/10.1088/1748-9326/ac9c74" target="_blank">DOI: 10.1088/1748-9326/ac9c74</a>
+        <div class="pub-highlight">
+          🌍 Highlighted on FAO website on the occasion of International Mountain Day 2022
         </div>
-        <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1088/1748-9326/ac9c74" data-altmetric-id="137554802"></span>
       </div>
+      <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1088/1748-9326/ac9c74" data-altmetric-id="137554802"></span>
+    </div>
 
-      <div class="publication">
-        <div class="pub-details">
-          <b>Kad Pratik</b>*, Anant Parekh, Ananya Karmakar, J.S. Chowdary, and C. Gnanaseelan. (2018)<br>
-          Recent changes in the summer monsoon circulation and their impact on dynamics and thermodynamics of the Arabian Sea.
-          <i>Theoretical and Applied Climatology</i>.<br>
-          <a href="https://doi.org/10.1007/s00704-018-2493-6" target="_blank">DOI: 10.1007/s00704-018-2493-6</a>
-        </div>
-        <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1007/s00704-018-2493-6" data-altmetric-id="110063159"></span>
+    <!-- Publication 6 -->
+    <div class="publication">
+      <div class="pub-details">
+        <b>Kad Pratik</b>*, Anant Parekh, Ananya Karmakar, J.S. Chowdary, and C. Gnanaseelan. (2018)<br>
+        Recent changes in the summer monsoon circulation and their impact on dynamics and thermodynamics of the Arabian Sea.
+        <i>Theoretical and Applied Climatology</i>.<br>
+        <a href="https://doi.org/10.1007/s00704-018-2493-6" target="_blank">DOI: 10.1007/s00704-018-2493-6</a>
       </div>
-    </section>
+      <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1007/s00704-018-2493-6" data-altmetric-id="110063159"></span>
+    </div>
 
+    <!-- CLIVAR highlight -->
+    <div class="pub-highlight">
+      🔗 Spotlighted on CLIVAR website: <a href="https://www.clivar.org/people/pratik-kad" target="_blank">www.clivar.org/people/pratik-kad</a>
+    </div>
   </main>
 
   <footer>
-    🌍✨ Exploring the World Through Science and Curiosity | ABC XYZ © 2025 All Rights Reserved
+    🌍✨ Exploring the World Through Science and Curiosity | Pratik Kad © 2025 All Rights Reserved
   </footer>
 
   <!-- Altmetric embed script -->
@@ -211,20 +204,3 @@
 
 </body>
 </html>
-
-
-
-<div class="publication">
-  <div class="pub-details">
-    <b>Pratik Kad</b>, Manuel Blau, Kyung-Ja Ha, and Jiang Zhu. (2022)<br>
-    Elevation-dependent temperature response in early Eocene using paleoclimate model experiment.
-    <i>Environmental Research Letters</i>.<br>
-    <a href="https://doi.org/10.1088/1748-9326/ac9c74" target="_blank">DOI: 10.1088/1748-9326/ac9c74</a>
-
-    <div class="pub-highlight">
-      🌟 Highlighted on FAO website on the occasion of International Mountain Day 2022
-    </div>
-  </div>
-  <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1088/1748-9326/ac9c74" data-altmetric-id="137554802"></span>
-</div>
-
