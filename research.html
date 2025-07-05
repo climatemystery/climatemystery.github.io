@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Research | Climate Mystery</title>
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
+    /* These styles should ideally be in styles.css */
     body {
       font-family: 'Inter', sans-serif;
       max-width: 900px;
@@ -59,6 +59,18 @@
       margin-top: 2rem;
     }
 
+    h3 { /* Added styling for h3 */
+        color: #024c9e; /* A slightly darker blue for subheadings */
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    h4 { /* Added styling for h4 */
+        color: #0366d6;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
     footer {
       margin-top: 4rem;
       font-size: 0.9rem;
@@ -66,16 +78,47 @@
       color: #777;
     }
 
+    /* Original article-link kept for specific use outside the box if needed, but adjusted below */
     a.article-link {
-      display: inline-block;
-      margin: 1rem 0;
+      display: block; /* Make it a block element within the box */
+      margin: 0.5rem 0;
       font-weight: 600;
       color: #024c9e;
     }
 
     ul {
       margin-top: 0.5rem;
+      list-style-type: disc; /* Ensure standard bullet points */
+      margin-left: 1.5rem; /* Indent list items */
     }
+
+    ul li {
+        margin-bottom: 0.5rem; /* Spacing between list items */
+    }
+
+    /* New styles for the shaded box - ADD THIS TO YOUR styles.css FILE */
+    .research-info-box {
+        background-color: #f0f8ff; /* Light blue shade */
+        border: 1px solid #d0e0ff; /* Slightly darker border */
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .research-info-box h4 {
+        margin-top: 0; /* Override default h4 margin within the box */
+        color: #0366d6;
+    }
+    
+    .research-info-box ul {
+        margin-top: 0; /* Adjust list margin within the box */
+        margin-left: 1.2rem;
+    }
+    .research-info-box ul li {
+        margin-bottom: 0.2rem;
+    }
+
   </style>
 </head>
 <body>
@@ -95,63 +138,115 @@
 
   <main>
 
-    <h2>Himalayan Monsoon</h2>
-    <p>
-      This study examines the monsoon season in the Himalayas, which is of utmost importance to the people of South Asia.
-      Every year, the heavy rainfall during the monsoon season causes floods that affect millions of people in the Himalayas and beyond.
-      The research aims to understand the natural changes in the eastern Himalayan climate over the past 43 years.
-      The study found interesting patterns in monsoon rainfall, with six dry years and seven wet years.
-      Surprisingly, melting snow does not contribute significantly to extreme rainfall.
-      Instead, local winds and sea temperatures have a significant influence on monsoon rainfall patterns.
-      This study shows that atmospheric processes play a major role in shaping the Himalayan monsoon.
-      Such insights help us better understand and predict challenging weather events.
-      Research is like a weather detective story, helping us figure out how and why extreme rain occurs in the Himalayas.
-      This information is crucial for predicting floods in countries such as Bhutan, Nepal, India, and China.
-      As the climate changes, we are working to understand how it may interact with natural variability patterns, so we can be prepared and stay safe.
-    </p>
+    <section>
+        <h2>Himalayan Monsoon</h2>
+        <img src="placeholder.jpg" alt="Himalayan Monsoon Image" style="max-width:100%; height:auto; margin-bottom: 1.5rem;">
+        <p>
+          This study examines the monsoon season in the Himalayas, which is of utmost importance to the people of South Asia.
+          Every year, the heavy rainfall during the monsoon season causes floods that affect millions of people in the Himalayas and beyond.
+          The research aims to understand the natural changes in the eastern Himalayan climate over the past 43 years.
+          The study found interesting patterns in monsoon rainfall, with six dry years and seven wet years.
+          Surprisingly, melting snow does not contribute significantly to extreme rainfall.
+          Instead, local winds and sea temperatures have a significant influence on monsoon rainfall patterns.
+          This study shows that atmospheric processes play a major role in shaping the Himalayan monsoon.
+          Such insights help us better understand and predict challenging weather events.
+          Research is like a weather detective story, helping us figure out how and why extreme rain occurs in the Himalayas.
+          This information is crucial for predicting floods in countries such as Bhutan, Nepal, India, and China.
+          As the climate changes, we are working to understand how it may interact with natural variability patterns, so we can be prepared and stay safe.
+        </p>
 
-    <a href="#" class="article-link" target="_blank">🔗 Link to Article: Recent Tangible Natural Variability of Monsoonal Orographic Rainfall in the Eastern Himalayas</a>
+        <div class="research-info-box">
+            <a href="#" class="article-link" target="_blank" rel="noopener noreferrer">🔗 Link to Article: Recent Tangible Natural Variability of Monsoonal Orographic Rainfall in the Eastern Himalayas</a>
+            <h4>Related Useful References</h4>
+            <ul>
+              <li>Seven centuries of reconstructed Brahmaputra River discharge demonstrate underestimated high discharge and flood hazard frequency</li>
+              <li>Northward propagation of the intertropical convergence zone and strengthening of Indian summer monsoon rainfall</li>
+              <li>The ERA5 global reanalysis</li>
+            </ul>
+        </div>
+    </section>
 
-    <h4>Related Useful References</h4>
-    <ul>
-      <li>Seven centuries of reconstructed Brahmaputra River discharge demonstrate underestimated high discharge and flood hazard frequency</li>
-      <li>Northward propagation of the intertropical convergence zone and strengthening of Indian summer monsoon rainfall</li>
-      <li>The ERA5 global reanalysis</li>
-    </ul>
+    <section>
+        <h2>Mountain Precipitation Change under CO₂</h2>
+        <img src="placeholder.jpg" alt="Mountain Precipitation Image" style="max-width:100%; height:auto; margin-bottom: 1.5rem;">
+        <p>
+          Mountain warming has garnered increasing attention, yet understanding its impact on mountain rainfall remains a formidable challenge. The study investigates the impact of rising greenhouse gases, particularly CO₂ concentration, on mountain precipitation. It employs high-resolution modeling and identifies that mountain areas are warming faster than the global average due to CO₂. The research focuses on five low-latitude mountain ranges (New Guinea, East Africa, the Himalayas, Central America, and Central Andes), where precipitation changes are elevation-dependent, leading to a mix of increased and decreased rainfall, especially at higher altitudes.
+        </p>
+        <p>
+          This research introduces the "Orographic moisture omega feedback" mechanism to explain these changes, highlighting the importance of understanding mountain meteorology for our overall grasp of Earth's climate system. Studying mountain meteorology gives us invaluable insights into the complex interplay shaping our Earth's climate system. Changes in mountain rainfall patterns can have far-reaching implications, extending into hydrology and potentially causing significant impacts on humanity and ecosystems.
+        </p>
 
-    <h2>Elevation-dependent Warming under CO₂</h2>
-    <p>
-      The first Eocene hothouse study proved the existence of elevation-dependent warming in the past warm climate.
-      This work demonstrated elevation-dependent temperature changes in the Eocene (~56 million years ago).
-      The Eocene is considered a replica of the future climate in an epoch with high atmospheric CO₂ concentration.
-    </p>
-    <p>
-      Through this study, the team elucidated the mechanisms behind mountain temperature changes using a comprehensive surface energy balance analysis.
-      Notably, the findings also unearthed an intriguing phenomenon — a paradox of the future.
-      It predicts that elevation-dependent cooling is foreseeable in all mountainous regions under existing geographic boundary conditions, as indicated by simulations based on present-day models.
-    </p>
-    <p>
-      These insights not only advance our understanding of past climatic dynamics but also offer crucial insights into potential future climate.
-      The implications of elevation-dependent temperature changes are far-reaching, offering a valuable perspective for comprehending the complex interplay between climate and geography.
-    </p>
+        <div class="research-info-box">
+            <a href="#" class="article-link" target="_blank" rel="noopener noreferrer">🔗 Link to Article: Projected Changes in Mountain Precipitation under CO₂-induced warmer climate</a>
+            <h4>Related Useful References</h4>
+            <ul>
+              <li>The Asymmetry of Vertical Velocity in Current and Future Climate.</li>
+              <li>Chapter 2: High Mountain Areas. IPCC Special Report on the Ocean and Cryosphere in a Changing Climate.</li>
+              <li>A new synoptic scale resolving global climate simulation using the Community Earth System Model.</li>
+            </ul>
+        </div>
+    </section>
 
-    <a href="#" class="article-link" target="_blank">🔗 Link to Article: Elevation-dependent temperature response in early Eocene using paleoclimate model experiment</a>
+    <section>
+        <h2>Elevation-dependent Warming under CO₂</h2>
+        <img src="placeholder.jpg" alt="Elevation-dependent Warming Image" style="max-width:100%; height:auto; margin-bottom: 1.5rem;">
+        <p>
+          The first Eocene hothouse study proved the existence of elevation-dependent warming in the past warm climate.
+          This work demonstrated elevation-dependent temperature changes in the Eocene (~56 million years ago).
+          The Eocene is considered a replica of the future climate in an epoch with high atmospheric CO₂ concentration.
+        </p>
+        <p>
+          Through this study, the team elucidated the mechanisms behind mountain temperature changes using a comprehensive surface energy balance analysis.
+          Notably, the findings also unearthed an intriguing phenomenon — a paradox of the future.
+          It predicts that elevation-dependent cooling is foreseeable in all mountainous regions under existing geographic boundary conditions, as indicated by simulations based on present-day models.
+        </p>
+        <p>
+          These insights not only advance our understanding of past climatic dynamics but also offer crucial insights into potential future climate.
+          The implications of elevation-dependent temperature changes are far-reaching, offering a valuable perspective for comprehending the complex interplay between climate and geography.
+        </p>
+        <p>
+          The Eocene simulations used in this study are available at <a href="https://www.deepmip.org/data-eocene/" target="_blank" rel="noopener noreferrer">DeepMIP</a>.
+        </p>
 
-    <p>
-      The Eocene simulations used in this study are available at <a href="https://www.deepmip.org/data-eocene/" target="_blank">DeepMIP</a>.
-    </p>
+        <div class="research-info-box">
+            <a href="#" class="article-link" target="_blank" rel="noopener noreferrer">🔗 Link to Article: Elevation-dependent temperature response in early Eocene using paleoclimate model experiment</a>
+            <h4>Related Useful References</h4>
+            <ul>
+              <li>Climate change in mountains: a review of elevation-dependent warming and its possible causes</li>
+              <li>Elevation-dependent warming in mountain regions of the world</li>
+              <li>DeepMIP: model intercomparison of early Eocene climatic optimum (EECO) large-scale climate features and comparison with proxy data</li>
+            </ul>
+        </div>
+    </section>
 
-    <h4>Related Useful References</h4>
-    <ul>
-      <li>Climate change in mountains: a review of elevation-dependent warming and its possible causes</li>
-      <li>Elevation-dependent warming in mountain regions of the world</li>
-      <li>DeepMIP: model intercomparison of early Eocene climatic optimum (EECO) large-scale climate features and comparison with proxy data</li>
-    </ul>
+    <section>
+        <h2>Arabian Sea Warming: The Influence of Monsoon Circulation</h2>
+        <img src="placeholder.jpg" alt="Arabian Sea Warming Image" style="max-width:100%; height:auto; margin-bottom: 1.5rem;">
+        <p>
+          The Arabian Sea, located in the northern Indian Ocean, is a crucial maritime region with diverse climatic and oceanic characteristics. The study examines changes in the low-level summer monsoon circulation and their impact on ocean dynamics over the Arabian Sea. Notably, intensification and the northward shift of the low-level jet were observed from 1979 to 2015. The Arabian Sea witnesses the influence of intensified anticyclonic winds, which amplify the thermocline downwelling process. This phenomenon, aligned with the anticyclonic wind, significantly contributes to the observed warming of the upper ocean in the region. Despite an apparent declining trend in the net surface heat flux with latent heat flux, the findings indicate a notable increase in heat content.
+        </p>
+        <p>
+          Furthermore, sensitivity experiments were conducted utilizing the GFDL (MOM5) ocean general circulation model to bolster the proposed hypothesis. This experiment focused on the impact of momentum flux over the ocean. The outcomes of these experiments affirm the hypothesis, revealing that the alteration in momentum flux linked to shifting monsoon circulation plays a pivotal role in heightening the upper ocean's heat content.
+        </p>
+        <p>
+          This insight underscores the intricate connection between monsoon circulation and ocean dynamics, with a focus on Arabian Sea warming.
+        </p>
+
+        <div class="research-info-box">
+            <a href="#" class="article-link" target="_blank" rel="noopener noreferrer">🔗 Link to Article: Recent changes in the summer monsoon circulation and their impact on dynamics and thermodynamics of the Arabian Sea</a>
+            <h4>Related Useful References</h4>
+            <ul>
+              <li>Arabian Sea response to monsoon variations</li>
+              <li>Poleward shift in Indian summer monsoon low level jetstream under global warming</li>
+              <li>Drying of Indian subcontinent by rapid Indian Ocean warming and a weakening land-sea thermal gradient</li>
+            </ul>
+        </div>
+    </section>
 
   </main>
 
   <footer>
-    🌍✨ Exploring the World Through Science and Curiosity  |  Pratik Kad © 2023 All Rights Reserved
+    🌍✨ Exploring the World Through Science and Curiosity | Pratik Kad © 2023 All Rights Reserved
   </footer>
 
 </body>
