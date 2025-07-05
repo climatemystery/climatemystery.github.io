@@ -37,10 +37,10 @@
     }
 
     .links {
-      margin-top: 4rem; /* Increased margin to push it lower */
+      margin-top: 4rem;
       display: flex;
       gap: 2rem;
-      justify-content: center; /* Centers the icons horizontally */
+      justify-content: center;
     }
 
     .links a {
@@ -89,6 +89,42 @@
     ul {
       margin-top: 0.5rem;
     }
+
+    /* New CSS for image and text layout */
+    .content-with-image {
+      display: flex;
+      flex-wrap: wrap; /* Allows items to wrap to the next line on small screens */
+      align-items: flex-start; /* Aligns items to the top */
+      gap: 2rem; /* Space between text and image */
+    }
+
+    .text-content {
+      flex: 2; /* Allows text to take up more space */
+      min-width: 300px; /* Ensures text doesn't get too narrow */
+    }
+
+    .profile-image-right {
+      flex: 1; /* Allows image to take up remaining space */
+      max-width: 250px; /* Maximum width for the image */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 8px; /* Slightly rounded corners for the image */
+      object-fit: cover; /* Ensures image covers its area without distortion */
+      margin-left: auto; /* Pushes the image to the right */
+      margin-top: 0; /* Align top with text */
+    }
+
+    /* Media query for smaller screens: stack content vertically */
+    @media (max-width: 768px) {
+      .content-with-image {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items when stacked */
+      }
+      .profile-image-right {
+        max-width: 80%; /* Make image wider on small screens */
+        margin-left: 0; /* Remove left margin when stacked */
+        margin-top: 1.5rem; /* Add some space above the image when stacked */
+      }
+    }
   </style>
 </head>
 <body>
@@ -100,16 +136,21 @@
   </nav>
 
   <main>
-    <p>
-    I'm currently a Postdoc at <a href="https://www.norceresearch.no/en/persons/pratik-kad/40144981" target="_blank" title="NORCE Research Profile" rel="noopener noreferrer"><b>NORCE Research</b></a> in Bergen, Norway, and an affiliated member of the <a href="https://bjerknes.uib.no/en/researchers/pratik-kad" target="_blank" title="Bjerknes Centre Researcher Profile" rel="noopener noreferrer"><b>Bjerknes Centre for Climate Research</b></a>.
-    My research interests are atmospheric science, mountain meteorology, physical oceanography, climate change, and biodiversity. I tackle these complex processes by combining theoretical understanding with observational data and Earth system modeling, examining them across past, present, and future climate scenarios.
-    I'm always eager to learn new approaches and explore cutting-edge tools in climate science, continually expanding my exceptional and unparalleled skill set.
-    </p>
-    <p>
-    Outside of my scientific pursuits, I find balance and inspiration in nature. Time spent in the mountains, observing birds and butterflies, and engaging in
-    strategic games of chess further fuels my curiosity and love for complexity. I also contribute to the scientific community as an Executive Committee (ExCom)
-    member of the <a href="https://www.yess-community.org/" target="_blank" title="YESS Community Website" rel="noopener noreferrer">Young Earth System Scientists (YESS) community</a>.
-    </p>
+    <div class="content-with-image">
+      <div class="text-content">
+        <p>
+        I'm currently a Postdoc at <a href="https://www.norceresearch.no/en/persons/pratik-kad/40144981" target="_blank" title="NORCE Research Profile" rel="noopener noreferrer"><b>NORCE Research</b></a> in Bergen, Norway, and an affiliated member of the <a href="https://bjerknes.uib.no/en/researchers/pratik-kad" target="_blank" title="Bjerknes Centre Researcher Profile" rel="noopener noreferrer"><b>Bjerknes Centre for Climate Research</b></a>.
+        My research interests are **atmospheric science, mountain meteorology, physical oceanography, climate change, and biodiversity**. I tackle these complex processes by combining theoretical understanding with observational data and Earth system modeling, examining them across past, present, and future climate scenarios.
+        I'm always eager to learn new approaches and explore cutting-edge tools in climate science, continually expanding my exceptional and unparalleled skill set.
+        </p>
+        <p>
+        Outside of my scientific pursuits, I find balance and inspiration in nature. Time spent in the mountains, observing birds and butterflies, and engaging in
+        strategic games of chess further fuels my curiosity and love for complexity. I also contribute to the scientific community as an Executive Committee (ExCom)
+        member of the <a href="https://www.yess-community.org/" target="_blank" title="YESS Community Website" rel="noopener noreferrer">Young Earth System Scientists (YESS) community</a>.
+        </p>
+      </div>
+      <img src="https://placehold.co/250x300/e0e0e0/000000?text=Your+Photo" alt="Your Profile Photo" class="profile-image-right">
+    </div>
 
     <div class="links">
       <a href="https://scholar.google.com/citations?user=AHFS0K8AAAAJ&hl=en" target="_blank" title="Google Scholar" rel="noopener noreferrer">
