@@ -28,9 +28,9 @@
     .cloud-title-wrapper {
       position: relative;
       display: inline-block;
-      padding: 2rem 3rem;
+      padding: 2rem 4rem;
       border-radius: 50px;
-      background: #f9f9f9;
+      background: #fff;
       box-shadow: 0 12px 30px rgba(0,0,0,0.1);
       overflow: hidden;
     }
@@ -38,27 +38,27 @@
     .cloud-title-wrapper h1 {
       position: relative;
       z-index: 2;
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       margin: 0;
-      color: #333;
+      color: #111;
     }
 
-    .moving-cloud-bg {
+    .glow-cloud {
       position: absolute;
       z-index: 1;
-      width: 200%;
-      height: 200%;
       top: -50%;
       left: -50%;
-      opacity: 0.1;
-      fill: #bbb;
-      animation: cloudDrift 20s ease-in-out infinite alternate;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 50% 50%, rgba(0, 162, 255, 0.2), transparent 70%);
+      filter: blur(80px);
+      animation: cloudFloat 12s ease-in-out infinite alternate;
     }
 
-    @keyframes cloudDrift {
-      0% { transform: translate(-10%, -5%); }
-      50% { transform: translate(10%, 5%); }
-      100% { transform: translate(-10%, -5%); }
+    @keyframes cloudFloat {
+      0%   { transform: translate(0%, 0%); }
+      50%  { transform: translate(5%, -5%); }
+      100% { transform: translate(-5%, 5%); }
     }
 
     nav {
@@ -134,9 +134,7 @@
   <header>
     <div class="cloud-title-wrapper">
       <h1>Publications</h1>
-      <svg class="moving-cloud-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-        <path d="M50 24h-2.52A16 16 0 1 0 18 48h32a10 10 0 0 0 0-20z"/>
-      </svg>
+      <div class="glow-cloud"></div>
     </div>
   </header>
 
@@ -145,31 +143,6 @@
     <a href="research.html">Research</a>
     <a href="publications.html">Publications</a>
   </nav>
-
-  <main>
-    <ol>
-      <!-- Example entry -->
-      <li>
-        <div class="pub-container">
-          <div class="pub-text">
-            <b>Pratik Kad</b>, Kyung-Ja Ha. (2023) Recent tangible natural variability of monsoonal orographic rainfall in the Eastern Himalayas.
-            <i>JGR: Atmospheres</i>. <a href="https://doi.org/10.1029/2023JD038759" target="_blank">DOI</a>
-            <div class="pub-highlight">
-              News: <a href="https://www.esakal.com/" target="_blank">Sakal</a>
-            </div>
-          </div>
-        </div>
-      </li>
-      <!-- Add more entries as needed -->
-    </ol>
-  </main>
-
-  <footer>
-    Pratik Kad © 2025 All Rights Reserved
-  </footer>
-
-</body>
-</html>
 
 
   <main>
