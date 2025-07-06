@@ -25,24 +25,22 @@
       margin-bottom: 2rem;
     }
 
-    /* Container for cloud and title */
     .cloud-title-wrapper {
       position: relative;
       display: inline-block;
-      background: linear-gradient(135deg, #111 0%, #333 100%);
-      color: #f0f0f0;
-      padding: 1rem 2rem;
-      border-radius: 8px;
+      padding: 2rem 3rem;
+      border-radius: 50px;
+      background: #f9f9f9;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
       overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
 
     .cloud-title-wrapper h1 {
       position: relative;
       z-index: 2;
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin: 0;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+      color: #333;
     }
 
     .moving-cloud-bg {
@@ -52,14 +50,15 @@
       height: 200%;
       top: -50%;
       left: -50%;
-      opacity: 0.07;
-      fill: #fff;
-      animation: cloudMove 18s ease-in-out infinite alternate;
+      opacity: 0.1;
+      fill: #bbb;
+      animation: cloudDrift 20s ease-in-out infinite alternate;
     }
 
-    @keyframes cloudMove {
-      0% { transform: translateX(-10%) translateY(0%); }
-      100% { transform: translateX(10%) translateY(5%); }
+    @keyframes cloudDrift {
+      0% { transform: translate(-10%, -5%); }
+      50% { transform: translate(10%, 5%); }
+      100% { transform: translate(-10%, -5%); }
     }
 
     nav {
@@ -146,6 +145,32 @@
     <a href="research.html">Research</a>
     <a href="publications.html">Publications</a>
   </nav>
+
+  <main>
+    <ol>
+      <!-- Example entry -->
+      <li>
+        <div class="pub-container">
+          <div class="pub-text">
+            <b>Pratik Kad</b>, Kyung-Ja Ha. (2023) Recent tangible natural variability of monsoonal orographic rainfall in the Eastern Himalayas.
+            <i>JGR: Atmospheres</i>. <a href="https://doi.org/10.1029/2023JD038759" target="_blank">DOI</a>
+            <div class="pub-highlight">
+              News: <a href="https://www.esakal.com/" target="_blank">Sakal</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <!-- Add more entries as needed -->
+    </ol>
+  </main>
+
+  <footer>
+    Pratik Kad © 2025 All Rights Reserved
+  </footer>
+
+</body>
+</html>
+
 
   <main>
     <ol>
