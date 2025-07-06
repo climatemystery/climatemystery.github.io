@@ -25,33 +25,49 @@
       justify-content: flex-end; /* Keeps content to the right */
     }
 
-    /* Original h1 styles are mostly superseded by .dark-mode-symbol-container */
-    h1 {
-        /* Removed previous h1 specific dark mode styles as they are now on .dark-mode-symbol-container */
-        margin: 0;
-        font-size: 2rem; /* Keep for general h1 in case it's used elsewhere */
-        font-weight: 700;
-    }
-
-    /* New styles for the symbol container */
-    .dark-mode-symbol-container {
-      background-color: #222; /* Dark background */
-      color: #f0f0f0; /* Light color for the symbol inside */
-      padding: 0.5rem 1rem;
+    /* Styles for the container that holds the title and the moving cloud */
+    .cloud-title-wrapper {
+      position: relative; /* Needed for absolute positioning of the cloud */
+      background-color: #222; /* Dark background for the tile */
+      color: #f0f0f0; /* Light text color for the title */
+      padding: 0.75rem 1.5rem;
       border-radius: 5px;
-      display: flex; /* To center the SVG inside */
+      overflow: hidden; /* Hides the parts of the moving cloud that go outside the box */
+      display: flex; /* Use flex to center the h1 within this box */
       align-items: center;
       justify-content: center;
-      /* Adjust font-size if text were present, but for SVG just adjust SVG size */
+      min-width: 200px; /* Ensures enough space for the title and cloud */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional subtle shadow */
     }
 
-    .dark-mode-symbol-container svg {
-        width: 32px; /* Size of the cloud icon */
-        height: 32px;
-        fill: currentColor; /* Makes the SVG fill color inherit from its parent's color property */
-        stroke: currentColor; /* For icons that use strokes */
+    .cloud-title-wrapper h1 {
+      position: relative;
+      z-index: 2; /* Ensures the text is above the cloud */
+      font-size: 1.8rem; /* Adjust font size to fit well */
+      margin: 0; /* Remove default h1 margin */
+      color: inherit; /* Inherit the light color from .cloud-title-wrapper */
     }
 
+    /* Styles for the moving cloud SVG */
+    .moving-cloud-bg {
+      position: absolute;
+      z-index: 1; /* Puts the cloud behind the text */
+      width: 150%; /* Make it larger than the wrapper to allow movement */
+      height: 150%;
+      top: -25%; /* Adjust initial position to make it seem like it's entering/exiting */
+      left: -25%;
+      fill: currentColor; /* Inherits the light color from .cloud-title-wrapper */
+      opacity: 0.15; /* Make it subtle and translucent */
+      animation: cloudMove 15s linear infinite alternate; /* Apply the animation */
+    }
+
+    /* Keyframes for the cloud movement animation */
+    @keyframes cloudMove {
+      0% { transform: translateX(-10%); } /* Starts slightly to the left */
+      100% { transform: translateX(10%); } /* Moves slightly to the right */
+    }
+
+    /* General nav styles */
     nav {
       margin: 1rem 0 2rem 0;
     }
@@ -122,8 +138,9 @@
 <body>
 
   <header>
-    <div class="dark-mode-symbol-container">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <div class="cloud-title-wrapper">
+        <h1>Publications</h1>
+        <svg class="moving-cloud-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
         </svg>
     </div>
