@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>Publications | Climate Mystery</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
@@ -25,18 +24,18 @@
       margin-bottom: 1rem;
     }
 
-    header img {
-      height: 100px;
-      width: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #0366d6;
-    }
+    /* Header img styles removed as the image is no longer in the HTML */
 
     h1 {
       margin: 0;
       font-size: 2rem;
       font-weight: 700;
+      /* Dark mode specific styles for the title */
+      background-color: #222; /* Dark background */
+      color: #f0f0f0; /* Light text */
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      display: inline-block; /* To make padding/background wrap content */
     }
 
     nav {
@@ -109,7 +108,6 @@
 <body>
 
   <header>
-    <img src="pk.jpg" alt="My Photo" />
     <h1>Publications</h1>
   </header>
 
@@ -213,7 +211,6 @@
   Pratik Kad © 2023 All Rights Reserved
   </footer>
 
-  <!-- Altmetric embed script -->
   <script async type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
 
 </body>
