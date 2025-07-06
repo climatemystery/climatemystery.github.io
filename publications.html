@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>Publications | Climate Mystery</title>
 
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
@@ -20,61 +21,55 @@
     header {
       display: flex;
       align-items: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-      justify-content: flex-end; /* Keeps content to the right */
+      justify-content: center;
+      margin-bottom: 2rem;
     }
 
-    /* Styles for the container that holds the title and the moving cloud */
+    /* Container for cloud and title */
     .cloud-title-wrapper {
-      position: relative; /* Needed for absolute positioning of the cloud */
-      background-color: #222; /* Dark background for the tile */
-      color: #f0f0f0; /* Light text color for the title */
-      padding: 0.75rem 1.5rem;
-      border-radius: 5px;
-      overflow: hidden; /* Hides the parts of the moving cloud that go outside the box */
-      display: flex; /* Use flex to center the h1 within this box */
-      align-items: center;
-      justify-content: center;
-      min-width: 200px; /* Ensures enough space for the title and cloud */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional subtle shadow */
+      position: relative;
+      display: inline-block;
+      background: linear-gradient(135deg, #111 0%, #333 100%);
+      color: #f0f0f0;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
 
     .cloud-title-wrapper h1 {
       position: relative;
-      z-index: 2; /* Ensures the text is above the cloud */
-      font-size: 1.8rem; /* Adjust font size to fit well */
-      margin: 0; /* Remove default h1 margin */
-      color: inherit; /* Inherit the light color from .cloud-title-wrapper */
+      z-index: 2;
+      font-size: 2rem;
+      margin: 0;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.4);
     }
 
-    /* Styles for the moving cloud SVG */
     .moving-cloud-bg {
       position: absolute;
-      z-index: 1; /* Puts the cloud behind the text */
-      width: 150%; /* Make it larger than the wrapper to allow movement */
-      height: 150%;
-      top: -25%; /* Adjust initial position to make it seem like it's entering/exiting */
-      left: -25%;
-      fill: currentColor; /* Inherits the light color from .cloud-title-wrapper */
-      opacity: 0.15; /* Make it subtle and translucent */
-      animation: cloudMove 15s linear infinite alternate; /* Apply the animation */
+      z-index: 1;
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+      opacity: 0.07;
+      fill: #fff;
+      animation: cloudMove 18s ease-in-out infinite alternate;
     }
 
-    /* Keyframes for the cloud movement animation */
     @keyframes cloudMove {
-      0% { transform: translateX(-10%); } /* Starts slightly to the left */
-      100% { transform: translateX(10%); } /* Moves slightly to the right */
+      0% { transform: translateX(-10%) translateY(0%); }
+      100% { transform: translateX(10%) translateY(5%); }
     }
 
-    /* General nav styles */
     nav {
       margin: 1rem 0 2rem 0;
+      text-align: center;
     }
 
     nav a {
       text-decoration: none;
-      margin-right: 1rem;
+      margin: 0 1rem;
       color: #0366d6;
       font-weight: 600;
     }
@@ -139,10 +134,10 @@
 
   <header>
     <div class="cloud-title-wrapper">
-        <h1>Publications</h1>
-        <svg class="moving-cloud-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
-        </svg>
+      <h1>Publications</h1>
+      <svg class="moving-cloud-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+        <path d="M50 24h-2.52A16 16 0 1 0 18 48h32a10 10 0 0 0 0-20z"/>
+      </svg>
     </div>
   </header>
 
@@ -177,53 +172,54 @@
         </div>
       </li>
 
-<li>
-  <div class="pub-container">
-    <div class="pub-text">
-      <b>Pratik Kad</b>, Kyung-Ja Ha.
-      Recent tangible natural variability of monsoonal orographic rainfall in the Eastern Himalayas. (2023)
-      <i>JGR: Atmospheres</i>.
-      <a href="https://doi.org/10.1029/2023JD038759" target="_blank">DOI: 10.1029/2023JD038759</a>
-      <div class="pub-highlight">
-        Feature news article in marathi: <a href="https://www.esakal.com/pune/effect-of-monsoon-variability-on-glaciers-research-of-chakan-scientist-pjp78" target="_blank"> Sakal newspaper</a>
-      </div>
-    </div>
-    <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1029/2023JD038759" data-altmetric-id="156893300"></span>
-  </div>
-</li>
+      <li>
+        <div class="pub-container">
+          <div class="pub-text">
+            <b>Pratik Kad</b>, Kyung-Ja Ha.
+            Recent tangible natural variability of monsoonal orographic rainfall in the Eastern Himalayas. (2023)
+            <i>JGR: Atmospheres</i>.
+            <a href="https://doi.org/10.1029/2023JD038759" target="_blank">DOI: 10.1029/2023JD038759</a>
+            <div class="pub-highlight">
+              Feature news article in Marathi: <a href="https://www.esakal.com/pune/effect-of-monsoon-variability-on-glaciers-research-of-chakan-scientist-pjp78" target="_blank">Sakal newspaper</a>
+            </div>
+          </div>
+          <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1029/2023JD038759" data-altmetric-id="156893300"></span>
+        </div>
+      </li>
 
-<li>
-  <div class="pub-container">
-    <div class="pub-text">
-      <b>Pratik Kad</b>, Kyung-Ja Ha, Sun-Seon Lee, and Jung-Eun Chu. (2023)
-      Mountain precipitation change in CO₂-induced warmer climate.
-      <i>Earth's Future</i>.
-      <a href="https://doi.org/10.1029/2023EF003886" target="_blank">DOI: 10.1029/2023EF003886</a>
-      <div class="pub-highlight">
-        Research Spotlight: <a href="https://www.nature.com/articles/s41558-024-02209-6" target="_blank">Nature Climate Change</a><br>
-        News Article: <a href="https://phys.org/news/2023-11-mountain-climate-carbon-dioxide.html" target="_blank">Phys.org</a><br>
-        Research Spotlight: <a href="https://eos.org/research-spotlights/carbon-dioxides-effect-on-mountain-climate-systems" target="_blank">AGU's EOS</a><br>
-        Spotlight in News Article in Spanish: <a href="https://www.meteored.com.ar/noticias/ciencia/efecto-dioxido-de-carbono-patrones-precipitacion-montana-andes-lluvia-nieve-simulacion-cambio-climatico-gei.html#google_vignette" target="_blank">Meteored (Weather Forecast)</a>
-      </div>
-    </div>
-    <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1029/2023EF003886" data-altmetric-id="154713892"></span>
-  </div>
-</li>
+      <li>
+        <div class="pub-container">
+          <div class="pub-text">
+            <b>Pratik Kad</b>, Kyung-Ja Ha, Sun-Seon Lee, and Jung-Eun Chu. (2023)
+            Mountain precipitation change in CO₂-induced warmer climate.
+            <i>Earth's Future</i>.
+            <a href="https://doi.org/10.1029/2023EF003886" target="_blank">DOI: 10.1029/2023EF003886</a>
+            <div class="pub-highlight">
+              Research Spotlight: <a href="https://www.nature.com/articles/s41558-024-02209-6" target="_blank">Nature Climate Change</a><br>
+              News Article: <a href="https://phys.org/news/2023-11-mountain-climate-carbon-dioxide.html" target="_blank">Phys.org</a><br>
+              Research Spotlight: <a href="https://eos.org/research-spotlights/carbon-dioxides-effect-on-mountain-climate-systems" target="_blank">AGU's EOS</a><br>
+              Spotlight in News Article (Spanish): <a href="https://www.meteored.com.ar/noticias/ciencia/efecto-dioxido-de-carbono-patrones-precipitacion-montana-andes-lluvia-nieve-simulacion-cambio-climatico-gei.html#google_vignette" target="_blank">Meteored</a>
+            </div>
+          </div>
+          <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1029/2023EF003886" data-altmetric-id="154713892"></span>
+        </div>
+      </li>
 
-<li>
-  <div class="pub-container">
-    <div class="pub-text">
-      <b>Pratik Kad</b>, Manuel Blau, Kyung-Ja Ha, and Jiang Zhu. (2022)
-      Elevation-dependent temperature response in early Eocene using paleoclimate model experiment.
-      <i>Environmental Research Letters</i>.
-      <a href="https://doi.org/10.1088/1748-9326/ac9c74" target="_blank">DOI: 10.1088/1748-9326/ac9c74</a>
-      <div class="pub-highlight">
-        Highlighted on FAO website on the occasion of International Mountain Day 2022:
-        <a href="https://www.fao.org/international-mountain-day/international-mountain-day-in-the-news/events-detail/en/c/1617412/" target="_blank">FAO link</a>
-      </div>
-    </div>
-    <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1088/1748-9326/ac9c74" data-altmetric-id="137554802"></span>
-  </div>
+      <li>
+        <div class="pub-container">
+          <div class="pub-text">
+            <b>Pratik Kad</b>, Manuel Blau, Kyung-Ja Ha, and Jiang Zhu. (2022)
+            Elevation-dependent temperature response in early Eocene using paleoclimate model experiment.
+            <i>Environmental Research Letters</i>.
+            <a href="https://doi.org/10.1088/1748-9326/ac9c74" target="_blank">DOI: 10.1088/1748-9326/ac9c74</a>
+            <div class="pub-highlight">
+              Highlighted on FAO website:
+              <a href="https://www.fao.org/international-mountain-day/international-mountain-day-in-the-news/events-detail/en/c/1617412/" target="_blank">International Mountain Day 2022</a>
+            </div>
+          </div>
+          <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1088/1748-9326/ac9c74" data-altmetric-id="137554802"></span>
+        </div>
+      </li>
 
       <li>
         <div class="pub-container">
@@ -233,7 +229,7 @@
             <i>Theoretical and Applied Climatology</i>.
             <a href="https://doi.org/10.1007/s00704-018-2493-6" target="_blank">DOI: 10.1007/s00704-018-2493-6</a>
             <div class="pub-highlight">
-              Spotlighted on CLIVAR website: <a href="https://www.clivar.org/people/pratik-kad" target="_blank">www.clivar.org/people/pratik-kad</a>
+              Spotlighted on CLIVAR: <a href="https://www.clivar.org/people/pratik-kad" target="_blank">www.clivar.org/people/pratik-kad</a>
             </div>
           </div>
           <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1007/s00704-018-2493-6" data-altmetric-id="110063159"></span>
@@ -243,7 +239,7 @@
   </main>
 
   <footer>
-  Pratik Kad © 2023 All Rights Reserved
+    Pratik Kad © 2025 All Rights Reserved
   </footer>
 
   <script async type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
