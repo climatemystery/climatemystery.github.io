@@ -8,27 +8,41 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      max-width: 900px;
       margin: 0 auto;
       padding: 2rem;
+      max-width: 900px;
       line-height: 1.75;
       background: #ffffff;
       color: #222;
     }
 
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
     nav {
-      margin: 1rem 0 2rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
     }
 
     nav a {
       text-decoration: none;
-      margin-right: 1rem;
       color: #0366d6;
       font-weight: 600;
     }
 
     nav a:hover {
       text-decoration: underline;
+    }
+
+    .name {
+      font-weight: 700;
+      font-size: 1.1rem;
     }
 
     p {
@@ -41,6 +55,7 @@
       display: flex;
       gap: 2rem;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
     .links a {
@@ -79,106 +94,90 @@
       color: #777;
     }
 
-    a.article-link {
-      display: inline-block;
-      margin: 1rem 0;
-      font-weight: 600;
-      color: #024c9e;
-    }
-
-    ul {
-      margin-top: 0.5rem;
-    }
-
-    /* New CSS for image and text layout */
     .content-with-image {
       display: flex;
-      flex-wrap: wrap; /* Allows items to wrap to the next line on small screens */
-      align-items: flex-start; /* Aligns items to the top */
-      gap: 2rem; /* Space between text and image */
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 2rem;
     }
 
     .text-content {
-      flex: 2; /* Allows text to take up more space */
-      min-width: 300px; /* Ensures text doesn't get too narrow */
+      flex: 2;
+      min-width: 280px;
     }
 
     .profile-image-right {
-      flex: 1; /* Allows image to take up remaining space */
-      max-width: 250px; /* Maximum width for the image */
-      height: auto; /* Maintain aspect ratio */
-      border-radius: 8px; /* Slightly rounded corners for the image */
-      object-fit: cover; /* Ensures image covers its area without distortion */
-      margin-left: auto; /* Pushes the image to the right */
-      margin-top: 0; /* Align top with text */
+      flex: 1;
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-left: auto;
     }
 
-    /* Media query for smaller screens: stack content vertically */
     @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-bottom: 1rem;
+      }
       .content-with-image {
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items when stacked */
+        flex-direction: column;
+        align-items: center;
       }
       .profile-image-right {
-        max-width: 80%; /* Make image wider on small screens */
-        margin-left: 0; /* Remove left margin when stacked */
-        margin-top: 1.5rem; /* Add some space above the image when stacked */
+        max-width: 80%;
+        margin-left: 0;
       }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="research.html">Research</a>
-    <a href="publications.html">Publications</a>
-  </nav>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="name">Pratik Kad</div>
+  </header>
 
   <main>
     <div class="content-with-image">
       <div class="text-content">
-        <p>
-        Welcome..! 
-        <p>
-        I'm a climate scientist. 
-        <p>
-        My research interests are atmospheric science, mountain meteorology, physical oceanography, climate change, and biodiversity.
-        <p>
-        I'm currently a Postdoc at <a href="https://www.norceresearch.no/en/persons/pratik-kad/40144981" target="_blank" title="NORCE Research Profile" rel="noopener noreferrer"><b>NORCE Research</b></a> in Bergen, Norway, and an affiliated member of the <a href="https://bjerknes.uib.no/en/researchers/pratik-kad" target="_blank" title="Bjerknes Centre Researcher Profile" rel="noopener noreferrer"><b>Bjerknes Centre for Climate Research</b></a>.
-        I tackle these complex processes by combining theoretical understanding with observational data and Earth system modeling, examining them across past, present, and future climate scenarios.
-        I'm always eager to learn new approaches and explore cutting-edge tools in climate science, continually expanding my exceptional and unparalleled skill set.
-        </p>
-        <p>
-        Outside of my scientific pursuits, I find balance and inspiration in nature. Time spent in the mountains, observing birds and butterflies, and engaging in
-        strategic games of chess further fuels my curiosity and love for complexity. I also contribute to the scientific community as an Executive Committee (ExCom)
-        member of the <a href="https://www.yess-community.org/" target="_blank" title="YESS Community Website" rel="noopener noreferrer">Young Earth System Scientists (YESS) community</a>.
-        </p>
+        <p>Welcome..!</p>
+        <p>I'm a climate scientist. My research interests are atmospheric science, mountain meteorology, physical oceanography, climate change, and biodiversity.</p>
+        <p>I'm currently a Postdoc at <a href="https://www.norceresearch.no/en/persons/pratik-kad/40144981" target="_blank"><b>NORCE Research</b></a> in Bergen, Norway, and an affiliated member of the <a href="https://bjerknes.uib.no/en/researchers/pratik-kad" target="_blank"><b>Bjerknes Centre for Climate Research</b></a>. I tackle these complex processes by combining theory with observations and Earth system models, across past, present, and future climate scenarios. I’m always eager to learn new approaches and tools in climate science.</p>
+        <p>Outside of science, I find balance in nature—spending time in the mountains, observing birds and butterflies, and playing chess. I also serve on the Executive Committee of the <a href="https://www.yess-community.org/" target="_blank">YESS community</a>.</p>
       </div>
       <img src="pk.jpg" alt="Pratik Kad" class="profile-image-right">
     </div>
 
     <div class="links">
-      <a href="https://scholar.google.com/citations?user=AHFS0K8AAAAJ&hl=en" target="_blank" title="Google Scholar" rel="noopener noreferrer">
+      <a href="https://scholar.google.com/citations?user=AHFS0K8AAAAJ&hl=en" target="_blank" title="Google Scholar">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
           <path fill="#4285F4" d="M24 4L4 24h8v16h8V28h8v12h8V24h8z"/>
         </svg>
       </a>
 
-      <a href="https://www.linkedin.com/in/pratikkad/" target="_blank" title="LinkedIn" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/pratikkad/" target="_blank" title="LinkedIn">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">
           <path fill="#0A66C2" d="M34,34H0V0H34V34Z"/><path fill="#FFFFFF" d="M10.11,14.77H5.68V28.01h4.43V14.77ZM7.9,12.75a2.57,2.57,0,1,1,0-5.14,2.57,2.57,0,1,1,0,5.14Zm19.73,15.26H23.2V20.81c0-1.72-.61-2.9-2.15-2.9A2.32,2.32,0,0,0,18,19.17a2.92,2.92,0,0,0-.14,1V28h-4.43s.06-12.15,0-13.23h4.43v1.87a4.39,4.39,0,0,1,4-2.2c2.93,0,5.13,1.92,5.13,6.06V28Z"/>
         </svg>
       </a>
 
-      <a href="https://orcid.org/0000-0002-0010-0891" target="_blank" title="ORCID" rel="noopener noreferrer">
+      <a href="https://orcid.org/0000-0002-0010-0891" target="_blank" title="ORCID">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
           <circle cx="128" cy="128" r="128" fill="#A6CE39"/>
           <path d="M86.6 89.5h17v76.9h-17V89.5zm8.5-35c5.6 0 10.2 4.6 10.2 10.2S100.7 75 95.1 75s-10.2-4.6-10.2-10.2 4.5-10.3 10.2-10.3zm36.6 35c22.6 0 41 18.4 41 41s-18.4 41-41 41h-18.8v-76.9h18.8zm0 17.4h-1.7v42.1h1.7c12.5 0 22.7-9.7 22.7-21.1s-10.2-21-22.7-21z" fill="#fff"/>
         </svg>
       </a>
 
-      <a href="https://www.researchgate.net/profile/Pratik-Kad" target="_blank" title="ResearchGate" rel="noopener noreferrer">
+      <a href="https://www.researchgate.net/profile/Pratik-Kad" target="_blank" title="ResearchGate">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
           <rect width="500" height="500" rx="100" ry="100" fill="#2D8C04"/>
           <text x="50%" y="55%" font-family="Arial, sans-serif" font-size="300" font-weight="bold" fill="#FFFFFF" text-anchor="middle" alignment-baseline="middle">RG</text>
@@ -188,7 +187,7 @@
   </main>
 
   <footer>
-    Pratik Kad © 2023 All Rights Reserved
+    Pratik Kad © 2025 All Rights Reserved
   </footer>
 
 </body>
