@@ -70,38 +70,39 @@ p {
   margin-top: 4rem;
 }
 
-/* Each wave layer */
+/* Container for the wave */
+.wave-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 100px; /* Height of wave area */
+  line-height: 0; /* Remove line spacing */
+}
+
+/* SVG wave style */
 .wave {
-  position: absolute;
-  bottom: 0;
-  width: 200%;
+  display: block;
+  position: relative;
+  width: 200%; /* For smooth loop */
   height: 100%;
+  animation: waveMove 20s linear infinite;
 }
 
-/* Animation for each wave */
-.wave1 {
-  animation: wave1 10s linear infinite;
+/* Wave animation */
+@keyframes waveMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-.wave2 {
-  animation: wave2 15s linear infinite;
-}
-
-.wave3 {
-  animation: wave3 20s linear infinite;
-}
-
-@keyframes wave1 {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(-50%); }
-}
-
-@keyframes wave2 {
-  0% { transform: translateX(0); }
-  20% { transform: translateX(-50%); }
-}
-
-@keyframes wave3 {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+/* Footer styling stays the same */
+footer {
+  background: #ffffff;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #777;
+  padding: 2rem 0;
 }
