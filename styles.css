@@ -60,49 +60,39 @@ p {
   color: #333;
 }
 
-
-/* Waves container */
-.waves {
+/* Container to position wave & footer together */
+.footer-with-wave {
   position: relative;
   width: 100%;
-  height: 150px;
   overflow: hidden;
   margin-top: 4rem;
 }
 
-/* Container for the wave */
-.wave-container {
-  position: relative;
+/* Wave SVG covers bottom, behind footer text */
+.footer-with-wave .wave {
+  display: block;
   width: 100%;
-  overflow: hidden;
-  height: 100px; /* Height of wave area */
-  line-height: 0; /* Remove line spacing */
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  animation: waveMove 20s linear infinite;
 }
 
-/* SVG wave style */
-.wave {
-  display: block;
+/* Footer text overlays the wave */
+.footer-with-wave footer {
   position: relative;
-  width: 200%; /* For smooth loop */
-  height: 100%;
-  animation: waveMove 20s linear infinite;
+  z-index: 2;
+  background: transparent; /* Or set a color if needed */
+  text-align: center;
+  color: #fff; /* White text for contrast on blue wave */
+  font-size: 0.9rem;
+  padding: 2rem 0 5rem 0; /* Extra bottom padding so text doesn't sit too low */
 }
 
 /* Wave animation */
 @keyframes waveMove {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* Footer styling stays the same */
-footer {
-  background: #ffffff;
-  font-size: 0.9rem;
-  text-align: center;
-  color: #777;
-  padding: 2rem 0;
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
