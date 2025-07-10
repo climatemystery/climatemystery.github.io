@@ -1,246 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Publications | Climate Mystery</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem;
-      line-height: 1.75;
-      background: #ffffff;
-      color: #222;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 2rem;
-    }
-
-    .cloud-title-wrapper {
-      position: relative;
-      display: inline-block;
-      padding: 2rem 4rem;
-      border-radius: 50px;
-      background: #fff;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
-
-    .cloud-title-wrapper h1 {
-      position: relative;
-      z-index: 2;
-      font-size: 2.4rem;
-      margin: 0;
-      color: #111;
-    }
-
-    .glow-cloud {
-      position: absolute;
-      z-index: 1;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at 50% 50%, rgba(0, 162, 255, 0.2), transparent 70%);
-      filter: blur(80px);
-      animation: cloudFloat 12s ease-in-out infinite alternate;
-    }
-
-    @keyframes cloudFloat {
-      0%   { transform: translate(0%, 0%); }
-      50%  { transform: translate(5%, -5%); }
-      100% { transform: translate(-5%, 5%); }
-    }
-
-    nav {
-      margin: 1rem 0 2rem 0;
-      text-align: center;
-    }
-
-    nav a {
-      text-decoration: none;
-      margin: 0 1rem;
-      color: #0366d6;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    ol {
-      margin-left: 1rem;
-      padding-left: 1rem;
-    }
-
-    li {
-      margin-bottom: 2rem;
-      font-family: 'Merriweather', serif;
-    }
-
-    a {
-      color: #0366d6;
-      text-decoration: underline;
-    }
-
-    a:hover {
-      text-decoration: none;
-    }
-
-    .pub-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-
-    .pub-text {
-      flex: 1;
-    }
-
-    .pub-highlight {
-      background: #f5f7fa;
-      border-left: 4px solid #0366d6;
-      padding: 0.75rem 1rem;
-      margin-top: 0.5rem;
-      font-family: 'Merriweather', serif;
-      font-size: 0.95rem;
-    }
-
-    .altmetric-embed {
-      flex-shrink: 0;
-    }
-
-    footer {
-      margin-top: 4rem;
-      font-size: 0.9rem;
-      text-align: center;
-      color: #777;
-    }
-  </style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Mani</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #0073e6;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 20px;
+        }
+        .publication-title {
+            font-weight: bold;
+            color: #0073e6;
+        }
+        .authors {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+        .journal {
+            color: #555;
+        }
+        a {
+            color: #0073e6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f0f0f0;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <div class="cloud-title-wrapper">
-      <h1>Publications</h1>
-      <div class="glow-cloud"></div>
-    </div>
-  </header>
+<div class="container">
+    <h1>Publications</h1>
+    <ul>
+        <li>
+            <span class="publication-title">Title of the First Paper</span><br>
+            <span class="authors">Author A, Author B, Author C</span><br>
+            <span class="journal">Journal Name, Year, Volume, Pages</span><br>
+            <a href="http://link-to-paper.com">[Link to paper]</a>
+        </li>
+        <li>
+            <span class="publication-title">Title of the Second Paper</span><br>
+            <span class="authors">Author D, Author E, Author F</span><br>
+            <span class="journal">Journal Name, Year, Volume, Pages</span><br>
+            <a href="http://link-to-paper.com">[Link to paper]</a>
+        </li>
+        <!-- Add more publications as needed -->
+    </ul>
+</div>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="research.html">Research</a>
-    <a href="publications.html">Publications</a>
-  </nav>
-
-
-  <main>
-    <ol>
-      <li>
-        <div class="pub-container">
-          <div class="pub-text">
-            Ling Zhang, Zhongshi Zhang, Lu Li, Xiaoling Chen, Xijin Wang, Entao Yu, <b>Pratik Kad</b>, Odd Helge Otterå, Chuncheng Guo, Jianzhong Lu & Mingna Wu. (2025)
-            Paleoflood Modeling Reveals Limited Magnitude of 1931 Yangtze River Flood, the World’s Deadliest on Record.
-            <i>npj Climate and Atmospheric Science</i>.
-            <a href="https://www.nature.com/articles/s41612-025-00908-1" target="_blank">DOI: 10.1038/s41612-025-00908-1</a>
-          </div>
-          <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1038/s41612-025-00908-1" data-altmetric-id="170288049"></span>
-        </div>
-      </li>
-
-      <li>
-        <div class="pub-container">
-          <div class="pub-text">
-            Manuel Blau, <b>Pratik Kad</b>, Jenny Turton and Kyung-Ja Ha. (2024)
-            Uneven global retreat of persistent mountain snow cover alongside mountain warming from ERA5-land.
-            <a href="https://www.nature.com/articles/s41612-024-00829-5" target="_blank">DOI: 10.1038/s41612-024-00829-5</a>
-          </div>
-          <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1038/s41612-024-00829-5" data-altmetric-id="170288048"></span>
-        </div>
-      </li>
-
-      <li>
-        <div class="pub-container">
-          <div class="pub-text">
-            <b>Pratik Kad</b>, Kyung-Ja Ha.
-            Recent tangible natural variability of monsoonal orographic rainfall in the Eastern Himalayas. (2023)
-            <i>JGR: Atmospheres</i>.
-            <a href="https://doi.org/10.1029/2023JD038759" target="_blank">DOI: 10.1029/2023JD038759</a>
-            <div class="pub-highlight">
-              Feature news article in Marathi: <a href="https://www.esakal.com/pune/effect-of-monsoon-variability-on-glaciers-research-of-chakan-scientist-pjp78" target="_blank">Sakal newspaper</a>
-            </div>
-          </div>
-          <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1029/2023JD038759" data-altmetric-id="156893300"></span>
-        </div>
-      </li>
-
-      <li>
-        <div class="pub-container">
-          <div class="pub-text">
-            <b>Pratik Kad</b>, Kyung-Ja Ha, Sun-Seon Lee, and Jung-Eun Chu. (2023)
-            Mountain precipitation change in CO₂-induced warmer climate.
-            <i>Earth's Future</i>.
-            <a href="https://doi.org/10.1029/2023EF003886" target="_blank">DOI: 10.1029/2023EF003886</a>
-            <div class="pub-highlight">
-              Research Spotlight: <a href="https://www.nature.com/articles/s41558-024-02209-6" target="_blank">Nature Climate Change</a><br>
-              News Article: <a href="https://phys.org/news/2023-11-mountain-climate-carbon-dioxide.html" target="_blank">Phys.org</a><br>
-              Research Spotlight: <a href="https://eos.org/research-spotlights/carbon-dioxides-effect-on-mountain-climate-systems" target="_blank">AGU's EOS</a><br>
-              Spotlight in News Article (Spanish): <a href="https://www.meteored.com.ar/noticias/ciencia/efecto-dioxido-de-carbono-patrones-precipitacion-montana-andes-lluvia-nieve-simulacion-cambio-climatico-gei.html#google_vignette" target="_blank">Meteored</a>
-            </div>
-          </div>
-          <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1029/2023EF003886" data-altmetric-id="154713892"></span>
-        </div>
-      </li>
-
-      <li>
-        <div class="pub-container">
-          <div class="pub-text">
-            <b>Pratik Kad</b>, Manuel Blau, Kyung-Ja Ha, and Jiang Zhu. (2022)
-            Elevation-dependent temperature response in early Eocene using paleoclimate model experiment.
-            <i>Environmental Research Letters</i>.
-            <a href="https://doi.org/10.1088/1748-9326/ac9c74" target="_blank">DOI: 10.1088/1748-9326/ac9c74</a>
-            <div class="pub-highlight">
-              Highlighted on FAO website:
-              <a href="https://www.fao.org/international-mountain-day/international-mountain-day-in-the-news/events-detail/en/c/1617412/" target="_blank">International Mountain Day 2022</a>
-            </div>
-          </div>
-          <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1088/1748-9326/ac9c74" data-altmetric-id="137554802"></span>
-        </div>
-      </li>
-
-      <li>
-        <div class="pub-container">
-          <div class="pub-text">
-            <b>Kad Pratik</b>*, Anant Parekh, Ananya Karmakar, J.S. Chowdary, and C. Gnanaseelan. (2018)
-            Recent changes in the summer monsoon circulation and their impact on dynamics and thermodynamics of the Arabian Sea.
-            <i>Theoretical and Applied Climatology</i>.
-            <a href="https://doi.org/10.1007/s00704-018-2493-6" target="_blank">DOI: 10.1007/s00704-018-2493-6</a>
-            <div class="pub-highlight">
-              Spotlighted on CLIVAR: <a href="https://www.clivar.org/people/pratik-kad" target="_blank">www.clivar.org/people/pratik-kad</a>
-            </div>
-          </div>
-          <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1007/s00704-018-2493-6" data-altmetric-id="110063159"></span>
-        </div>
-      </li>
-    </ol>
-  </main>
-
-  <footer>
-    Pratik Kad © 2024 All Rights Reserved
-  </footer>
-
-  <script async type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+<footer>
+    <p>&copy; 2024 Mani's Research Group</p>
+</footer>
 
 </body>
 </html>
