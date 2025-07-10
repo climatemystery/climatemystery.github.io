@@ -60,3 +60,29 @@ p {
   color: #333;
 }
 
+
+/* Wave Container Styles */
+.wave-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 100px; /* Adjust height as needed */
+  margin-top: 4rem;
+}
+
+.wave {
+  position: absolute;
+  width: 200%; /* Make wave wider for smooth loop */
+  height: 100%;
+  animation: waveMove 20s linear infinite;
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
