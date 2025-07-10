@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Climate Mystery | My Homepage</title>
+  <title>About | Pratik Kad</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -61,6 +61,7 @@
       margin-top: 1rem;
       display: flex;
       gap: 2rem;
+      flex-wrap: wrap;
     }
 
     .links a {
@@ -92,12 +93,6 @@
       margin-top: 2rem;
     }
 
-    h3 { /* Added styling for h3 */
-        color: #024c9e; /* A slightly darker blue for subheadings */
-        margin-top: 1.5rem;
-        margin-bottom: 0.5rem;
-    }
-
     footer {
       margin-top: 4rem;
       font-size: 0.9rem;
@@ -105,50 +100,77 @@
       color: #777;
     }
 
-    a.article-link {
-      display: inline-block;
-      margin: 1rem 0;
-      font-weight: 600;
+    /* Timeline styles */
+    .timeline {
+      position: relative;
+      margin: 2rem 0;
+      padding-left: 30px;
+      border-left: 3px solid #0366d6;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -10px;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      background: #0366d6;
+      border-radius: 50%;
+      border: 3px solid #ffffff;
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 0.3rem 0;
+      font-size: 1.1rem;
       color: #024c9e;
     }
 
-    ul {
-      margin-top: 0.5rem;
-      list-style-type: disc; /* Ensure standard bullet points */
-      margin-left: 1.5rem; /* Indent list items */
+    .timeline-item p {
+      margin: 0;
+      font-size: 0.95rem;
     }
 
-    ul li {
-        margin-bottom: 0.5rem; /* Spacing between list items */
+    @media (max-width: 600px) {
+      .timeline {
+        padding-left: 20px;
+      }
+      .timeline-item::before {
+        left: -12px;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <header>
-    <img src="XYZ.png" alt="My Photo" />
-    <h1>Welcome to My Homepage</h1>
+    <img src="XYZ.png" alt="Pratik Kad">
+    <h1>About Me</h1>
   </header>
 
   <nav>
     <a href="index.html">Home</a>
     <a href="research.html">Research</a>
     <a href="publications.html">Publications</a>
+    <a href="about.html">About</a>
   </nav>
 
   <main>
     <p>
-    I'm currently a Postdoc at NORCE Research in Bergen, Norway, and an affiliated member of the Bjerknes Centre for Climate Research. The
-    day-to-day weather and its changes ignite my curiosity about climate. I enjoy watching and tracking weather events. My research interests
-    are atmospheric science, mountain meteorology, physical oceanography, climate change, and biodiversity. I tackle these complex processes
-    by combining theoretical understanding with observational data and Earth system modeling, examining them across past, present, and future
-    climate scenarios. I'm always eager to learn new approaches and explore cutting-edge tools in climate science, continually expanding my
-    exceptional and unparalleled skill set.
+      I'm currently a Postdoc at NORCE Research in Bergen, Norway, and an affiliated member of the Bjerknes Centre for Climate Research.
+      My curiosity for weather and climate drives my research interests: atmospheric science, mountain meteorology, physical oceanography,
+      climate change, and biodiversity. I combine theory, observations, and Earth system modeling across past, present, and future climates.
     </p>
+
     <p>
-    Outside of my scientific pursuits, I find balance and inspiration in nature. I'm an avid hiker, birdwatcher, and explorer of the natural
-    world. Time spent in the mountains, observing butterflies, and engaging in strategic games of chess further fuels my curiosity and love
-    for complexity. I also contribute to the scientific community as an ExCom member of the Young Earth System Scientists (YESS) community.
+      Beyond research, I find inspiration in nature — hiking, birdwatching, and observing butterflies — and enjoy strategic games like chess.
+      I'm also part of the Executive Committee for the Young Earth System Scientists (YESS) community.
     </p>
 
     <div class="links">
@@ -172,60 +194,51 @@
       </a>
     </div>
 
-    ---
+    <h2>CV Timeline</h2>
 
-    <section>
-        <h2>Research Interests</h2>
-        <p>
-          Atmospheric Science, Mountain Meteorology, Physical Oceanography, Climate Change, and Biodiversity.
-        </p>
-    </section>
-
-    ---
-
-    <section>
-        <h2>Research Experience</h2>
-
-        <h3>Post Doc</h3>
-        <ul>
-          <li><strong>NORCE Norwegian Research Centre</strong> — 2024–Present</li>
-          <li><strong>Research Affiliate, Bjerknes Centre for Climate Research</strong> — February 2024–Present</li>
-        </ul>
-
-        <h3>Leadership Roles</h3>
-        <ul>
-          <li><strong> Young Earth System Scientist (YESS) Community  </strong><br>
-            Executive Committee (ExCom) Member — March 2025<br>
-            Regional Representative — April 2024–April 2025
-          </li>
-        </ul>
-
-        <h3>Expert Reviewer</h3>
-        <ul>
-          <li><strong>IPCC</strong> — February 2020–January 2021</li>
-        </ul>
-
-        <h3>Graduate Student</h3>
-        <ul>
-          <li><strong>Indian Institute of Tropical Meteorology</strong> — 2015–2017</li>
-        </ul>
-    </section>
-
-    ---
-
-    <section>
-        <h2>Education</h2>
-        <ul>
-          <li><strong>PhD</strong> in Climate System, Hokkaido University, Sapporo, Japan — 2007</li>
-          <li><strong>MSc</strong> Savitribai Phule Pune University, India — 2002</li>
-          <li><strong>BSc</strong> in Physics (Honors), Delhi University — 2000</li>
-        </ul>
-    </section>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>Postdoc — NORCE Research Centre</h3>
+        <p>2024–Present</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Affiliated Researcher — Bjerknes Centre</h3>
+        <p>2024–Present</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Executive Committee — YESS Community</h3>
+        <p>March 2025</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Regional Representative — YESS Community</h3>
+        <p>April 2024 – April 2025</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Expert Reviewer — IPCC</h3>
+        <p>2020–2021</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Graduate Student — IITM</h3>
+        <p>2015–2017</p>
+      </div>
+      <div class="timeline-item">
+        <h3>PhD — Hokkaido University</h3>
+        <p>2007</p>
+      </div>
+      <div class="timeline-item">
+        <h3>MSc — SPPU Pune University</h3>
+        <p>2002</p>
+      </div>
+      <div class="timeline-item">
+        <h3>BSc Physics — Delhi University</h3>
+        <p>2000</p>
+      </div>
+    </div>
 
   </main>
 
   <footer>
- Pratik Kad © 2024 All Rights Reserved
+    Pratik Kad © 2024 All Rights Reserved
   </footer>
 
 </body>
