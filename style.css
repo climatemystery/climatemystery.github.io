@@ -4,19 +4,19 @@ body {
   margin: 0 auto;
   padding: 2rem;
   line-height: 1.75;
-  background: #121212;
-  color: #e0e0e0;
+  background: #1c1c1e; /* soft dark gray */
+  color: #ddd; /* warm light gray text */
 }
 
 h1 {
   font-family: 'Merriweather', serif;
   font-size: 2.2rem;
   margin-bottom: 1rem;
-  color: #ffffff;
+  color: #f2f2f2;
 }
 
 h2 {
-  color: #81cfff;
+  color: #62b0f9; /* softer blue */
   margin-top: 2rem;
 }
 
@@ -28,11 +28,11 @@ nav a {
   text-decoration: none;
   margin-right: 1rem;
   font-weight: 600;
-  color: #81cfff;
+  color: #62b0f9;
 }
 
 nav a.active {
-  color: #4fa3ff;
+  color: #3a90e3;
 }
 
 .grid {
@@ -46,19 +46,19 @@ nav a.active {
   border: 1px solid #333;
   border-radius: 8px;
   padding: 1rem 1.25rem;
-  background: #1e1e1e;
+  background: #2a2a2c; /* softer dark box */
 }
 
 .card h2 {
   margin-top: 0;
   font-size: 1.2rem;
-  color: #81cfff;
+  color: #62b0f9;
 }
 
 .card a {
   display: inline-block;
   margin-top: 0.5rem;
-  color: #4fa3ff;
+  color: #3a90e3;
   font-weight: 600;
   text-decoration: none;
 }
@@ -75,8 +75,8 @@ section img {
 }
 
 .research-info-box {
-  background: #1a1a1a;
-  border: 1px solid #333;
+  background: #2a2a2c;
+  border: 1px solid #444;
   border-radius: 8px;
   padding: 1.25rem;
   margin-top: 1.25rem;
@@ -86,7 +86,7 @@ section img {
   display: inline-block;
   font-weight: 600;
   margin-bottom: 0.75rem;
-  color: #4fa3ff;
+  color: #3a90e3;
 }
 
 .pub-container {
@@ -96,10 +96,10 @@ section img {
   gap: 1rem;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
-  background: #1e1e1e;
+  background: #2a2a2c;
   border: 1px solid #333;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .pub-text {
@@ -108,15 +108,15 @@ section img {
 }
 
 .pub-text b {
-  color: #ffffff;
+  color: #f2f2f2;
 }
 
 .pub-text i {
-  color: #81cfff;
+  color: #62b0f9;
 }
 
 .pub-text a {
-  color: #4fa3ff;
+  color: #3a90e3;
   text-decoration: underline;
 }
 
@@ -126,32 +126,21 @@ section img {
 }
 
 .pub-highlight {
-  background: #222;
+  background: #333; /* slightly lighter than container */
   padding: 0.75rem 1rem;
   margin-top: 0.75rem;
-  border-left: 4px solid #4fa3ff;
+  border-left: 4px solid #3a90e3;
   border-radius: 4px;
   font-size: 0.95rem;
 }
 
 .pub-highlight a {
-  color: #81cfff;
+  color: #62b0f9;
   text-decoration: underline;
 }
 
 main ol {
   padding-left: 1.2rem;
-}
-
-nav a {
-  margin-right: 1rem;
-  text-decoration: none;
-  font-weight: 600;
-  color: #81cfff;
-}
-
-nav a.active {
-  color: #4fa3ff;
 }
 
 footer {
