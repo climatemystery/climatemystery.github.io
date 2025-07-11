@@ -71,45 +71,58 @@ nav a.active {
   font-weight: 600;
 }
 
-/* Publication container: flex for side-by-side layout */
+/* Publication container with flex */
 .pub-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background: #f9f9f9; /* subtle background to separate each pub block */
-  padding: 1rem;
-  margin-bottom: 1rem;
+  gap: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #ddd;
   border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
+/* Publication text area */
 .pub-text {
+  flex: 1 1 auto;
   max-width: 80%;
-  font-family: 'Inter', sans-serif;
-  line-height: 1.5;
 }
 
+/* Altmetric badge container */
 .altmetric-embed {
   flex-shrink: 0;
-  margin-left: 1rem;
+  width: auto;
 }
 
-/* Related highlights block */
+/* Highlight block styling */
 .pub-highlight {
-  background: #eef6fa;
+  background: #f1f8ff;
   padding: 0.75rem 1rem;
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
   border-left: 4px solid #007acc;
   border-radius: 4px;
   font-size: 0.95rem;
 }
 
+/* Highlight links */
 .pub-highlight a {
   color: #007acc;
   text-decoration: underline;
 }
 
-ol {
-  padding-left: 1.5rem;
+/* List styling */
+main ol {
+  padding-left: 1.2rem;
+}
+
+/* General text and nav */
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #333;
 }
 
 h1 {
@@ -124,6 +137,7 @@ nav a {
   margin-right: 1rem;
   text-decoration: none;
   font-weight: 600;
+  color: #333;
 }
 
 nav a.active {
