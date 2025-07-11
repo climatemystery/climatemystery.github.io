@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Research | Climate Mystery</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -10,34 +11,105 @@
   <header>
     <h1>Research</h1>
   </header>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="research.html" class="active">Research</a>
     <a href="publications.html">Publications</a>
     <a href="about.html">About Me</a>
   </nav>
-  <main>
-    <p>I investigate climate processes across scales — from orographic rainfall and monsoon variability to Earth system modeling and impacts on biodiversity.</p>
 
+  <main>
+    <p>I investigate climate processes across scales — from orographic rainfall and monsoon variability to Earth system modeling and hydrological extremes.</p>
+
+    <!-- Simple grid for topics -->
     <div class="grid">
       <div class="card">
-        <h2>Monsoon Dynamics</h2>
-        <p>Studying how monsoon systems interact with mountains and oceanic forcing under changing climates.</p>
+        <h2>Himalayan Monsoon</h2>
+        <p>Exploring monsoonal rainfall variability, flood hazards, and atmospheric drivers in the Eastern Himalayas.</p>
+        <a href="#himalayan-monsoon">Read more →</a>
       </div>
       <div class="card">
-        <h2>Mountain Meteorology</h2>
-        <p>Snow cover, orographic precipitation, and the role of topography in extremes.</p>
+        <h2>Mountain Precipitation</h2>
+        <p>Studying how greenhouse gases shape rainfall patterns in mountains under warming climates.</p>
+        <a href="#mountain-precipitation">Read more →</a>
       </div>
       <div class="card">
-        <h2>Earth System Modeling</h2>
-        <p>Regional high-res climate modeling with WRF and NorESM for past & future.</p>
+        <h2>Elevation-dependent Warming</h2>
+        <p>Analyzing elevation-dependent warming in past and future warm climates using paleoclimate models.</p>
+        <a href="#elevation-dependent">Read more →</a>
       </div>
       <div class="card">
-        <h2>Hydrology & Extremes</h2>
-        <p>Connecting extremes to river runoff and flood risks in mountain basins.</p>
+        <h2>Arabian Sea Monsoon</h2>
+        <p>Investigating low-level monsoon circulation shifts and ocean heat content changes in the Arabian Sea.</p>
+        <a href="#arabian-sea">Read more →</a>
       </div>
     </div>
+
+    <!-- Detailed sections -->
+    <section id="himalayan-monsoon">
+      <h2>Himalayan Monsoon</h2>
+      <img src="placeholder.jpg" alt="Himalayan Monsoon" />
+      <p>This study examines natural changes in the Eastern Himalayan monsoon over 43 years. Findings reveal wet/dry cycles, the influence of winds and SSTs, and minimal snowmelt impact on extreme rainfall. These insights are vital for flood prediction in Bhutan, Nepal, India, and China.</p>
+      <div class="research-info-box">
+        <a href="#" class="article-link" target="_blank">🔗 Link to Article</a>
+        <h4>Key References</h4>
+        <ul>
+          <li>Seven centuries of reconstructed Brahmaputra River discharge</li>
+          <li>ITCZ northward shift & monsoon strengthening</li>
+          <li>The ERA5 global reanalysis</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="mountain-precipitation">
+      <h2>Mountain Precipitation under CO₂</h2>
+      <img src="placeholder.jpg" alt="Mountain Precipitation" />
+      <p>Rising CO₂ affects mountain precipitation. High-resolution modeling shows warming exceeds global average, with elevation-dependent changes. The "Orographic moisture omega feedback" explains shifts in rainfall. Results have wide implications for hydrology and mountain ecosystems.</p>
+      <div class="research-info-box">
+        <a href="#" class="article-link" target="_blank">🔗 Link to Article</a>
+        <h4>Key References</h4>
+        <ul>
+          <li>Asymmetry of Vertical Velocity in Current and Future Climate</li>
+          <li>IPCC Special Report on High Mountain Areas</li>
+          <li>Synoptic scale global climate simulation (CESM)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="elevation-dependent">
+      <h2>Elevation-dependent Warming</h2>
+      <img src="placeholder.jpg" alt="Elevation-dependent Warming" />
+      <p>The first Eocene hothouse study confirmed elevation-dependent warming in the past. Mechanisms were revealed using energy budget analysis. Results hint at paradoxical elevation-dependent cooling under present-day boundaries. This research informs understanding of mountain climate futures.</p>
+      <p>DeepMIP data: <a href="https://www.deepmip.org/data-eocene/" target="_blank">DeepMIP</a></p>
+      <div class="research-info-box">
+        <a href="#" class="article-link" target="_blank">🔗 Link to Article</a>
+        <h4>Key References</h4>
+        <ul>
+          <li>Review of elevation-dependent warming</li>
+          <li>Global mountain warming studies</li>
+          <li>DeepMIP model intercomparison</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="arabian-sea">
+      <h2>Arabian Sea Monsoon</h2>
+      <img src="placeholder.jpg" alt="Arabian Sea Monsoon" />
+      <p>This research highlights changes in the summer monsoon low-level jet and ocean thermodynamics over the Arabian Sea. GFDL MOM5 model experiments confirmed momentum flux changes significantly boost upper ocean heat content, showing a tight ocean-monsoon link.</p>
+      <div class="research-info-box">
+        <a href="#" class="article-link" target="_blank">🔗 Link to Article</a>
+        <h4>Key References</h4>
+        <ul>
+          <li>Arabian Sea response to monsoon variations</li>
+          <li>Monsoon jetstream poleward shift</li>
+          <li>Indian subcontinent drying due to Indian Ocean warming</li>
+        </ul>
+      </div>
+    </section>
+
   </main>
+
   <footer>Pratik Kad © 2024</footer>
 </body>
 </html>
