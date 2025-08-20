@@ -2,114 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Publications | Climate Mystery</title>
+  <title>Publications | Climate Mystery — Pratik Kad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Peer-reviewed publications and preprints on monsoons, orographic precipitation, hydrology, and climate modeling." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script type="text/javascript" src="//d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
 </head>
-<body>
-  <header>
-    <h1>Publications</h1>
+<body class="theme-dark">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header id="site-header" class="site-header">
+    <div class="container nav-grid">
+      <a class="brand" href="index.html"><span class="brand-dot"></span><span class="brand-text">Climate Mystery</span></a>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <ul id="nav-menu" class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a class="active" href="publications.html">Publications</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="divider"></li>
+          <li><button id="theme-toggle" class="icon-btn">🌓</button></li>
+        </ul>
+      </nav>
+    </div>
   </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="research.html">Research</a>
-    <a href="publications.html" class="active">Publications</a>
-    <a href="about.html">About Me</a>
-  </nav>
 
-  <main>
-    <ol>
-      <li>
-        <div class="pub-container">
-          <div class="pub-text">
-            Ling Zhang, Zhongshi Zhang, Lu Li, Xiaoling Chen, Xijin Wang, Entao Yu, <b>Pratik Kad</b>, Odd Helge Otterå, Chuncheng Guo, Jianzhong Lu & Mingna Wu. (2025)  
-            Paleoflood Modeling Reveals Limited Magnitude of 1931 Yangtze River Flood, the World’s Deadliest on Record.  
-            <i>npj Climate and Atmospheric Science</i>.  
-            <a href="https://www.nature.com/articles/s41612-025-00908-1" target="_blank">DOI: 10.1038/s41612-025-00908-1</a>
-          </div>
-          <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1038/s41612-025-00908-1"></span>
-        </div>
-      </li>
+  <main id="main">
+    <section class="section page-hero">
+      <div class="container narrow">
+        <h1>Publications</h1>
+        <p class="lead">A curated list of peer-reviewed papers, preprints, and datasets. Filter by topic or search by title, journal, or year.</p>
+      </div>
+    </section>
 
-      <li>
-        <div class="pub-container">
-          <div class="pub-text">
-            Manuel Blau, <b>Pratik Kad</b>, Jenny Turton and Kyung-Ja Ha. (2024)  
-            Uneven global retreat of persistent mountain snow cover alongside mountain warming from ERA5-land.  
-            <i>npj Climate and Atmospheric Science</i>.  
-            <a href="https://www.nature.com/articles/s41612-024-00829-5" target="_blank">DOI: 10.1038/s41612-024-00829-5</a>
+    <section class="section">
+      <div class="container">
+        <div class="filters">
+          <div class="chips" role="tablist" aria-label="Filter publications">
+            <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+            <button class="chip" data-filter="monsoon" role="tab">Monsoon</button>
+            <button class="chip" data-filter="orography" role="tab">Orography</button>
+            <button class="chip" data-filter="hydrology" role="tab">Hydrology</button>
+            <button class="chip" data-filter="modeling" role="tab">Modeling</button>
+            <button class="chip" data-filter="dataset" role="tab">Datasets</button>
           </div>
-          <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1038/s41612-024-00829-5"></span>
+          <input id="pub-search" class="search" type="search" placeholder="Search publications…" aria-label="Search publications">
         </div>
-      </li>
 
-      <li>
-        <div class="pub-container">
-          <div class="pub-text">
-            <b>Pratik Kad</b>, Kyung-Ja Ha. (2023)  
-            Recent tangible natural variability of monsoonal orographic rainfall in the Eastern Himalayas.  
-            <i>JGR: Atmospheres</i>.  
-            <a href="https://doi.org/10.1029/2023JD038759" target="_blank">DOI: 10.1029/2023JD038759</a>  
-            <div class="pub-highlight">
-              Featured news article (Marathi): <a href="https://www.esakal.com/pune/effect-of-monsoon-variability-on-glaciers-research-of-chakan-scientist-pjp78" target="_blank">Sakal Newspaper</a>
-            </div>
-          </div>
-          <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1029/2023JD038759"></span>
-        </div>
-      </li>
-
-      <li>
-        <div class="pub-container">
-          <div class="pub-text">
-            <b>Pratik Kad</b>, Kyung-Ja Ha, Sun-Seon Lee, and Jung-Eun Chu. (2023)  
-            Mountain precipitation change in CO₂-induced warmer climate.  
-            <i>Earth's Future</i>.  
-            <a href="https://doi.org/10.1029/2023EF003886" target="_blank">DOI: 10.1029/2023EF003886</a>  
-            <div class="pub-highlight">
-              Research Spotlight: <a href="https://www.nature.com/articles/s41558-024-02209-6" target="_blank">Nature Climate Change</a><br>
-              News Article: <a href="https://phys.org/news/2023-11-mountain-climate-carbon-dioxide.html" target="_blank">Phys.org</a><br>
-              AGU Research Spotlight: <a href="https://eos.org/research-spotlights/carbon-dioxides-effect-on-mountain-climate-systems" target="_blank">EOS</a><br>
-              Spanish News: <a href="https://www.meteored.com.ar/noticias/ciencia/efecto-dioxido-de-carbono-patrones-precipitacion-montana-andes-lluvia-nieve-simulacion-cambio-climatico-gei.html#google_vignette" target="_blank">Meteored</a>
-            </div>
-          </div>
-          <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1029/2023EF003886"></span>
-        </div>
-      </li>
-
-      <li>
-        <div class="pub-container">
-          <div class="pub-text">
-            <b>Pratik Kad</b>, Manuel Blau, Kyung-Ja Ha, and Jiang Zhu. (2022)  
-            Elevation-dependent temperature response in early Eocene using paleoclimate model experiment.  
-            <i>Environmental Research Letters</i>.  
-            <a href="https://doi.org/10.1088/1748-9326/ac9c74" target="_blank">DOI: 10.1088/1748-9326/ac9c74</a>  
-            <div class="pub-highlight">
-              Highlighted on FAO site for International Mountain Day 2022:  
-              <a href="https://www.fao.org/international-mountain-day/international-mountain-day-in-the-news/events-detail/en/c/1617412/" target="_blank">FAO link</a>
-            </div>
-          </div>
-          <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1088/1748-9326/ac9c74"></span>
-        </div>
-      </li>
-
-      <li>
-        <div class="pub-container">
-          <div class="pub-text">
-            <b>Kad Pratik</b>*, Anant Parekh, Ananya Karmakar, J.S. Chowdary, and C. Gnanaseelan. (2018)  
-            Recent changes in the summer monsoon circulation and their impact on dynamics and thermodynamics of the Arabian Sea.  
-            <i>Theoretical and Applied Climatology</i>.  
-            <a href="https://doi.org/10.1007/s00704-018-2493-6" target="_blank">DOI: 10.1007/s00704-018-2493-6</a>  
-            <div class="pub-highlight">
-              Spotlighted on CLIVAR: <a href="https://www.clivar.org/people/pratik-kad" target="_blank">www.clivar.org</a>
-            </div>
-          </div>
-          <span class="altmetric-embed" data-badge-type="donut" data-doi="10.1007/s00704-018-2493-6"></span>
-        </div>
-      </li>
-    </ol>
+        <ol id="pub-list" class="pub-list">
+          <!-- Example items (replace with your real ones) -->
+          <li class="pub" data-tags="monsoon extremes 2024">
+            <h3>Tail Risks in South Asian Monsoon Rainfall under Warming</h3>
+            <p class="meta"><span class="journal">J. Climate</span> · <span class="year">2024</span> · <span class="topic">Monsoon</span></p>
+            <p class="desc">Convection-permitting ensembles reveal non-linear shifts in extreme rainfall distributions and wet-bulb risk.</p>
+            <p class="links"><a href="#" target="_blank" rel="noopener">Paper</a> · <a href="#" target="_blank" rel="noopener">Code</a> · <a href="#" target="_blank" rel="noopener">Data</a></p>
+          </li>
+          <li class="pub" data-tags="orography snow 2023">
+            <h3>Snow Microphysics and Orographic Precipitation in Complex Terrain</h3>
+            <p class="meta"><span class="journal">GRL</span> · <span class="year">2023</span> · <span class="topic">Orography</span></p>
+            <p class="desc">Process-level evaluation of microphysical schemes against alpine radar/lidar observations.</p>
+            <p class="links"><a href="#" target="_blank" rel="noopener">Paper</a> · <a href="#" target="_blank" rel="noopener">Code</a></p>
+          </li>
+          <li class="pub" data-tags="hydrology flood drought 2022 dataset">
+            <h3>Compound Drought–Flood Atlas for Global Basins</h3>
+            <p class="meta"><span class="journal">Scientific Data</span> · <span class="year">2022</span> · <span class="topic">Hydrology, Dataset</span></p>
+            <p class="desc">Probabilistic joint distributions for extremes, built from reanalyses + gauged flows, with QA/QC flags.</p>
+            <p class="links"><a href="#" target="_blank" rel="noopener">Paper</a> · <a href="#" target="_blank" rel="noopener">Data</a></p>
+          </li>
+        </ol>
+      </div>
+    </section>
   </main>
 
-  <footer>Pratik Kad © 2024</footer>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="brand small"><span class="brand-dot"></span> Climate Mystery</div>
+      <nav class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a class="active" href="publications.html">Publications</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="social">
+        <a href="https://scholar.google.com/" target="_blank" rel="noopener">🎓</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
 </body>
 </html>
