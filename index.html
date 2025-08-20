@@ -1,179 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Meta -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Home | Climate Mystery — Pratik Kad</title>
-  <meta name="description" content="Portfolio of Pratik Kad, climate scientist researching mountain weather, monsoons, hydrology, and Earth system modeling." />
-  <meta name="theme-color" content="#0b1220" />
-  <!-- Open Graph -->
-  <meta property="og:title" content="Climate Mystery — Pratik Kad" />
-  <meta property="og:description" content="World-class research portfolio in climate & Earth system science." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://YOUR-USERNAME.github.io/" />
-  <meta property="og:image" content="https://YOUR-USERNAME.github.io/assets/avatar.jpg" />
-  <!-- Fonts & CSS -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Climate Research | Pratik Kad</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <!-- Favicon (optional) -->
-  <!-- <link rel="icon" href="assets/icons/favicon.ico"> -->
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="theme-dark">
-  <!-- Skip link -->
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- Header / Nav -->
-  <header id="site-header" class="site-header">
-    <div class="container nav-grid">
-      <a class="brand" href="index.html" aria-label="Home">
-        <span class="brand-dot" aria-hidden="true"></span>
-        <span class="brand-text">Climate Mystery</span>
-      </a>
-
-      <nav class="nav" aria-label="Primary">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
-          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        </button>
-        <ul id="nav-menu" class="nav-menu">
-          <li><a class="active" href="index.html">Home</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="publications.html">Publications</a></li>
-          <li><a href="about.html">About</a></li>
-          <li class="divider" aria-hidden="true"></li>
-          <li><button id="theme-toggle" class="icon-btn" aria-label="Toggle color theme">🌓</button></li>
-        </ul>
-      </nav>
-    </div>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">🌍 Climate Mystery</div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="hero section">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <h1 class="display">Decoding a changing planet.</h1>
-        <p class="lead">I’m <strong>Pratik Kad</strong>, a climate scientist exploring <em>mountain weather</em>, <em>monsoons</em>, <em>hydrology</em>, and <em>Earth system modeling</em>. I build models and tools that turn climate signals into decisions.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="research.html">Explore Research</a>
-          <a class="btn btn-ghost" href="publications.html">View Publications</a>
-        </div>
-        <ul class="hero-meta">
-          <li>🔬 Earth System Models</li>
-          <li>🌧️ Extreme Precipitation</li>
-          <li>🏔️ Orographic Processes</li>
-          <li>💧 Water Resources</li>
-        </ul>
-      </div>
-      <div class="hero-art">
-        <!-- Animated SVG Globe -->
-        <?xml version="1.0" encoding="utf-8"?>
-        <svg class="globe" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated globe">
-          <defs>
-            <radialGradient id="g" cx="50%" cy="50%" r="60%">
-              <stop offset="0%" stop-color="#57e6ff"/>
-              <stop offset="100%" stop-color="#00b3ff"/>
-            </radialGradient>
-            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
-              <feMerge>
-                <feMergeNode in="coloredBlur"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
-          </defs>
-          <circle cx="260" cy="260" r="200" fill="url(#g)" opacity="0.2" filter="url(#glow)"/>
-          <g class="graticule">
-            <!-- Longitudes -->
-            <circle cx="260" cy="260" r="200" class="grid"/>
-            <ellipse cx="260" cy="260" rx="200" ry="50" class="grid"/>
-            <ellipse cx="260" cy="260" rx="200" ry="100" class="grid"/>
-            <ellipse cx="260" cy="260" rx="200" ry="150" class="grid"/>
-          </g>
-          <g class="spin">
-            <path class="land" d="M120,220c40,-70 190,-70 240,0c60,90 -60,160 -150,140c-90,-20 -130,-70 -90,-140z"/>
-            <path class="land" d="M330,200c30,-20 60,10 70,40c10,30 -10,50 -40,50c-30,0 -50,-20 -40,-45c5,-15 5,-30 10,-45z"/>
-          </g>
-        </svg>
-      </div>
+  <!-- Hero with Earth -->
+  <section class="hero">
+    <canvas id="earthCanvas"></canvas>
+    <div class="hero-text">
+      <h1>Exploring Climate Mysteries</h1>
+      <p>Researching monsoons, polar amplification, mountain weather, and the Earth’s complex system.</p>
+      <a href="research.html" class="btn">Discover My Work</a>
     </div>
   </section>
 
-  <!-- Featured Research -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2>Featured Research</h2>
-        <a class="link" href="research.html">View all →</a>
-      </div>
-      <div class="card-grid" data-animate="cards">
-        <!-- Card 1 -->
-        <article class="card">
-          <img src="assets/research/monsoon.jpg" alt="Monsoon cloud systems" loading="lazy" />
-          <div class="card-body">
-            <h3>Monsoon Extremes & Water Security</h3>
-            <p>Quantifying shifting monsoon dynamics and their hydrological impacts with high-res convection-permitting models.</p>
-            <div class="tags"><span>Monsoon</span><span>Extremes</span><span>CPMs</span></div>
-          </div>
-        </article>
-        <!-- Card 2 -->
-        <article class="card">
-          <img src="assets/research/mountain.jpg" alt="Mountain weather" loading="lazy" />
-          <div class="card-body">
-            <h3>Orographic Precipitation & Snowpack</h3>
-            <p>Downscaling storms over complex terrain to resolve snowfall, avalanches, and spring runoff risk.</p>
-            <div class="tags"><span>Orography</span><span>Snow</span><span>Runoff</span></div>
-          </div>
-        </article>
-        <!-- Card 3 -->
-        <article class="card">
-          <img src="assets/research/hydrology.jpg" alt="River hydrology" loading="lazy" />
-          <div class="card-body">
-            <h3>Hydrology Under Warming</h3>
-            <p>Coupled land–atmosphere simulations tracking streamflow, drought, and compound flood hazards.</p>
-            <div class="tags"><span>Hydrology</span><span>Drought</span><span>Flood</span></div>
-          </div>
-        </article>
-      </div>
+  <!-- Highlights -->
+  <section class="highlights">
+    <div class="highlight">
+      <h2>🌡️ Climate Dynamics</h2>
+      <p>Studying how monsoons, low-level jets, and atmospheric circulation respond to warming.</p>
     </div>
-  </section>
-
-  <!-- CTA Banner -->
-  <section class="section cta">
-    <div class="container cta-grid">
-      <div>
-        <h2>Collaborate or consult?</h2>
-        <p>I partner with agencies, NGOs, and industry to translate climate signals into operations, risk, and design.</p>
-      </div>
-      <div class="cta-actions">
-        <a class="btn btn-primary" href="about.html#contact">Get in touch</a>
-        <a class="btn btn-ghost" href="assets/Pratik-Kad-CV.pdf" target="_blank" rel="noopener">Download CV</a>
-      </div>
+    <div class="highlight">
+      <h2>❄️ Polar Amplification</h2>
+      <p>Investigating why the poles warm faster, with implications for global climate patterns.</p>
+    </div>
+    <div class="highlight">
+      <h2>🌊 Hydroclimate</h2>
+      <p>Exploring water cycle processes and floods using high-resolution Earth system modeling.</p>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="brand small"><span class="brand-dot" aria-hidden="true"></span> Climate Mystery</div>
-        <p class="muted">© <span id="year"></span> Pratik Kad. All rights reserved.</p>
-      </div>
-      <nav aria-label="Footer" class="footer-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="about.html">About</a>
-      </nav>
-      <div class="social">
-        <a href="mailto:your@email" aria-label="Email">✉️</a>
-        <a href="https://scholar.google.com/" target="_blank" rel="noopener" aria-label="Google Scholar">🎓</a>
-        <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener" aria-label="GitHub">🐙</a>
-        <a href="https://www.linkedin.com/in/YOUR-LINK" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-      </div>
-    </div>
+  <footer>
+    <p>© 2025 Pratik Kad · Built with ❤ for Earth Science</p>
   </footer>
 
-  <script src="app.js" defer></script>
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
