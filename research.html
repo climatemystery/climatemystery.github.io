@@ -2,114 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Research | Climate Mystery</title>
+  <title>Research | Climate Mystery — Pratik Kad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Research projects in monsoon extremes, orographic precipitation, hydrology, and Earth system modeling." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <header>
-    <h1>Research</h1>
+<body class="theme-dark">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header id="site-header" class="site-header">
+    <div class="container nav-grid">
+      <a class="brand" href="index.html"><span class="brand-dot"></span><span class="brand-text">Climate Mystery</span></a>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <ul id="nav-menu" class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="research.html">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="divider"></li>
+          <li><button id="theme-toggle" class="icon-btn">🌓</button></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="research.html" class="active">Research</a>
-    <a href="publications.html">Publications</a>
-    <a href="about.html">About Me</a>
-  </nav>
-
-  <main>
-    <p>I investigate climate processes across scales — from orographic rainfall and monsoon variability to Earth system modeling and hydrological extremes.</p>
-
-    <!-- Simple grid for topics -->
-    <div class="grid">
-      <div class="card">
-        <h2>Himalayan Monsoon</h2>
-        <p>Exploring monsoonal rainfall variability, flood hazards, and atmospheric drivers in the Eastern Himalayas.</p>
-        <a href="#himalayan-monsoon">Read more →</a>
-      </div>
-      <div class="card">
-        <h2>Mountain Precipitation</h2>
-        <p>Studying how greenhouse gases shape rainfall patterns in mountains under warming climates.</p>
-        <a href="#mountain-precipitation">Read more →</a>
-      </div>
-      <div class="card">
-        <h2>Elevation-dependent Warming</h2>
-        <p>Analyzing elevation-dependent warming in past and future warm climates using paleoclimate models.</p>
-        <a href="#elevation-dependent">Read more →</a>
-      </div>
-      <div class="card">
-        <h2>Arabian Sea Monsoon</h2>
-        <p>Investigating low-level monsoon circulation shifts and ocean heat content changes in the Arabian Sea.</p>
-        <a href="#arabian-sea">Read more →</a>
-      </div>
-    </div>
-
-    <!-- Detailed sections -->
-    <section id="himalayan-monsoon">
-      <h2>Himalayan Monsoon</h2>
-      <img src="placeholder.jpg" alt="Himalayan Monsoon" />
-      <p>This study examines natural changes in the Eastern Himalayan monsoon over 43 years. Findings reveal wet/dry cycles, the influence of winds and SSTs, and minimal snowmelt impact on extreme rainfall. These insights are vital for flood prediction in Bhutan, Nepal, India, and China.</p>
-      <div class="research-info-box">
-        <a href="#" class="article-link" target="_blank">🔗 Link to Article</a>
-        <h4>Key References</h4>
-        <ul>
-          <li>Seven centuries of reconstructed Brahmaputra River discharge</li>
-          <li>ITCZ northward shift & monsoon strengthening</li>
-          <li>The ERA5 global reanalysis</li>
-        </ul>
+  <main id="main">
+    <section class="section page-hero">
+      <div class="container narrow">
+        <h1>Research</h1>
+        <p class="lead">From convection-permitting simulations to hydrologic coupling, my work quantifies risk under climate variability and change.</p>
       </div>
     </section>
 
-    <section id="mountain-precipitation">
-      <h2>Mountain Precipitation under CO₂</h2>
-      <img src="placeholder.jpg" alt="Mountain Precipitation" />
-      <p>Rising CO₂ affects mountain precipitation. High-resolution modeling shows warming exceeds global average, with elevation-dependent changes. The "Orographic moisture omega feedback" explains shifts in rainfall. Results have wide implications for hydrology and mountain ecosystems.</p>
-      <div class="research-info-box">
-        <a href="#" class="article-link" target="_blank">🔗 Link to Article</a>
-        <h4>Key References</h4>
-        <ul>
-          <li>Asymmetry of Vertical Velocity in Current and Future Climate</li>
-          <li>IPCC Special Report on High Mountain Areas</li>
-          <li>Synoptic scale global climate simulation (CESM)</li>
-        </ul>
+    <section class="section">
+      <div class="container">
+        <!-- Filters -->
+        <div class="filters">
+          <div class="chips" role="tablist" aria-label="Filter projects">
+            <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+            <button class="chip" data-filter="monsoon" role="tab">Monsoon</button>
+            <button class="chip" data-filter="orography" role="tab">Orography</button>
+            <button class="chip" data-filter="hydrology" role="tab">Hydrology</button>
+            <button class="chip" data-filter="modeling" role="tab">Modeling</button>
+          </div>
+          <input id="project-search" class="search" type="search" placeholder="Search projects…" aria-label="Search projects">
+        </div>
+
+        <!-- Projects -->
+        <div id="projects" class="card-grid">
+          <!-- Each article has data-tags used by filters/search -->
+          <article class="card" data-tags="monsoon extremes modeling">
+            <img src="assets/research/monsoon.jpg" alt="Monsoon cloud systems" loading="lazy"/>
+            <div class="card-body">
+              <h3>Shifting Monsoon Extremes</h3>
+              <p>Convection-permitting ensembles (2–4 km) that resolve mesoscale organization and extreme rainfall tails.</p>
+              <div class="tags"><span>Monsoon</span><span>Extremes</span><span>CPMs</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-tags="orography snow hydrology modeling">
+            <img src="assets/research/mountain.jpg" alt="Mountain snow and wind" loading="lazy"/>
+            <div class="card-body">
+              <h3>Orographic Snow and Avalanches</h3>
+              <p>High-resolution downscaling over complex terrain to capture snowfall microphysics and avalanche precursors.</p>
+              <div class="tags"><span>Orography</span><span>Snow</span><span>Runoff</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-tags="hydrology drought flood risk">
+            <img src="assets/research/hydrology.jpg" alt="River flowing through valley" loading="lazy"/>
+            <div class="card-body">
+              <h3>Hydrologic Compounds</h3>
+              <p>Joint drought–flood analysis with coupled land surface routing and bias-corrected reanalyses.</p>
+              <div class="tags"><span>Hydrology</span><span>Drought</span><span>Flood</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-tags="modeling esms coupling">
+            <img src="assets/research/esms.jpg" alt="Earth system model visualization" loading="lazy"/>
+            <div class="card-body">
+              <h3>Next-Gen Earth System Models</h3>
+              <p>Parameter learning, subgrid convection, and lake/cryosphere coupling to reduce structural uncertainty.</p>
+              <div class="tags"><span>Modeling</span><span>ESM</span><span>Coupling</span></div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
-
-    <section id="elevation-dependent">
-      <h2>Elevation-dependent Warming</h2>
-      <img src="placeholder.jpg" alt="Elevation-dependent Warming" />
-      <p>The first Eocene hothouse study confirmed elevation-dependent warming in the past. Mechanisms were revealed using energy budget analysis. Results hint at paradoxical elevation-dependent cooling under present-day boundaries. This research informs understanding of mountain climate futures.</p>
-      <p>DeepMIP data: <a href="https://www.deepmip.org/data-eocene/" target="_blank">DeepMIP</a></p>
-      <div class="research-info-box">
-        <a href="#" class="article-link" target="_blank">🔗 Link to Article</a>
-        <h4>Key References</h4>
-        <ul>
-          <li>Review of elevation-dependent warming</li>
-          <li>Global mountain warming studies</li>
-          <li>DeepMIP model intercomparison</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="arabian-sea">
-      <h2>Arabian Sea Monsoon</h2>
-      <img src="placeholder.jpg" alt="Arabian Sea Monsoon" />
-      <p>This research highlights changes in the summer monsoon low-level jet and ocean thermodynamics over the Arabian Sea. GFDL MOM5 model experiments confirmed momentum flux changes significantly boost upper ocean heat content, showing a tight ocean-monsoon link.</p>
-      <div class="research-info-box">
-        <a href="#" class="article-link" target="_blank">🔗 Link to Article</a>
-        <h4>Key References</h4>
-        <ul>
-          <li>Arabian Sea response to monsoon variations</li>
-          <li>Monsoon jetstream poleward shift</li>
-          <li>Indian subcontinent drying due to Indian Ocean warming</li>
-        </ul>
-      </div>
-    </section>
-
   </main>
 
-  <footer>Pratik Kad © 2024</footer>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="brand small"><span class="brand-dot"></span> Climate Mystery</div>
+      <nav class="footer-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="social">
+        <a href="mailto:your@email">✉️</a>
+        <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener">🐙</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
 </body>
 </html>
