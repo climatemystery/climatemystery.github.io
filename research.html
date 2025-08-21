@@ -11,9 +11,22 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes gradientShift { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
     .animate-fade-in { animation: fadeIn 0.8s ease-out; }
-    body { font-family: 'Inter', sans-serif; line-height: 1.6; }
-    .text-contrast { color: #ffffff; text-shadow: 0 0 4px rgba(0,0,0,0.5); }
+    .gradient-text { 
+      background: linear-gradient(90deg, #06b6d4, #3b82f6, #06b6d4);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 5s ease-in-out infinite;
+    }
+    .hover-scale { transition: transform 0.3s ease; }
+    .hover-scale:hover { transform: scale(1.05); }
+    body { font-family: 'Inter', sans-serif; line-height: 1.6; scroll-behavior: smooth; }
+    .hero-bg { 
+      background: linear-gradient(135deg, #1e3a8a 0%, #06b6d4 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
   </style>
 </head>
 <body class="bg-gray-900 text-gray-100">
@@ -34,7 +47,7 @@
 
       return (
         <header className="fixed top-0 w-full bg-gray-900 bg-opacity-90 backdrop-blur-sm z-50">
-          <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+          <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <div className="flex items-center space-x-3">
               <span className="text-3xl">🌍</span>
               <h1 className="text-xl font-semibold text-white">Pratik Kad</h1>
@@ -45,6 +58,7 @@
                   key={item.name}
                   href={item.href}
                   className="text-lg text-gray-300 hover:text-cyan-300 transition-colors duration-200"
+                  aria-label={`Navigate to ${item.name} page`}
                 >
                   {item.name}
                 </a>
@@ -53,6 +67,7 @@
             <button
               className="md:hidden text-white focus:outline-none"
               onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle navigation menu"
             >
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
@@ -67,6 +82,7 @@
                   href={item.href}
                   className="block py-2 text-lg text-gray-300 hover:text-cyan-300"
                   onClick={() => setIsOpen(false)}
+                  aria-label={`Navigate to ${item.name} page`}
                 >
                   {item.name}
                 </a>
@@ -83,7 +99,7 @@
         {
           title: 'Himalayan Monsoon',
           icon: '🌧️',
-          description: 'This study examines the monsoon season in the Himalayas, which is of utmost importance to the people of South Asia. Every year, the heavy rainfall during the monsoon season causes floods that affect millions of people in the Himalayas and beyond. The research aims to understand the natural changes in the eastern Himalayan climate over the past 43 years. The study found interesting patterns in monsoon rainfall, with six dry years and seven wet years. Surprisingly, melting snow does not contribute significantly to extreme rainfall. Instead, local winds and sea temperatures have a significant influence on monsoon rainfall patterns. This study shows that atmospheric processes play a major role in shaping the Himalayan monsoon. Such insights help us better understand and predict challenging weather events. Research is like a weather detective story, helping us figure out how and why extreme rain occurs in the Himalayas. This information is crucial for predicting floods in countries such as Bhutan, Nepal, India, and China. As the climate changes, we are working to understand how it may interact with natural variability patterns, so we can be prepared and stay safe',
+          description: 'This study examines the monsoon season in the Himalayas, critical for South Asia. Heavy monsoon rainfall causes floods affecting millions. My research analyzes 43 years of eastern Himalayan climate data, revealing six dry and seven wet years. Surprisingly, melting snow has little impact on extreme rainfall, but local winds and sea temperatures significantly influence monsoon patterns. These insights help predict floods in Bhutan, Nepal, India, and China, aiding preparation for climate change impacts.',
           article: {
             title: 'Recent Tangible Natural Variability of Monsoonal Orographic Rainfall in the Eastern Himalayas',
             link: 'https://doi.org/10.1029/2023JD038759',
@@ -95,9 +111,9 @@
           ],
         },
         {
-          title: 'Elevation-dependent warming under CO₂',
+          title: 'Elevation-Dependent Warming',
           icon: '🏔️',
-          description: 'The First Eocene hothouse study proved the existence of elevation-dependent warming in the past warm climate. This work demonstrated elevation-dependent temperature changes in the Eocene (~56Myr). The Eocene is considered a replica of the future climate in an epoch with high atmospheric carbon dioxide concentration (CO2). Through this study, the team elucidated the mechanisms behind mountain temperature changes using a comprehensive surface energy balance analysis. Notably, the findings also unearthed an intriguing phenomenon; a paradox of the future. It predicts that elevation-dependent cooling is foreseeable in all mountainous regions under existing geographic boundary conditions, as indicated by simulations based on present-day models. These insights not only advance our understanding of past climatic dynamics but also offer crucial insights into potential future climate. The implications of elevation-dependent temperature changes are far-reaching, offering a valuable perspective for comprehending the complex interplay between climate and geography.',
+          description: 'My research on the Eocene (~56Myr) proves elevation-dependent warming in past warm climates, resembling future high-CO₂ scenarios. Using surface energy balance analysis, we uncovered mechanisms behind mountain temperature changes and a paradox: future elevation-dependent cooling in mountainous regions under current geographic conditions. These findings enhance our understanding of past and future climate dynamics, highlighting the interplay between climate and geography.',
           article: {
             title: 'Elevation-dependent temperature response in early Eocene using paleoclimate model experiment',
             link: 'https://doi.org/10.1088/1748-9326/ac9c74',
@@ -112,7 +128,7 @@
         {
           title: 'Mountain Precipitation Change under CO₂',
           icon: '⛰️',
-          description: 'Mountain warming has garnered increasing attention, yet understanding its impact on mountain rainfall remains a formidable challenge. The study investigates the impact of rising greenhouse gases, particularly CO₂ concentration, on mountain precipitation. It employs high-resolution modeling and identifies that mountain areas are warming faster than the global average due to CO₂. The research focuses on five low-latitude mountain ranges (New Guinea, East Africa, the Himalayas, Central America, and Central Andes), where precipitation changes are elevation-dependent, leading to a mix of increased and decreased rainfall, especially at higher altitudes. This research introduces the "Orographic moisture omega feedback" mechanism to explain these changes, highlighting the importance of understanding mountain meteorology for our overall grasp of Earth’s climate system. I’m studying mountain meteorology gives us invaluable insights into the complex interplay shaping our Earth’s climate system. Changes in mountain rainfall patterns can have far-reaching implications, extending into hydrology and potentially causing significant impacts on humanity and ecosystems.',
+          description: 'This study investigates how rising CO₂ affects mountain precipitation, focusing on five low-latitude ranges (New Guinea, East Africa, Himalayas, Central America, Central Andes). High-resolution modeling shows mountains warm faster than the global average, with elevation-dependent rainfall changes—some areas see more rain, others less, especially at higher altitudes. The "Orographic moisture omega feedback" mechanism explains these shifts, impacting hydrology and ecosystems.',
           article: {
             title: 'Projected Changes in Mountain Precipitation under CO₂-induced warmer climate',
             link: 'https://doi.org/10.1029/2023EF003886',
@@ -126,38 +142,48 @@
       ];
 
       return (
-        <section id="research" className="py-16 bg-gray-900 min-h-screen">
-          <div className="max-w-6xl mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12 animate-fade-in">What I Research</h2>
-            <p className="text-lg text-gray-200 text-center mb-8 animate-fade-in">
-              My work explores climate patterns through Himalayan monsoons, elevation-dependent warming, and mountain precipitation changes, using data and models to predict impacts on communities and ecosystems.
+        <section id="research" className="min-h-screen">
+          <div className="hero-bg py-20 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-white gradient-text mb-6 animate-fade-in">
+              Unraveling Climate Mysteries
+            </h2>
+            <p className="text-xl text-gray-100 max-w-3xl mx-auto animate-fade-in">
+              Exploring Himalayan monsoons, elevation-dependent warming, and mountain precipitation changes to predict impacts on communities and ecosystems.
             </p>
-            <img
-              src="https://via.placeholder.com/800x400?text=Figure+Covering+Three+Themes:+Himalayan+Monsoon,+Elevation-Dependent+Warming,+Mountain+Precipitation+Change"
-              alt="Figure covering Himalayan Monsoon, Elevation-Dependent Warming, and Mountain Precipitation Change under CO₂"
-              className="w-full max-w-4xl mx-auto mb-12 rounded-lg shadow-lg animate-fade-in"
-            />
-            <div className="space-y-6 bg-gray-100 p-6 rounded-lg shadow-md text-gray-900">
+          </div>
+          <div className="max-w-7xl mx-auto px-4 py-12">
+            <div className="mb-12">
+              <img
+                src="https://via.placeholder.com/800x400?text=Figure+Covering+Himalayan+Monsoon,+Elevation-Dependent+Warming,+Mountain+Precipitation+Change"
+                alt="Figure illustrating Himalayan Monsoon, Elevation-Dependent Warming, and Mountain Precipitation Change under CO₂"
+                className="w-full max-w-4xl mx-auto rounded-xl shadow-2xl hover-scale"
+                style={{ animationDelay: '0.2s' }}
+              />
+              <p className="text-center text-gray-200 mt-4 text-sm italic">
+                A visual representation of my research on Himalayan monsoons, elevation-dependent warming, and CO₂-driven precipitation changes.
+              </p>
+            </div>
+            <div className="space-y-8 bg-gray-100 p-8 rounded-xl shadow-lg text-gray-900">
               {researchTopics.map((topic, index) => (
                 <div
                   key={index}
-                  className="bg-white p-6 rounded-lg shadow-sm animate-fade-in"
-                  style={{ animationDelay: `${index * 0.2}s` }}
+                  className="bg-white p-6 rounded-lg shadow-md hover-scale border-l-4 border-transparent hover:border-cyan-500 transition-all duration-300"
+                  style={{ animationDelay: `${index * 0.2 + 0.4}s` }}
                 >
                   <div className="flex items-center mb-4">
-                    <span className="text-4xl mr-3">{topic.icon}</span>
-                    <h3 className="text-xl font-semibold text-gray-900">{topic.title}</h3>
+                    <span className="text-4xl mr-3" role="img" aria-label={`${topic.title} icon`}>{topic.icon}</span>
+                    <h3 className="text-2xl font-semibold text-gray-900">{topic.title}</h3>
                   </div>
-                  <p className="text-gray-700 mb-4">{topic.description}</p>
-                  <p className="text-gray-800 mb-2">
-                    <strong>Link to article:</strong>{' '}
-                    <a href={topic.article.link} target="_blank" className="text-blue-600 hover:underline">
+                  <p className="text-gray-700 mb-4 text-lg">{topic.description}</p>
+                  <p className="text-gray-800 mb-4 font-medium">
+                    <strong>Read More:</strong>{' '}
+                    <a href={topic.article.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline" aria-label={`Read article: ${topic.article.title}`}>
                       {topic.article.title}
                     </a>
                     {topic.article.dataLink && (
                       <span>
                         {' ('}
-                        <a href={topic.article.dataLink.url} target="_blank" className="text-blue-600 hover:underline">
+                        <a href={topic.article.dataLink.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline" aria-label={`Visit ${topic.article.dataLink.text}`}>
                           {topic.article.dataLink.text}
                         </a>
                         {')'}
@@ -165,11 +191,11 @@
                     )}
                   </p>
                   {topic.references.length > 0 && (
-                    <div className="mt-3 bg-gray-50 p-3 rounded border-l-4 border-blue-500">
-                      <p className="text-gray-800 font-semibold mb-2">Related useful references:</p>
+                    <div className="mt-4 bg-gray-50 p-4 rounded-lg border-l-4 border-blue-500">
+                      <p className="text-gray-800 font-semibold mb-2">Related References:</p>
                       {topic.references.map((ref, i) => (
-                        <p key={i} className="text-gray-600 text-sm">
-                          <a href={ref.link} target="_blank" className="text-blue-600 hover:underline">
+                        <p key={i} className="text-gray-600 text-sm mb-1">
+                          <a href={ref.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline" aria-label={`Read reference: ${ref.text}`}>
                             {ref.text}
                           </a>
                         </p>
