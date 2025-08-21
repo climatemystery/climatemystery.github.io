@@ -4,57 +4,292 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Climate Research | Pratik Kad</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
-  <!-- Navigation -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">🌍 Climate Mystery</div>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState, useEffect, useRef } = React;
 
-  <!-- Hero with Earth -->
-  <section class="hero">
-    <canvas id="earthCanvas"></canvas>
-    <div class="hero-text">
-      <h1>Exploring Climate Mysteries</h1>
-      <p>Researching monsoons, polar amplification, mountain weather, and the Earth’s complex system.</p>
-      <a href="research.html" class="btn">Discover My Work</a>
-    </div>
-  </section>
+    // Navigation Component
+    const Navbar = () => {
+      const [isOpen, setIsOpen] = useState(false);
+      const navItems = [
+        { name: 'Home', href: '#home' },
+        { name: 'Research', href: '#research' },
+        { name: 'Publications', href: '#publications' },
+        { name: 'About', href: '#about' },
+        { name: 'Contact', href: '#contact' },
+      ];
 
-  <!-- Highlights -->
-  <section class="highlights">
-    <div class="highlight">
-      <h2>🌡️ Climate Dynamics</h2>
-      <p>Studying how monsoons, low-level jets, and atmospheric circulation respond to warming.</p>
-    </div>
-    <div class="highlight">
-      <h2>❄️ Polar Amplification</h2>
-      <p>Investigating why the poles warm faster, with implications for global climate patterns.</p>
-    </div>
-    <div class="highlight">
-      <h2>🌊 Hydroclimate</h2>
-      <p>Exploring water cycle processes and floods using high-resolution Earth system modeling.</p>
-    </div>
-  </section>
+      return (
+        <header className="fixed top-0 left-0 w-full bg-gray-900 bg-opacity-80 backdrop-blur-md z-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div className="flex items-center space-x-2">
+              <span className="text-2xl">🌍</span>
+              <h1 className="text-xl font-bold text-white">Climate Mystery</h1>
+            </div>
+            <nav className="hidden md:flex space-x-6">
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector(item.href).scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  {item.name}
+                </a>
+              ))}
+            </nav>
+            <button
+              className="md:hidden text-white"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
+              </svg>
+            </button>
+          </div>
+          {isOpen && (
+            <div className="md:hidden bg-gray-900 bg-opacity-95">
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="block px-4 py-2 text-gray-300 hover:text-cyan-400"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsOpen(false);
+                    document.querySelector(item.href).scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
+          )}
+        </header>
+      );
+    };
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Pratik Kad · Built with ❤ for Earth Science</p>
-  </footer>
+    // Hero Component with Three.js Globe
+    const Hero = () => {
+      const canvasRef = useRef(null);
 
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="script.js"></script>
+      useEffect(() => {
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        const geometry = new THREE.SphereGeometry(5, 32, 32);
+        const texture = new THREE.TextureLoader().load('https://threejs.org/examples/textures/land_ocean_ice_cloud_2048.jpg');
+        const material = new THREE.MeshBasicMaterial({ map: texture });
+        const sphere = new THREE.Mesh(geometry, material);
+        scene.add(sphere);
+
+        camera.position.z = 10;
+
+        const animate = () => {
+          requestAnimationFrame(animate);
+          sphere.rotation.y += 0.005;
+          renderer.render(scene, camera);
+        };
+        animate();
+
+        const handleResize = () => {
+          camera.aspect = window.innerWidth / window.innerHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(window.innerWidth, window.innerHeight);
+        };
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+      }, []);
+
+      return (
+        <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-blue-900 relative">
+          <canvas ref={canvasRef} className="absolute inset-0 z-0" />
+          <div className="text-center z-10">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 animate-fade-in-down">Exploring Climate Mysteries</h1>
+            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-6 animate-fade-in-up">
+              Researching monsoons, polar amplification, mountain weather, and Earth’s complex systems.
+            </p>
+            <a
+              href="#research"
+              className="inline-block bg-cyan-400 text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-cyan-500 transition-colors duration-300"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector('#research').scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              Discover My Work
+            </a>
+          </div>
+        </section>
+      );
+    };
+
+    // Highlights Component
+    const Highlights = () => {
+      const highlights = [
+        {
+          icon: '🌡️',
+          title: 'Climate Dynamics',
+          description: 'Studying how monsoons, low-level jets, and atmospheric circulation respond to warming.',
+        },
+        {
+          icon: '❄️',
+          title: 'Polar Amplification',
+          description: 'Investigating why the poles warm faster, with implications for global climate patterns.',
+        },
+        {
+          icon: '🌊',
+          title: 'Hydroclimate',
+          description: 'Exploring water cycle processes and floods using high-resolution Earth system modeling.',
+        },
+      ];
+
+      return (
+        <section id="research" className="py-16 bg-gray-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-4xl font-bold text-white text-center mb-12">Research Highlights</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {highlights.map((highlight, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-900 bg-opacity-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2"
+                >
+                  <span className="text-4xl mb-4 block">{highlight.icon}</span>
+                  <h3 className="text-xl font-semibold text-white mb-2">{highlight.title}</h3>
+                  <p className="text-gray-300">{highlight.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    };
+
+    // Publications Component
+    const Publications = () => {
+      return (
+        <section id="publications" className="py-16 bg-gray-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-4xl font-bold text-white text-center mb-12">Publications</h2>
+            <div className="space-y-6">
+              <div className="bg-gray-800 bg-opacity-50 p-6 rounded-xl">
+                <h3 className="text-lg font-semibold text-white">Monsoon Dynamics in a Warming World</h3>
+                <p className="text-gray-400">Kad, P., et al. (2024). Journal of Climate Research.</p>
+                <a href="#" className="text-cyan-400 hover:underline">Read Paper</a>
+              </div>
+              <div className="bg-gray-800 bg-opacity-50 p-6 rounded-xl">
+                <h3 className="text-lg font-semibold text-white">Polar Amplification and Arctic Climate</h3>
+                <p className="text-gray-400">Kad, P., et al. (2023). Nature Climate Change.</p>
+                <a href="#" className="text-cyan-400 hover:underline">Read Paper</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    };
+
+    // About Component
+    const About = () => {
+      return (
+        <section id="about" className="py-16 bg-gray-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <img
+                src="https://via.placeholder.com/360x360?text=Pratik+Kad"
+                alt="Pratik Kad"
+                className="rounded-xl border border-gray-700"
+              />
+            </div>
+            <div>
+              <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
+              <p className="text-gray-300 mb-4">
+                I’m Pratik Kad, a climate scientist passionate about unraveling the complexities of Earth’s climate system.
+                My research focuses on monsoons, polar amplification, and hydroclimate dynamics, using advanced modeling to
+                address global challenges.
+              </p>
+              <ul className="list-disc text-gray-400 pl-5">
+                <li>PhD in Climate Science, University of Earth Studies</li>
+                <li>Over 10 publications in peer-reviewed journals</li>
+                <li>Recipient of the Global Climate Research Award 2024</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      );
+    };
+
+    // Contact Component
+    const Contact = () => {
+      return (
+        <section id="contact" className="py-16 bg-gray-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-4xl font-bold text-white text-center mb-12">Get in Touch</h2>
+            <div className="max-w-lg mx-auto">
+              <div className="grid gap-4">
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 text-white"
+                />
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 text-white"
+                />
+                <textarea
+                  placeholder="Your Message"
+                  className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 text-white"
+                  rows="5"
+                ></textarea>
+                <button className="bg-cyan-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-cyan-500 transition-colors duration-300">
+                  Send Message
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    };
+
+    // Footer Component
+    const Footer = () => {
+      return (
+        <footer className="py-8 bg-gray-800 text-center text-gray-400">
+          <p>© 2025 Pratik Kad · Built with ❤ for Earth Science</p>
+        </footer>
+      );
+    };
+
+    // Main App Component
+    const App = () => {
+      return (
+        <div>
+          <Navbar />
+          <Hero />
+          <Highlights />
+          <Publications />
+          <About />
+          <Contact />
+          <Footer />
+        </div>
+      );
+    };
+
+    // Render the App
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
 </body>
 </html>
