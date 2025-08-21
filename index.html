@@ -3,96 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Climate Mystery | Dr. Pratik Kad</title>
+  <title>Climate Mystery | Pratik Kad</title>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Three.js for Earth -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
-  <!-- HEADER -->
   <header class="site-header">
-    <div class="logo">
-      🌍 Climate Mystery
-    </div>
-    <nav class="nav-links">
+    <div class="logo">🌍 Climate Mystery</div>
+    <nav>
       <a href="index.html" class="active">Home</a>
       <a href="research.html">Research</a>
       <a href="publications.html">Publications</a>
-      <a href="infographics.html">Infographics</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- Hero Section -->
   <section class="hero">
+    <div id="earth-container"></div>
     <div class="hero-text">
-      <h1>Unveiling Climate Mysteries</h1>
-      <p>Hi, I’m <strong>Dr. Pratik Kad</strong>, a climate researcher exploring monsoons, polar amplification, hydrology, and Earth system modeling.</p>
-      <a href="research.html" class="btn-primary">Explore My Research</a>
-    </div>
-    <div class="hero-earth">
-      <canvas id="earthCanvas"></canvas>
+      <h1>Understanding Climate, One Layer at a Time</h1>
+      <p>I’m a climate scientist studying <strong>mountain weather</strong>, <strong>monsoons</strong>, <strong>hydrology</strong>, and <strong>Earth system modeling</strong>.  
+         This site is where science meets visualization.</p>
+      <a href="research.html" class="btn">Explore My Research</a>
     </div>
   </section>
 
-  <!-- ABOUT SECTION -->
-  <section class="about-preview">
-    <h2>About Me</h2>
-    <p>I work at the intersection of <em>climate dynamics</em>, <em>paleoclimate</em>, and <em>future projections</em>, decoding how our planet responds to natural and anthropogenic changes. With experience in high-resolution modeling (WRF, NorESM, SWAT), my research spans from Himalayan monsoons to Arctic amplification.</p>
-    <a href="about.html" class="btn-secondary">Learn More</a>
-  </section>
-
-  <!-- RESEARCH HIGHLIGHTS -->
-  <section class="research-highlights">
-    <h2>Research Highlights</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Monsoon Variability</h3>
-        <p>Investigating the past and future evolution of South Asian monsoons through high-resolution Earth system models.</p>
-      </div>
-      <div class="card">
-        <h3>Polar Amplification</h3>
-        <p>Understanding Arctic and Antarctic amplification, comparing modern warming to paleoclimate analogs.</p>
-      </div>
-      <div class="card">
-        <h3>Hydrology & Floods</h3>
-        <p>Reconstructing pre-instrumental flood events using the NorESM–WRF–SWAT chain to inform future risk assessment.</p>
-      </div>
+  <!-- Featured Sections -->
+  <section class="highlights">
+    <div class="card">
+      <h2>🌡️ Climate Research</h2>
+      <p>From monsoon variability to polar amplification, I investigate key processes shaping our planet’s future.</p>
+      <a href="research.html">Learn More →</a>
+    </div>
+    <div class="card">
+      <h2>📊 Infographics</h2>
+      <p>Data-driven stories of climate change, translated into powerful visuals for both scientists and the public.</p>
+      <a href="infographics.html">See Visuals →</a>
+    </div>
+    <div class="card">
+      <h2>📚 Publications</h2>
+      <p>Peer-reviewed contributions advancing our understanding of past, present, and future climate.</p>
+      <a href="publications.html">Browse Papers →</a>
     </div>
   </section>
 
-  <!-- PUBLICATIONS -->
-  <section class="publications-preview">
-    <h2>Selected Publications</h2>
-    <ul>
-      <li><strong>npj Climate</strong> — Reconstructing Pre-Instrumental Floods (2025)</li>
-      <li><strong>Clim. Dyn.</strong> — Decline of the Low-Level Jet in the Hot Eocene (2024)</li>
-      <li><strong>QJRMS</strong> — Surface Energy Budget & Snow Cover Feedbacks (in review)</li>
-    </ul>
-    <a href="publications.html" class="btn-secondary">See All</a>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <p>© 2025 Dr. Pratik Kad — Climate Mystery</p>
-    <div class="socials">
-      <a href="#">Twitter</a>
-      <a href="#">Google Scholar</a>
-      <a href="#">GitHub</a>
-      <a href="#">LinkedIn</a>
-    </div>
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Pratik Kad | Climate Mystery</p>
+    <p>Made with passion for science & Earth 🌍</p>
   </footer>
 
-  <!-- INTERACTIVE EARTH SCRIPT -->
+  <!-- Earth Script -->
   <script>
+    const container = document.getElementById("earth-container");
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({canvas: document.getElementById("earthCanvas"), alpha: true});
-    renderer.setSize(400, 400);
+    const camera = new THREE.PerspectiveCamera(50, container.offsetWidth/container.offsetHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(container.offsetWidth, container.offsetHeight);
+    container.appendChild(renderer.domElement);
 
-    const geometry = new THREE.SphereGeometry(1.5, 64, 64);
-    const texture = new THREE.TextureLoader().load("https://raw.githubusercontent.com/ajayns/webgl-earth/main/images/earthmap1k.jpg");
+    const geometry = new THREE.SphereGeometry(2, 64, 64);
+    const texture = new THREE.TextureLoader().load("https://threejs.org/examples/textures/earth_atmos_2048.jpg");
     const material = new THREE.MeshPhongMaterial({ map: texture });
     const earth = new THREE.Mesh(geometry, material);
     scene.add(earth);
@@ -101,14 +81,20 @@
     light.position.set(5, 3, 5);
     scene.add(light);
 
-    camera.position.z = 4;
+    camera.position.z = 5;
 
     function animate() {
       requestAnimationFrame(animate);
-      earth.rotation.y += 0.002;
+      earth.rotation.y += 0.002; // smooth spin
       renderer.render(scene, camera);
     }
     animate();
+
+    window.addEventListener("resize", () => {
+      camera.aspect = container.offsetWidth / container.offsetHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.offsetWidth, container.offsetHeight);
+    });
   </script>
 </body>
 </html>
