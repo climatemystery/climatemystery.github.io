@@ -11,17 +11,28 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes gradientShift { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
     .animate-fade-in { animation: fadeIn 0.8s ease-out; }
-    body { font-family: 'Inter', sans-serif; line-height: 1.6; }
-    .text-contrast { color: #ffffff; text-shadow: 0 0 4px rgba(0,0,0,0.5); }
-    .swing { animation: swing 1s ease-in-out infinite alternate; }
-    @keyframes swing { 0% { transform: rotate(-10deg); } 100% { transform: rotate(10deg); } }
+    .gradient-text { 
+      background: linear-gradient(90deg, #06b6d4, #3b82f6, #06b6d4);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 5s ease-in-out infinite;
+    }
+    .hover-scale { transition: transform 0.3s ease; }
+    .hover-scale:hover { transform: scale(1.05); }
+    body { font-family: 'Inter', sans-serif; line-height: 1.6; scroll-behavior: smooth; }
+    .hero-bg { 
+      background: linear-gradient(to bottom, #111827, #1e40af);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
   </style>
 </head>
 <body class="bg-gray-900 text-gray-100">
   <div id="root"></div>
   <script type="text/babel">
-    const { useState } = React;
+    const { useState, useEffect, useRef } = React;
 
     // Navigation Component
     const Navbar = () => {
@@ -36,7 +47,7 @@
 
       return (
         <header className="fixed top-0 w-full bg-gray-900 bg-opacity-90 backdrop-blur-sm z-50">
-          <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+          <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <div className="flex items-center space-x-3">
               <span className="text-3xl">🌍</span>
               <h1 className="text-xl font-semibold text-white">Pratik Kad</h1>
@@ -47,6 +58,7 @@
                   key={item.name}
                   href={item.href}
                   className="text-lg text-gray-300 hover:text-cyan-300 transition-colors duration-200"
+                  aria-label={`Navigate to ${item.name} page`}
                 >
                   {item.name}
                 </a>
@@ -55,6 +67,7 @@
             <button
               className="md:hidden text-white focus:outline-none"
               onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle navigation menu"
             >
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
@@ -69,6 +82,7 @@
                   href={item.href}
                   className="block py-2 text-lg text-gray-300 hover:text-cyan-300"
                   onClick={() => setIsOpen(false)}
+                  aria-label={`Navigate to ${item.name} page`}
                 >
                   {item.name}
                 </a>
@@ -76,6 +90,62 @@
             </div>
           )}
         </header>
+      );
+    };
+
+    // Hero Component with Three.js Globe
+    const Hero = () => {
+      const canvasRef = useRef(null);
+
+      useEffect(() => {
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / 600, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current, alpha: true });
+        renderer.setSize(window.innerWidth, 600);
+
+        const geometry = new THREE.SphereGeometry(5, 16, 16);
+        const material = new THREE.MeshBasicMaterial({ color: 0x57e6ff, wireframe: true });
+        const sphere = new THREE.Mesh(geometry, material);
+        scene.add(sphere);
+
+        camera.position.z = 10;
+
+        const animate = () => {
+          requestAnimationFrame(animate);
+          sphere.rotation.y += 0.003;
+          renderer.render(scene, camera);
+        };
+        animate();
+
+        const handleResize = () => {
+          renderer.setSize(window.innerWidth, 600);
+          camera.aspect = window.innerWidth / 600;
+          camera.updateProjectionMatrix();
+        };
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+      }, []);
+
+      return (
+        <section id="hero" className="min-h-[60vh] flex items-center justify-center hero-bg relative">
+          <canvas ref={canvasRef} className="absolute inset-0 z-0 opacity-50" />
+          <div className="text-center z-10 max-w-3xl mx-auto px-4 animate-fade-in">
+            <h1 className="text-4xl md:text-5xl font-bold text-white gradient-text mb-6">
+              About Me
+            </h1>
+            <p className="text-lg md:text-xl text-gray-200 mb-8">
+              Discover my journey in climate science, from atmospheric dynamics to mountain meteorology.
+            </p>
+            <a
+              href="#about-content"
+              className="inline-block bg-cyan-400 text-gray-900 px-6 py-3 rounded-lg font-semibold text-lg hover:bg-cyan-500 transition-colors duration-200"
+              aria-label="Scroll to about content"
+            >
+              Learn More
+            </a>
+          </div>
+        </section>
       );
     };
 
@@ -105,15 +175,15 @@
       ];
 
       return (
-        <section id="about" className="py-16 bg-gray-900 min-h-screen">
-          <div className="max-w-6xl mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12 animate-fade-in">About Me</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="animate-fade-in">
+        <section id="about-content" className="py-16 bg-gray-900 min-h-screen">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="md:col-span-1 animate-fade-in">
                 <img
                   src="pk.jpg"
                   alt="Pratik Kad"
-                  className="rounded-full border-4 border-cyan-500 w-full max-w-xs mx-auto"
+                  className="rounded-full border-4 border-cyan-500 w-full max-w-xs mx-auto hover-scale"
+                  style={{ animationDelay: '0.2s' }}
                 />
                 <div className="flex justify-center gap-6 mt-6">
                   {socialLinks.map((link, index) => (
@@ -121,17 +191,19 @@
                       key={index}
                       href={link.href}
                       target="_blank"
+                      rel="noopener noreferrer"
                       title={link.title}
-                      className="text-cyan-300 hover:text-cyan-400"
+                      className="text-cyan-300 hover:text-cyan-400 hover-scale"
                       dangerouslySetInnerHTML={{ __html: link.svg }}
-                      onMouseEnter={(e) => e.currentTarget.classList.add('swing')}
-                      onMouseLeave={(e) => e.currentTarget.classList.remove('swing')}
+                      aria-label={`Visit my ${link.title} profile`}
                     />
                   ))}
                 </div>
                 <div className="text-center mt-4">
                   <p className="text-gray-300">
-                    <a href="mailto:prka@norceresearch.no" className="text-cyan-300 hover:underline">prka@norceresearch.no</a>
+                    <a href="mailto:prka@norceresearch.no" className="text-cyan-300 hover:underline" aria-label="Email Pratik Kad">
+                      prka@norceresearch.no
+                    </a>
                   </p>
                   <p className="text-gray-300">
                     NORCE Norwegian Research Centre<br />
@@ -140,62 +212,62 @@
                   </p>
                 </div>
               </div>
-              <div className="animate-fade-in">
-                <h3 className="text-xl font-semibold text-cyan-300 mb-2">Research Interests</h3>
-                <p className="text-gray-300 mb-4">Atmospheric Science, Climate Change, Climate Dynamics, Mountain Meteorology, Physical Oceanography</p>
+              <div className="md:col-span-2 bg-gray-100 p-8 rounded-xl shadow-lg text-gray-900 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4 gradient-text">Research Interests</h3>
+                <p className="text-gray-700 mb-6 text-lg">Atmospheric Science, Climate Change, Climate Dynamics, Mountain Meteorology, Physical Oceanography</p>
 
-                <h3 className="text-xl font-semibold text-cyan-300 mb-2">Professional Service</h3>
-                <ul className="list-disc text-gray-400 pl-5 mb-4">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4 gradient-text">Professional Service</h3>
+                <ul className="list-disc text-gray-700 pl-5 mb-6 text-lg">
                   <li>
-                    <span className="text-cyan-300">Executive Committee Member</span> –{' '}
-                    <a href="https://www.yess-community.org/members/community/pratik/" target="_blank" className="text-cyan-300 hover:underline">
+                    <span className="font-medium">Executive Committee Member</span> –{' '}
+                    <a href="https://www.yess-community.org/members/community/pratik/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                       Young Earth System Scientists (YESS) Community
                     </a>{' '}
                     (April 2025 – Present)
                   </li>
                   <li>
-                    <span className="text-cyan-300">Member, Robust Information Working Group</span> –{' '}
-                    <a href="https://www.wcrp-rifs.org/activities/working-groups/robust-information-working-group/" target="_blank" className="text-cyan-300 hover:underline">
+                    <span className="font-medium">Member, Robust Information Working Group</span> –{' '}
+                    <a href="https://www.wcrp-rifs.org/activities/working-groups/robust-information-working-group/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                       WCRP Regional Information for Society (RifS)
                     </a>{' '}
                     (July 2024 – Present)
                   </li>
                 </ul>
 
-                <h3 className="text-xl font-semibold text-cyan-300 mb-2">Research Experience</h3>
-                <ul className="list-disc text-gray-400 pl-5">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4 gradient-text">Research Experience</h3>
+                <ul className="list-disc text-gray-700 pl-5 mb-6 text-lg">
                   <li>
-                    <span className="text-cyan-300">Postdoctoral Researcher (Regional Climate Modeling)</span> –{' '}
-                    <a href="https://www.norceresearch.no/en/persons/pratik-kad/40144981" target="_blank" className="text-cyan-300 hover:underline">
+                    <span className="font-medium">Postdoctoral Researcher (Regional Climate Modeling)</span> –{' '}
+                    <a href="https://www.norceresearch.no/en/persons/pratik-kad/40144981" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                       NORCE Norwegian Research Centre
                     </a>{' '}
                     (February 2024 – Present)
                   </li>
                   <li>
-                    <span className="text-cyan-300">Research Affiliate (Climate Hazards)</span> –{' '}
-                    <a href="https://bjerknes.uib.no/en/user/176346" target="_blank" className="text-cyan-300 hover:underline">
+                    <span className="font-medium">Research Affiliate (Climate Hazards)</span> –{' '}
+                    <a href="https://bjerknes.uib.no/en/user/176346" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                       Bjerknes Centre for Climate Research
                     </a>{' '}
                     (February 2024 – Present)
                   </li>
                   <li>
-                    <span className="text-cyan-300">PhD Researcher</span> – Pusan National University, Republic of Korea (September 2018 – August 2023)
+                    <span className="font-medium">PhD Researcher</span> – Pusan National University, Republic of Korea (September 2018 – August 2023)
                   </li>
                   <li>
-                    <span className="text-cyan-300">Graduate Student</span> – Indian Institute of Tropical Meteorology, Pune, India (September 2016 – August 2017)
+                    <span className="font-medium">Graduate Student</span> – Indian Institute of Tropical Meteorology, Pune, India (September 2016 – August 2017)
                   </li>
                 </ul>
 
-                <h3 className="text-xl font-semibold text-cyan-300 mb-2">Education</h3>
-                <ul className="list-disc text-gray-400 pl-5 mb-4">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4 gradient-text">Education</h3>
+                <ul className="list-disc text-gray-700 pl-5 text-lg">
                   <li>
-                    <span className="text-cyan-300">PhD in Climate System</span> – Pusan National University, Busan, Republic of Korea (September 2018 – August 2023)
+                    <span className="font-medium">PhD in Climate System</span> – Pusan National University, Busan, Republic of Korea (September 2018 – August 2023)
                   </li>
                   <li>
-                    <span className="text-cyan-300">MSc in Atmospheric Science</span> – Savitribai Phule Pune University and Indian Institute of Tropical Meteorology, Pune, India (July 2015 – June 2017)
+                    <span className="font-medium">MSc in Atmospheric Science</span> – Savitribai Phule Pune University and Indian Institute of Tropical Meteorology, Pune, India (July 2015 – June 2017)
                   </li>
                   <li>
-                    <span className="text-cyan-300">BSc in Physics</span> – Savitribai Phule Pune University, Pune, India (July 2012 – June 2015)
+                    <span className="font-medium">BSc in Physics</span> – Savitribai Phule Pune University, Pune, India (July 2012 – June 2015)
                   </li>
                 </ul>
               </div>
@@ -219,6 +291,7 @@
       return (
         <div>
           <Navbar />
+          <Hero />
           <About />
           <Footer />
         </div>
@@ -230,3 +303,4 @@
   </script>
 </body>
 </html>
+</xaiArtifact>
