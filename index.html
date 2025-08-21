@@ -1,100 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Climate Mystery | Pratik Kad</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- Three.js for Earth -->
+  <title>Pratik Kad | Climate Research</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-fade-in { animation: fadeIn 0.8s ease-out; }
+    body { font-family: 'Inter', sans-serif; line-height: 1.6; }
+    .text-contrast { color: #ffffff; text-shadow: 0 0 4px rgba(0,0,0,0.5); }
+    .swing { animation: swing 1s ease-in-out infinite alternate; }
+    @keyframes swing { 0% { transform: rotate(-10deg); } 100% { transform: rotate(10deg); } }
+  </style>
 </head>
-<body>
-  <header class="site-header">
-    <div class="logo">🌍 Climate Mystery</div>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="research.html">Research</a>
-      <a href="publications.html">Publications</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+<body class="bg-gray-900 text-gray-100">
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState, useEffect, useRef } = React;
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div id="earth-container"></div>
-    <div class="hero-text">
-      <h1>Understanding Climate, One Layer at a Time</h1>
-      <p>I’m a climate scientist studying <strong>mountain weather</strong>, <strong>monsoons</strong>, <strong>hydrology</strong>, and <strong>Earth system modeling</strong>.  
-         This site is where science meets visualization.</p>
-      <a href="research.html" class="btn">Explore My Research</a>
-    </div>
-  </section>
+    const Navbar = () => {
+      const [isOpen, setIsOpen] = useState(false);
+      const navItems = [
+        { name: 'Home', href: 'index.html' },
+        { name: 'Research', href: 'research.html' },
+        { name: 'Publications', href: 'publications.html' },
+        { name: 'Outreach', href: 'outreach.html' },
+        { name: 'About', href: 'about.html' },
+      ];
 
-  <!-- Featured Sections -->
-  <section class="highlights">
-    <div class="card">
-      <h2>🌡️ Climate Research</h2>
-      <p>From monsoon variability to polar amplification, I investigate key processes shaping our planet’s future.</p>
-      <a href="research.html">Learn More →</a>
-    </div>
-    <div class="card">
-      <h2>📊 Infographics</h2>
-      <p>Data-driven stories of climate change, translated into powerful visuals for both scientists and the public.</p>
-      <a href="infographics.html">See Visuals →</a>
-    </div>
-    <div class="card">
-      <h2>📚 Publications</h2>
-      <p>Peer-reviewed contributions advancing our understanding of past, present, and future climate.</p>
-      <a href="publications.html">Browse Papers →</a>
-    </div>
-  </section>
+      return (
+        <header className="fixed top-0 w-full bg-gray-900 bg-opacity-90 backdrop-blur-sm z-50">
+          <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div className="flex items-center space-x-3">
+              <span className="text-3xl">🌍</span>
+              <h1 className="text-xl font-semibold text-white">Pratik Kad</h1>
+            </div>
+            <nav className="hidden md:flex space-x-6">
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-lg text-gray-300 hover:text-cyan-300 transition-colors duration-200"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </nav>
+            <button
+              className="md:hidden text-white focus:outline-none"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
+              </svg>
+            </button>
+          </div>
+          {isOpen && (
+            <div className="md:hidden bg-gray-900 bg-opacity-95 px-4 py-2">
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="block py-2 text-lg text-gray-300 hover:text-cyan-300"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
+          )}
+        </header>
+      );
+    };
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2024 Pratik Kad | Climate Mystery</p>
-    <p>Made with passion for science & Earth 🌍</p>
-  </footer>
+    const Hero = () => {
+      const canvasRef = useRef(null);
 
-  <!-- Earth Script -->
-  <script>
-    const container = document.getElementById("earth-container");
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(50, container.offsetWidth/container.offsetHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(container.offsetWidth, container.offsetHeight);
-    container.appendChild(renderer.domElement);
+      useEffect(() => {
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / 600, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current, alpha: true });
+        renderer.setSize(window.innerWidth, 600);
 
-    const geometry = new THREE.SphereGeometry(2, 64, 64);
-    const texture = new THREE.TextureLoader().load("https://threejs.org/examples/textures/earth_atmos_2048.jpg");
-    const material = new THREE.MeshPhongMaterial({ map: texture });
-    const earth = new THREE.Mesh(geometry, material);
-    scene.add(earth);
+        const geometry = new THREE.SphereGeometry(5, 16, 16);
+        const material = new THREE.MeshBasicMaterial({ color: 0x57e6ff, wireframe: true });
+        const sphere = new THREE.Mesh(geometry, material);
+        scene.add(sphere);
 
-    const light = new THREE.PointLight(0xffffff, 1.2);
-    light.position.set(5, 3, 5);
-    scene.add(light);
+        camera.position.z = 10;
 
-    camera.position.z = 5;
+        const animate = () => {
+          requestAnimationFrame(animate);
+          sphere.rotation.y += 0.003;
+          renderer.render(scene, camera);
+        };
+        animate();
 
-    function animate() {
-      requestAnimationFrame(animate);
-      earth.rotation.y += 0.002; // smooth spin
-      renderer.render(scene, camera);
-    }
-    animate();
+        const handleResize = () => {
+          renderer.setSize(window.innerWidth, 600);
+          camera.aspect = window.innerWidth / 600;
+          camera.updateProjectionMatrix();
+        };
+        window.addEventListener('resize', handleResize);
 
-    window.addEventListener("resize", () => {
-      camera.aspect = container.offsetWidth / container.offsetHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(container.offsetWidth, container.offsetHeight);
-    });
+        return () => window.removeEventListener('resize', handleResize);
+      }, []);
+
+      return (
+        <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-blue-800 relative">
+          <canvas ref={canvasRef} className="absolute inset-0 z-0 opacity-50" />
+          <div className="text-center z-10 max-w-3xl mx-auto px-4 animate-fade-in">
+            <h1 className="text-4xl md:text-6xl font-bold text-contrast mb-6">Unraveling Climate Mysteries</h1>
+            <p className="text-lg md:text-xl text-gray-200 mb-8">
+              Hi, I’m Pratik Kad, a climate scientist studying monsoons, polar warming, and water cycles to understand Earth’s changing climate.
+            </p>
+            <a
+              href="research.html"
+              className="inline-block bg-cyan-400 text-gray-900 px-6 py-3 rounded-lg font-semibold text-lg hover:bg-cyan-500 transition-colors duration-200"
+            >
+              Explore My Research
+            </a>
+          </div>
+        </section>
+      );
+    };
+
+    const Footer = () => {
+      return (
+        <footer className="py-8 bg-gray-800 text-center text-gray-400">
+          <p>🌍✨ Exploring the World Through Science and Curiosity | Pratik Kad © 2025 All Rights Reserved</p>
+        </footer>
+      );
+    };
+
+    const App = () => {
+      return (
+        <div>
+          <Navbar />
+          <Hero />
+          <Footer />
+        </div>
+      );
+    };
+
+    ReactDOM.render(<App />, document.getElementById('root'));
   </script>
 </body>
 </html>
