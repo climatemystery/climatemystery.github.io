@@ -1,116 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Research | Climate Mystery — Pratik Kad</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Research projects in monsoon extremes, orographic precipitation, hydrology, and Earth system modeling." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pratik Kad | Research</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-fade-in { animation: fadeIn 0.8s ease-out; }
+    body { font-family: 'Inter', sans-serif; line-height: 1.6; }
+    .text-contrast { color: #ffffff; text-shadow: 0 0 4px rgba(0,0,0,0.5); }
+    .swing { animation: swing 1s ease-in-out infinite alternate; }
+    @keyframes swing { 0% { transform: rotate(-10deg); } 100% { transform: rotate(10deg); } }
+  </style>
 </head>
-<body class="theme-dark">
-  <a class="skip-link" href="#main">Skip to content</a>
+<body class="bg-gray-900 text-gray-100">
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState, useEffect, useRef } = React;
 
-  <header id="site-header" class="site-header">
-    <div class="container nav-grid">
-      <a class="brand" href="index.html"><span class="brand-dot"></span><span class="brand-text">Climate Mystery</span></a>
-      <nav class="nav" aria-label="Primary">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
-          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        </button>
-        <ul id="nav-menu" class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a class="active" href="research.html">Research</a></li>
-          <li><a href="publications.html">Publications</a></li>
-          <li><a href="about.html">About</a></li>
-          <li class="divider"></li>
-          <li><button id="theme-toggle" class="icon-btn">🌓</button></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    const Navbar = () => {
+      const [isOpen, setIsOpen] = useState(false);
+      const navItems = [
+        { name: 'Home', href: 'index.html' },
+        { name: 'Research', href: 'research.html' },
+        { name: 'Publications', href: 'publications.html' },
+        { name: 'Outreach', href: 'outreach.html' },
+        { name: 'About', href: 'about.html' },
+      ];
 
-  <main id="main">
-    <section class="section page-hero">
-      <div class="container narrow">
-        <h1>Research</h1>
-        <p class="lead">From convection-permitting simulations to hydrologic coupling, my work quantifies risk under climate variability and change.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <!-- Filters -->
-        <div class="filters">
-          <div class="chips" role="tablist" aria-label="Filter projects">
-            <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
-            <button class="chip" data-filter="monsoon" role="tab">Monsoon</button>
-            <button class="chip" data-filter="orography" role="tab">Orography</button>
-            <button class="chip" data-filter="hydrology" role="tab">Hydrology</button>
-            <button class="chip" data-filter="modeling" role="tab">Modeling</button>
+      return (
+        <header className="fixed top-0 w-full bg-gray-900 bg-opacity-90 backdrop-blur-sm z-50">
+          <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div className="flex items-center space-x-3">
+              <span className="text-3xl">🌍</span>
+              <h1 className="text-xl font-semibold text-white">Pratik Kad</h1>
+            </div>
+            <nav className="hidden md:flex space-x-6">
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-lg text-gray-300 hover:text-cyan-300 transition-colors duration-200"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </nav>
+            <button
+              className="md:hidden text-white focus:outline-none"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
+              </svg>
+            </button>
           </div>
-          <input id="project-search" class="search" type="search" placeholder="Search projects…" aria-label="Search projects">
+          {isOpen && (
+            <div className="md:hidden bg-gray-900 bg-opacity-95 px-4 py-2">
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="block py-2 text-lg text-gray-300 hover:text-cyan-300"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
+          )}
+        </header>
+      );
+    };
+
+    const Highlights = () => {
+      const highlights = [
+        {
+          icon: '🌡️',
+          title: 'Monsoons & Climate',
+          description: 'I study how monsoons and air currents change as Earth warms, helping us predict weather patterns.',
+        },
+        {
+          icon: '❄️',
+          title: 'Polar Warming',
+          description: 'I explore why the Arctic and Antarctic are heating up faster, affecting global climate.',
+        },
+        {
+          icon: '🌊',
+          title: 'Water Cycles',
+          description: 'I research floods and water movement using computer models to protect communities.',
+        },
+      ];
+
+      return (
+        <section id="research" className="py-16 bg-gray-800 min-h-screen">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12 animate-fade-in">What I Research</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {highlights.map((highlight, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-700 bg-opacity-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 animate-fade-in"
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  <span className="text-5xl mb-4 block">{highlight.icon}</span>
+                  <h3 className="text-xl font-semibold text-white mb-3">{highlight.title}</h3>
+                  <p className="text-gray-300 text-base">{highlight.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    };
+
+    const Footer = () => {
+      return (
+        <footer className="py-8 bg-gray-800 text-center text-gray-400">
+          <p>🌍✨ Exploring the World Through Science and Curiosity | Pratik Kad © 2025 All Rights Reserved</p>
+        </footer>
+      );
+    };
+
+    const App = () => {
+      return (
+        <div>
+          <Navbar />
+          <Highlights />
+          <Footer />
         </div>
+      );
+    };
 
-        <!-- Projects -->
-        <div id="projects" class="card-grid">
-          <!-- Each article has data-tags used by filters/search -->
-          <article class="card" data-tags="monsoon extremes modeling">
-            <img src="assets/research/monsoon.jpg" alt="Monsoon cloud systems" loading="lazy"/>
-            <div class="card-body">
-              <h3>Shifting Monsoon Extremes</h3>
-              <p>Convection-permitting ensembles (2–4 km) that resolve mesoscale organization and extreme rainfall tails.</p>
-              <div class="tags"><span>Monsoon</span><span>Extremes</span><span>CPMs</span></div>
-            </div>
-          </article>
-
-          <article class="card" data-tags="orography snow hydrology modeling">
-            <img src="assets/research/mountain.jpg" alt="Mountain snow and wind" loading="lazy"/>
-            <div class="card-body">
-              <h3>Orographic Snow and Avalanches</h3>
-              <p>High-resolution downscaling over complex terrain to capture snowfall microphysics and avalanche precursors.</p>
-              <div class="tags"><span>Orography</span><span>Snow</span><span>Runoff</span></div>
-            </div>
-          </article>
-
-          <article class="card" data-tags="hydrology drought flood risk">
-            <img src="assets/research/hydrology.jpg" alt="River flowing through valley" loading="lazy"/>
-            <div class="card-body">
-              <h3>Hydrologic Compounds</h3>
-              <p>Joint drought–flood analysis with coupled land surface routing and bias-corrected reanalyses.</p>
-              <div class="tags"><span>Hydrology</span><span>Drought</span><span>Flood</span></div>
-            </div>
-          </article>
-
-          <article class="card" data-tags="modeling esms coupling">
-            <img src="assets/research/esms.jpg" alt="Earth system model visualization" loading="lazy"/>
-            <div class="card-body">
-              <h3>Next-Gen Earth System Models</h3>
-              <p>Parameter learning, subgrid convection, and lake/cryosphere coupling to reduce structural uncertainty.</p>
-              <div class="tags"><span>Modeling</span><span>ESM</span><span>Coupling</span></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="brand small"><span class="brand-dot"></span> Climate Mystery</div>
-      <nav class="footer-links">
-        <a href="index.html">Home</a>
-        <a class="active" href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="about.html">About</a>
-      </nav>
-      <div class="social">
-        <a href="mailto:your@email">✉️</a>
-        <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener">🐙</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="app.js" defer></script>
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
 </body>
 </html>
