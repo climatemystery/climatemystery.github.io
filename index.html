@@ -3,14 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Climate Research | Pratik Kad</title>
+  <title>Pratik Kad | Climate Research</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-fade-in { animation: fadeIn 0.8s ease-out; }
+    body { font-family: 'Inter', sans-serif; line-height: 1.6; }
+    .text-contrast { color: #ffffff; text-shadow: 0 0 4px rgba(0,0,0,0.5); }
+    .swing { animation: swing 1s ease-in-out infinite alternate; }
+    @keyframes swing { 0% { transform: rotate(-10deg); } 100% { transform: rotate(10deg); } }
+  </style>
 </head>
-<body>
+<body class="bg-gray-900 text-gray-100">
   <div id="root"></div>
   <script type="text/babel">
     const { useState, useEffect, useRef } = React;
@@ -22,23 +30,23 @@
         { name: 'Home', href: '#home' },
         { name: 'Research', href: '#research' },
         { name: 'Publications', href: '#publications' },
+        { name: 'Outreach', href: '#outreach' },
         { name: 'About', href: '#about' },
-        { name: 'Contact', href: '#contact' },
       ];
 
       return (
-        <header className="fixed top-0 left-0 w-full bg-gray-900 bg-opacity-80 backdrop-blur-md z-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <div className="flex items-center space-x-2">
-              <span className="text-2xl">🌍</span>
-              <h1 className="text-xl font-bold text-white">Climate Mystery</h1>
+        <header className="fixed top-0 w-full bg-gray-900 bg-opacity-90 backdrop-blur-sm z-50">
+          <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div className="flex items-center space-x-3">
+              <span className="text-3xl">🌍</span>
+              <h1 className="text-xl font-semibold text-white">Pratik Kad</h1>
             </div>
             <nav className="hidden md:flex space-x-6">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                  className="text-lg text-gray-300 hover:text-cyan-300 transition-colors duration-200"
                   onClick={(e) => {
                     e.preventDefault();
                     document.querySelector(item.href).scrollIntoView({ behavior: 'smooth' });
@@ -49,21 +57,21 @@
               ))}
             </nav>
             <button
-              className="md:hidden text-white"
+              className="md:hidden text-white focus:outline-none"
               onClick={() => setIsOpen(!isOpen)}
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
               </svg>
             </button>
           </div>
           {isOpen && (
-            <div className="md:hidden bg-gray-900 bg-opacity-95">
+            <div className="md:hidden bg-gray-900 bg-opacity-95 px-4 py-2">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block px-4 py-2 text-gray-300 hover:text-cyan-400"
+                  className="block py-2 text-lg text-gray-300 hover:text-cyan-300"
                   onClick={(e) => {
                     e.preventDefault();
                     setIsOpen(false);
@@ -79,19 +87,18 @@
       );
     };
 
-    // Hero Component with Three.js Globe
+    // Hero Component with Simplified Three.js Globe
     const Hero = () => {
       const canvasRef = useRef(null);
 
       useEffect(() => {
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / 600, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current, alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setSize(window.innerWidth, 600);
 
-        const geometry = new THREE.SphereGeometry(5, 32, 32);
-        const texture = new THREE.TextureLoader().load('https://threejs.org/examples/textures/land_ocean_ice_cloud_2048.jpg');
-        const material = new THREE.MeshBasicMaterial({ map: texture });
+        const geometry = new THREE.SphereGeometry(5, 16, 16);
+        const material = new THREE.MeshBasicMaterial({ color: 0x57e6ff, wireframe: true });
         const sphere = new THREE.Mesh(geometry, material);
         scene.add(sphere);
 
@@ -99,15 +106,15 @@
 
         const animate = () => {
           requestAnimationFrame(animate);
-          sphere.rotation.y += 0.005;
+          sphere.rotation.y += 0.003;
           renderer.render(scene, camera);
         };
         animate();
 
         const handleResize = () => {
-          camera.aspect = window.innerWidth / window.innerHeight;
+          renderer.setSize(window.innerWidth, 600);
+          camera.aspect = window.innerWidth / 600;
           camera.updateProjectionMatrix();
-          renderer.setSize(window.innerWidth, window.innerHeight);
         };
         window.addEventListener('resize', handleResize);
 
@@ -115,61 +122,62 @@
       }, []);
 
       return (
-        <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-blue-900 relative">
-          <canvas ref={canvasRef} className="absolute inset-0 z-0" />
-          <div className="text-center z-10">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 animate-fade-in-down">Exploring Climate Mysteries</h1>
-            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-6 animate-fade-in-up">
-              Researching monsoons, polar amplification, mountain weather, and Earth’s complex systems.
+        <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-blue-800 relative">
+          <canvas ref={canvasRef} className="absolute inset-0 z-0 opacity-50" />
+          <div className="text-center z-10 max-w-3xl mx-auto px-4 animate-fade-in">
+            <h1 className="text-4xl md:text-6xl font-bold text-contrast mb-6">Unraveling Climate Mysteries</h1>
+            <p className="text-lg md:text-xl text-gray-200 mb-8">
+              Hi, I’m Pratik Kad, a climate scientist studying monsoons, polar warming, and water cycles to understand Earth’s changing climate.
             </p>
             <a
               href="#research"
-              className="inline-block bg-cyan-400 text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-cyan-500 transition-colors duration-300"
+              className="inline-block bg-cyan-400 text-gray-900 px-6 py-3 rounded-lg font-semibold text-lg hover:bg-cyan-500 transition-colors duration-200"
               onClick={(e) => {
                 e.preventDefault();
                 document.querySelector('#research').scrollIntoView({ behavior: 'smooth' });
               }}
             >
-              Discover My Work
+              Explore My Research
             </a>
           </div>
         </section>
       );
     };
 
-    // Highlights Component
+    // Research Highlights Component
     const Highlights = () => {
       const highlights = [
         {
           icon: '🌡️',
-          title: 'Climate Dynamics',
-          description: 'Studying how monsoons, low-level jets, and atmospheric circulation respond to warming.',
+          title: 'Monsoons & Climate',
+          description: 'I study how monsoons and air currents change as Earth warms, helping us predict weather patterns.',
         },
         {
           icon: '❄️',
-          title: 'Polar Amplification',
-          description: 'Investigating why the poles warm faster, with implications for global climate patterns.',
+          title: 'Polar Warming',
+          description: 'I explore why the Arctic and Antarctic are heating up faster, affecting global climate.',
         },
         {
           icon: '🌊',
-          title: 'Hydroclimate',
-          description: 'Exploring water cycle processes and floods using high-resolution Earth system modeling.',
+          title: 'Water Cycles',
+          description: 'I research floods and water movement using computer models to protect communities.',
         },
       ];
 
       return (
         <section id="research" className="py-16 bg-gray-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold text-white text-center mb-12">Research Highlights</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12 animate-fade-in">What I Research</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {highlights.map((highlight, index) => (
                 <div
                   key={index}
-                  className="bg-gray-900 bg-opacity-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2"
+                  className="bg-gray-700 bg-opacity-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 animate-fade-in"
+                  style={{ animationDelay: `${index * 0.2}s` }}
                 >
-                  <span className="text-4xl mb-4 block">{highlight.icon}</span>
-                  <h3 className="text-xl font-semibold text-white mb-2">{highlight.title}</h3>
-                  <p className="text-gray-300">{highlight.description}</p>
+                  <span className="text-5xl mb-4 block">{highlight.icon}</span>
+                  <h3 className="text-xl font-semibold text-white mb-3">{highlight.title}</h3>
+                  <p className="text-gray-300 text-base">{highlight.description}</p>
                 </div>
               ))}
             </div>
@@ -180,21 +188,160 @@
 
     // Publications Component
     const Publications = () => {
+      const publications = [
+        {
+          title: 'Paleoflood Modeling Reveals Limited Magnitude of 1931 Yangtze River Flood, the World’s Deadliest on Record',
+          citation: 'Zhang, L., Zhang, Z., Li, L., Chen, X., Wang, X., Yu, E., Kad, P., Otterå, O. H., Guo, C., Lu, J., & Wu, M. (2025). npj Climate and Atmospheric Science.',
+          doi: '10.1038/s41612-025-00908-1',
+          link: 'https://www.nature.com/articles/s41612-025-00908-1',
+          altmetric: '170288049',
+        },
+        {
+          title: 'Uneven global retreat of persistent mountain snow cover alongside mountain warming from ERA5-land',
+          citation: 'Blau, M., Kad, P., Turton, J., & Ha, K.-J. (2024). npj Climate and Atmospheric Science.',
+          doi: '10.1038/s41612-024-00829-5',
+          link: 'https://www.nature.com/articles/s41612-024-00829-5',
+          altmetric: '170288048',
+        },
+        {
+          title: 'Recent tangible natural variability of monsoonal orographic rainfall in the Eastern Himalayas',
+          citation: 'Kad, P., Ha, K.-J. (2023). JGR: Atmospheres.',
+          doi: '10.1029/2023JD038759',
+          link: 'https://doi.org/10.1029/2023JD038759',
+          highlight: [
+            { text: 'Feature news article in Marathi', link: 'https://www.esakal.com/pune/effect-of-monsoon-variability-on-glaciers-research-of-chakan-scientist-pjp78', label: 'Sakal newspaper' },
+          ],
+          altmetric: '156893300',
+        },
+        {
+          title: 'Mountain precipitation change in CO₂-induced warmer climate',
+          citation: 'Kad, P., Ha, K.-J., Lee, S.-S., & Chu, J.-E. (2023). Earth’s Future.',
+          doi: '10.1029/2023EF003886',
+          link: 'https://doi.org/10.1029/2023EF003886',
+          highlight: [
+            { text: 'Research Spotlight', link: 'https://www.nature.com/articles/s41558-024-02209-6', label: 'Nature Climate Change' },
+            { text: 'News Article', link: 'https://phys.org/news/2023-11-mountain-climate-carbon-dioxide.html', label: 'Phys.org' },
+            { text: 'Research Spotlight', link: 'https://eos.org/research-spotlights/carbon-dioxides-effect-on-mountain-climate-systems', label: 'AGU’s EOS' },
+            { text: 'Spotlight in News Article (Spanish)', link: 'https://www.meteored.com.ar/noticias/ciencia/efecto-dioxido-de-carbono-patrones-precipitacion-montana-andes-lluvia-nieve-simulacion-cambio-climatico-gei.html#google_vignette', label: 'Meteored' },
+          ],
+          altmetric: '154713892',
+        },
+        {
+          title: 'Elevation-dependent temperature response in early Eocene using paleoclimate model experiment',
+          citation: 'Kad, P., Blau, M., Ha, K.-J., & Zhu, J. (2022). Environmental Research Letters.',
+          doi: '10.1088/1748-9326/ac9c74',
+          link: 'https://doi.org/10.1088/1748-9326/ac9c74',
+          highlight: [
+            { text: 'Highlighted on FAO website', link: 'https://www.fao.org/international-mountain-day/international-mountain-day-in-the-news/events-detail/en/c/1617412/', label: 'International Mountain Day 2022' },
+          ],
+          altmetric: '137554802',
+        },
+        {
+          title: 'Recent changes in the summer monsoon circulation and their impact on dynamics and thermodynamics of the Arabian Sea',
+          citation: 'Kad, P., Parekh, A., Karmakar, A., Chowdary, J.S., & Gnanaseelan, C. (2018). Theoretical and Applied Climatology.',
+          doi: '10.1007/s00704-018-2493-6',
+          link: 'https://doi.org/10.1007/s00704-018-2493-6',
+          highlight: [
+            { text: 'Spotlighted on CLIVAR', link: 'https://www.clivar.org/people/pratik-kad', label: 'www.clivar.org/people/pratik-kad' },
+          ],
+          altmetric: '110063159',
+        },
+      ];
+
       return (
         <section id="publications" className="py-16 bg-gray-900">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold text-white text-center mb-12">Publications</h2>
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12 animate-fade-in">My Publications</h2>
             <div className="space-y-6">
-              <div className="bg-gray-800 bg-opacity-50 p-6 rounded-xl">
-                <h3 className="text-lg font-semibold text-white">Monsoon Dynamics in a Warming World</h3>
-                <p className="text-gray-400">Kad, P., et al. (2024). Journal of Climate Research.</p>
-                <a href="#" className="text-cyan-400 hover:underline">Read Paper</a>
-              </div>
-              <div className="bg-gray-800 bg-opacity-50 p-6 rounded-xl">
-                <h3 className="text-lg font-semibold text-white">Polar Amplification and Arctic Climate</h3>
-                <p className="text-gray-400">Kad, P., et al. (2023). Nature Climate Change.</p>
-                <a href="#" className="text-cyan-400 hover:underline">Read Paper</a>
-              </div>
+              {publications.map((pub, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-800 bg-opacity-50 p-6 rounded-lg animate-fade-in flex justify-between gap-4"
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2">{pub.title}</h3>
+                    <p className="text-gray-400 mb-2">{pub.citation}</p>
+                    <a href={pub.link} target="_blank" className="text-cyan-300 hover:underline">DOI: {pub.doi}</a>
+                    {pub.highlight && (
+                      <div className="mt-3 bg-gray-700 p-3 rounded border-l-4 border-cyan-500">
+                        {pub.highlight.map((h, i) => (
+                          <p key={i} className="text-gray-300 text-sm">
+                            {h.text}: <a href={h.link} target="_blank" className="text-cyan-300 hover:underline">{h.label}</a>
+                          </p>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  <span
+                    className="altmetric-embed"
+                    data-badge-type="donut"
+                    data-doi={pub.doi}
+                    data-altmetric-id={pub.altmetric}
+                  ></span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    };
+
+    // Outreach Component
+    const Outreach = () => {
+      const articles = [
+        {
+          title: 'Effect of Monsoon Variability on Glaciers: Research of Chakan Scientist',
+          source: 'Sakal newspaper',
+          link: 'https://www.esakal.com/pune/effect-of-monsoon-variability-on-glaciers-research-of-chakan-scientist-pjp78',
+          description: 'A feature article in Marathi discussing the impact of monsoon variability on Himalayan glaciers.',
+        },
+        {
+          title: 'Carbon Dioxide’s Effect on Mountain Climate Systems',
+          source: 'Phys.org',
+          link: 'https://phys.org/news/2023-11-mountain-climate-carbon-dioxide.html',
+          description: 'An article exploring how CO₂ affects mountain precipitation patterns.',
+        },
+        {
+          title: 'Efecto del dióxido de carbono en los patrones de precipitación montañosa',
+          source: 'Meteored',
+          link: 'https://www.meteored.com.ar/noticias/ciencia/efecto-dioxido-de-carbono-patrones-precipitacion-montana-andes-lluvia-nieve-simulacion-cambio-climatico-gei.html#google_vignette',
+          description: 'A Spanish-language spotlight on mountain precipitation changes due to climate change.',
+        },
+        {
+          title: 'International Mountain Day 2022',
+          source: 'FAO website',
+          link: 'https://www.fao.org/international-mountain-day/international-mountain-day-in-the-news/events-detail/en/c/1617412/',
+          description: 'Highlight of my research on elevation-dependent temperature responses.',
+        },
+        {
+          title: 'Spotlight on Pratik Kad',
+          source: 'CLIVAR',
+          link: 'https://www.clivar.org/people/pratik-kad',
+          description: 'A profile highlighting my work on monsoon circulation and the Arabian Sea.',
+        },
+      ];
+
+      return (
+        <section id="outreach" className="py-16 bg-gray-800">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12 animate-fade-in">Outreach</h2>
+            <p className="text-gray-300 text-center mb-8 max-w-3xl mx-auto">
+              I’m passionate about sharing climate science with the public. Below are some of my articles and features written for broader audiences to make climate research accessible and engaging.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {articles.map((article, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-700 bg-opacity-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 animate-fade-in"
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  <h3 className="text-lg font-semibold text-white mb-2">{article.title}</h3>
+                  <p className="text-gray-400 mb-2">{article.source}</p>
+                  <p className="text-gray-300 mb-4">{article.description}</p>
+                  <a href={article.link} target="_blank" className="text-cyan-300 hover:underline">Read Article</a>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -203,60 +350,65 @@
 
     // About Component
     const About = () => {
-      return (
-        <section id="about" className="py-16 bg-gray-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <img
-                src="https://via.placeholder.com/360x360?text=Pratik+Kad"
-                alt="Pratik Kad"
-                className="rounded-xl border border-gray-700"
-              />
-            </div>
-            <div>
-              <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
-              <p className="text-gray-300 mb-4">
-                I’m Pratik Kad, a climate scientist passionate about unraveling the complexities of Earth’s climate system.
-                My research focuses on monsoons, polar amplification, and hydroclimate dynamics, using advanced modeling to
-                address global challenges.
-              </p>
-              <ul className="list-disc text-gray-400 pl-5">
-                <li>PhD in Climate Science, University of Earth Studies</li>
-                <li>Over 10 publications in peer-reviewed journals</li>
-                <li>Recipient of the Global Climate Research Award 2024</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-      );
-    };
+      const socialLinks = [
+        { href: 'https://scholar.google.com/yourprofile', title: 'Google Scholar', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#4285F4" d="M24 4L4 24h8v16h8V28h8v12h8V24h8z"/></svg>' },
+        { href: 'https://www.linkedin.com/in/yourprofile', title: 'LinkedIn', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34"><path fill="#0A66C2" d="M34,34H0V0H34V34Z"/><path fill="#FFFFFF" d="M10.11,14.77H5.68V28.01h4.43V14.77ZM7.9,12.75a2.57,2.57,0,1,1,0-5.14,2.57,2.57,0,1,1,0,5.14Zm19.73,15.26H23.2V20.81c0-1.72-.61-2.9-2.15-2.9A2.32,2.32,0,0,0,18,19.17a2.92,2.92,0,0,0-.14,1V28h-4.43s.06-12.15,0-13.23h4.43v1.87a4.39,4.39,0,0,1,4-2.2c2.93,0,5.13,1.92,5.13,6.06V28Z"/></svg>' },
+        { href: 'https://orcid.org/your-orcid-id', title: 'ORCID', svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><circle cx="128" cy="128" r="128" fill="#A6CE39"/><path d="M86.6 89.5h17v76.9h-17V89.5zm8.5-35c5.6 0 10.2 4.6 10.2 10.2S100.7 75 95.1 75s-10.2-4.6-10.2-10.2 4.5-10.3 10.2-10.3zm36.6 35c22.6 0 41 18.4 41 41s-18.4 41-41 41h-18.8v-76.9h18.8zm0 17.4h-1.7v42.1h1.7c12.5 0 22.7-9.7 22.7-21.1s-10.2-21-22.7-21z" fill="#fff"/></svg>' },
+      ];
 
-    // Contact Component
-    const Contact = () => {
       return (
-        <section id="contact" className="py-16 bg-gray-900">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold text-white text-center mb-12">Get in Touch</h2>
-            <div className="max-w-lg mx-auto">
-              <div className="grid gap-4">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 text-white"
+        <section id="about" className="py-16 bg-gray-900">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12 animate-fade-in">About Me</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="animate-fade-in">
+                <img
+                  src="https://via.placeholder.com/300x300?text=Pratik+Kad"
+                  alt="Pratik Kad"
+                  className="rounded-full border-4 border-cyan-500 w-full max-w-xs mx-auto"
                 />
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 text-white"
-                />
-                <textarea
-                  placeholder="Your Message"
-                  className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 text-white"
-                  rows="5"
-                ></textarea>
-                <button className="bg-cyan-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-cyan-500 transition-colors duration-300">
-                  Send Message
-                </button>
+                <div className="flex justify-center gap-6 mt-6">
+                  {socialLinks.map((link, index) => (
+                    <a
+                      key={index}
+                      href={link.href}
+                      target="_blank"
+                      title={link.title}
+                      className="text-cyan-300 hover:text-cyan-400"
+                      dangerouslySetInnerHTML={{ __html: link.svg }}
+                      onMouseEnter={(e) => e.currentTarget.classList.add('swing')}
+                      onMouseLeave={(e) => e.currentTarget.classList.remove('swing')}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className="animate-fade-in">
+                <p className="text-gray-300 mb-4">
+                  I’m Pratik Kad, a climate scientist at NORCE Norwegian Research Centre in Bergen, Norway, and an affiliate of the Bjerknes Centre for Climate Research. My passion for weather and climate drives my research in atmospheric science, mountain meteorology, physical oceanography, climate change, and biodiversity. Using observational data and Earth system modeling, I study climate processes across past, present, and future scenarios.
+                </p>
+                <p className="text-gray-300 mb-4">
+                  Beyond research, I’m an avid hiker, birdwatcher, and chess enthusiast, finding inspiration in nature’s complexity. I’m also an Executive Committee member of the Young Earth System Scientists (YESS) community. Visit my older website at{' '}
+                  <a href="https://sites.google.com/view/climate-mystery/home" target="_blank" className="text-cyan-300 hover:underline">
+                    Climate Mystery
+                  </a>{' '}
+                  for more insights.
+                </p>
+                <h3 className="text-xl font-semibold text-cyan-300 mb-2">Research Interests</h3>
+                <p className="text-gray-300 mb-4">Atmospheric Science, Mountain Meteorology, Physical Oceanography, Climate Change, Biodiversity</p>
+                <h3 className="text-xl font-semibold text-cyan-300 mb-2">Education</h3>
+                <ul className="list-disc text-gray-400 pl-5 mb-4">
+                  <li>PhD in Climate System, Hokkaido University, Sapporo, Japan — 2007</li>
+                  <li>MSc, Savitribai Phule Pune University, India — 2002</li>
+                  <li>BSc in Physics (Honors), Delhi University — 2000</li>
+                </ul>
+                <h3 className="text-xl font-semibold text-cyan-300 mb-2">Research Experience</h3>
+                <ul className="list-disc text-gray-400 pl-5">
+                  <li>Postdoc, NORCE Norwegian Research Centre — 2024–Present</li>
+                  <li>Research Affiliate, Bjerknes Centre for Climate Research — 2024–Present</li>
+                  <li>Graduate Student, Indian Institute of Tropical Meteorology — 2015–2017</li>
+                  <li>Expert Reviewer, IPCC — 2020–2021</li>
+                  <li>Executive Committee Member, YESS Community — 2025</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -268,7 +420,7 @@
     const Footer = () => {
       return (
         <footer className="py-8 bg-gray-800 text-center text-gray-400">
-          <p>© 2025 Pratik Kad · Built with ❤ for Earth Science</p>
+          <p>🌍✨ Exploring the World Through Science and Curiosity | Pratik Kad © 2025 All Rights Reserved</p>
         </footer>
       );
     };
@@ -281,8 +433,8 @@
           <Hero />
           <Highlights />
           <Publications />
+          <Outreach />
           <About />
-          <Contact />
           <Footer />
         </div>
       );
@@ -291,5 +443,6 @@
     // Render the App
     ReactDOM.render(<App />, document.getElementById('root'));
   </script>
+  <script async type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
 </body>
 </html>
