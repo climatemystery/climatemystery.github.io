@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pratik Kad | Outreach</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-fade-in { animation: fadeIn 0.8s ease-out; }
+    body { font-family: 'Inter', sans-serif; line-height: 1.6; }
+    .text-contrast { color: #ffffff; text-shadow: 0 0 4px rgba(0,0,0,0.5); }
+    .swing { animation: swing 1s ease-in-out infinite alternate; }
+    @keyframes swing { 0% { transform: rotate(-10deg); } 100% { transform: rotate(10deg); } }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState, useEffect, useRef } = React;
+
+    const Navbar = () => {
+      const [isOpen, setIsOpen] = useState(false);
+      const navItems = [
+        { name: 'Home', href: 'index.html' },
+        { name: 'Research', href: 'research.html' },
+        { name: 'Publications', href: 'publications.html' },
+        { name: 'Outreach', href: 'outreach.html' },
+        { name: 'About', href: 'about.html' },
+      ];
+
+      return (
+        <header className="fixed top-0 w-full bg-gray-900 bg-opacity-90 backdrop-blur-sm z-50">
+          <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div className="flex items-center space-x-3">
+              <span className="text-3xl">🌍</span>
+              <h1 className="text-xl font-semibold text-white">Pratik Kad</h1>
+            </div>
+            <nav className="hidden md:flex space-x-6">
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-lg text-gray-300 hover:text-cyan-300 transition-colors duration-200"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </nav>
+            <button
+              className="md:hidden text-white focus:outline-none"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
+              </svg>
+            </button>
+          </div>
+          {isOpen && (
+            <div className="md:hidden bg-gray-900 bg-opacity-95 px-4 py-2">
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="block py-2 text-lg text-gray-300 hover:text-cyan-300"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
+          )}
+        </header>
+      );
+    };
+
+    const Outreach = () => {
+      const articles = [
+        {
+          title: 'Effect of Monsoon Variability on Glaciers: Research of Chakan Scientist',
+          source: 'Sakal newspaper',
+          link: 'https://www.esakal.com/pune/effect-of-monsoon-variability-on-glaciers-research-of-chakan-scientist-pjp78',
+          description: 'A feature article in Marathi discussing the impact of monsoon variability on Himalayan glaciers.',
+        },
+        {
+          title: 'Carbon Dioxide’s Effect on Mountain Climate Systems',
+          source: 'Phys.org',
+          link: 'https://phys.org/news/2023-11-mountain-climate-carbon-dioxide.html',
+          description: 'An article exploring how CO₂ affects mountain precipitation patterns.',
+        },
+        {
+          title: 'Efecto del dióxido de carbono en los patrones de precipitación montañosa',
+          source: 'Meteored',
+          link: 'https://www.meteored.com.ar/noticias/ciencia/efecto-dioxido-de-carbono-patrones-precipitacion-montana-andes-lluvia-nieve-simulacion-cambio-climatico-gei.html#google_vignette',
+          description: 'A Spanish-language spotlight on mountain precipitation changes due to climate change.',
+        },
+        {
+          title: 'International Mountain Day 2022',
+          source: 'FAO website',
+          link: 'https://www.fao.org/international-mountain-day/international-mountain-day-in-the-news/events-detail/en/c/1617412/',
+          description: 'Highlight of my research on elevation-dependent temperature responses.',
+        },
+        {
+          title: 'Spotlight on Pratik Kad',
+          source: 'CLIVAR',
+          link: 'https://www.clivar.org/people/pratik-kad',
+          description: 'A profile highlighting my work on monsoon circulation and the Arabian Sea.',
+        },
+      ];
+
+      return (
+        <section id="outreach" className="py-16 bg-gray-800 min-h-screen">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12 animate-fade-in">Outreach</h2>
+            <p className="text-gray-300 text-center mb-8 max-w-3xl mx-auto">
+              I’m passionate about sharing climate science with the public. Below are some of my articles and features written for broader audiences to make climate research accessible and engaging.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {articles.map((article, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-700 bg-opacity-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 animate-fade-in"
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  <h3 className="text-lg font-semibold text-white mb-2">{article.title}</h3>
+                  <p className="text-gray-400 mb-2">{article.source}</p>
+                  <p className="text-gray-300 mb-4">{article.description}</p>
+                  <a href={article.link} target="_blank" className="text-cyan-300 hover:underline">Read Article</a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    };
+
+    const Footer = () => {
+      return (
+        <footer className="py-8 bg-gray-800 text-center text-gray-400">
+          <p>🌍✨ Exploring the World Through Science and Curiosity | Pratik Kad © 2025 All Rights Reserved</p>
+        </footer>
+      );
+    };
+
+    const App = () => {
+      return (
+        <div>
+          <Navbar />
+          <Outreach />
+          <Footer />
+        </div>
+      );
+    };
+
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
+</html>
