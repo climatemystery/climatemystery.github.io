@@ -1,0 +1,13 @@
+[
+  {
+    "image": "figures/example-mountain-precipitation.png",
+    "alt": "Replace with a factual description of the plotted variable, region and period",
+    "title": "Add your figure title",
+    "topic": "Mountain climate",
+    "caption": "Add a concise explanation of what the figure shows, including the main result without overstating it.",
+    "model": "Model or analysis method",
+    "dataset": "Dataset",
+    "period": "Study period",
+    "publication": ""
+  }
+]
