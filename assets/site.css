@@ -53,3 +53,22 @@
 @media(max-width:760px){.home-research-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.home-research-card{min-height:295px}.home-theme-icon{width:52px;height:52px;margin-top:25px}}
 @media(max-width:380px){.home-research-grid{grid-template-columns:1fr}.home-research-card{min-height:245px}}
 @media(prefers-reduced-motion:reduce){.home-theme-icon,.home-research-card,.story-feature,.story-card,.talk-card{transition:none}.home-research-card:hover .home-theme-icon,.story-feature:hover,.story-card:hover,.talk-card:hover{transform:none}}
+
+/* Publications: clear reading area with right-hand attention badges */
+.publication{grid-template-columns:minmax(0,1fr) 112px;align-items:center;gap:28px;padding:26px 28px;transition:border-color .2s,box-shadow .2s}
+.publication:hover{border-color:#a8c8c1;box-shadow:0 8px 24px rgba(13,38,48,.06)}
+.publication[hidden]{display:none!important}
+.publication-details{min-width:0}
+.publication h3{font-size:18px;line-height:1.42;margin:7px 0 11px}
+.publication-citation{line-height:1.7}
+.publication-metrics{min-height:105px;display:flex;justify-content:center;align-items:center;border-left:1px solid var(--line);padding-left:18px}
+.publication-metrics .altmetric-embed{margin:0!important}
+.publication-metrics-empty{border-left-color:transparent}
+.pub-pagination{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;margin:32px 0 16px}
+.pub-pagination button{font:600 12px 'DM Sans',sans-serif;min-height:38px;min-width:38px;padding:8px 12px;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:5px;cursor:pointer}
+.pub-pagination button:hover:not(:disabled){background:#e9f3ee;border-color:var(--teal)}
+.pub-pagination button.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+.pub-pagination button:disabled{cursor:default;opacity:.4}
+.pub-page-status{font:11px 'DM Mono',monospace;color:var(--muted);flex-basis:100%;text-align:center;margin-top:6px}
+@media(max-width:680px){.publication{grid-template-columns:minmax(0,1fr) 74px;gap:12px;padding:18px 14px}.publication h3{font-size:16px}.publication-metrics{min-height:90px;padding-left:10px}.pub-pagination{gap:5px}}
+@media(max-width:400px){.publication{grid-template-columns:1fr}.publication-metrics{border-left:0;border-top:1px solid var(--line);padding:12px 0 0;min-height:0;justify-content:flex-start}}
