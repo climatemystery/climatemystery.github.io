@@ -138,3 +138,14 @@
  .linkedin-link:hover .profile-icon,.linkedin-link:focus-visible .profile-icon,
  .github-link:hover .profile-icon,.github-link:focus-visible .profile-icon{animation:none;transform:none}
 }
+
+/* Footer brand symbols: icon-only links with a coordinated bounce */
+.footer-links{gap:20px}
+.footer-links a{width:30px;height:30px;border-radius:7px;transition:transform .2s ease}
+.footer-links img,.footer-links svg{width:20px;height:20px;display:block;object-fit:contain;transition:filter .2s ease}
+.footer-links .footer-linkedin svg{fill:#0A66C2}
+.footer-links a:hover,.footer-links a:focus-visible{animation:footer-logo-hop .62s cubic-bezier(.28,.84,.42,1) both}
+.footer-links a:hover img,.footer-links a:focus-visible img{opacity:1}
+.footer-links a:hover,.footer-links a:focus-visible{filter:drop-shadow(0 4px 5px rgba(20,45,55,.2))}
+@keyframes footer-logo-hop{0%,100%{transform:translateY(0) rotate(0) scale(1)}28%{transform:translateY(-6px) rotate(-8deg) scale(1.08)}52%{transform:translateY(0) rotate(5deg) scale(.98)}72%{transform:translateY(-2px) rotate(-3deg) scale(1.02)}}
+@media(prefers-reduced-motion:reduce){.footer-links a:hover,.footer-links a:focus-visible{animation:none;transform:none}}
