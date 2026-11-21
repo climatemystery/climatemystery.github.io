@@ -101,3 +101,11 @@
 @media(max-width:1050px){.editorial-topics .home-research-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.latest-grid{grid-template-columns:1fr 1fr}.latest-paper-main{grid-column:span 2}}
 @media(max-width:700px){.editorial-hero-inner{grid-template-columns:1fr;gap:28px;padding-top:55px;padding-bottom:45px}.editorial-lead h1{font-size:49px}.editorial-hero-image{min-height:300px;border-top-right-radius:65px}.editorial-ribbon .wrap{justify-content:center;padding:12px 0}.editorial-topics .home-research-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.latest-grid,.editorial-outreach-grid,.editorial-about-inner{grid-template-columns:1fr;gap:22px}.latest-paper-main{grid-column:auto}.editorial-story{min-height:260px;padding:26px}.editorial-story h3{font-size:23px}.topic-footer{align-items:flex-start;flex-direction:column}}
 @media(max-width:380px){.editorial-topics .home-research-grid{grid-template-columns:1fr}}
+
+/* LinkedIn brand mark: inline vector avoids remote-logo rendering issues */
+.linkedin-link .profile-icon{background:#0A66C2;color:#fff;overflow:visible;transition:transform .22s cubic-bezier(.2,.8,.2,1),box-shadow .22s}
+.linkedin-link .profile-icon svg{display:block;width:17px;height:17px;fill:currentColor}
+.linkedin-link:hover .profile-icon{animation:linkedin-hop .58s cubic-bezier(.28,.84,.42,1) both;box-shadow:0 5px 12px rgba(10,102,194,.28)}
+.linkedin-link:focus-visible .profile-icon{animation:linkedin-hop .58s cubic-bezier(.28,.84,.42,1) both}
+@keyframes linkedin-hop{0%,100%{transform:translateY(0) rotate(0)}28%{transform:translateY(-6px) rotate(-8deg)}52%{transform:translateY(0) rotate(5deg)}72%{transform:translateY(-2px) rotate(-3deg)}}
+@media(prefers-reduced-motion:reduce){.linkedin-link:hover .profile-icon,.linkedin-link:focus-visible .profile-icon{animation:none;transform:none}}
