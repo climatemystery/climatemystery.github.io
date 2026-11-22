@@ -1,17 +1,17 @@
 # Research figures
 
-Place only figures that you have permission to publish on this website in this folder.
+Place only figures that you have permission to publish on this website in the `assets/` folder.
 
 ## Add a figure
 
 1. Export a web-ready PNG, JPEG, or WebP image. Keep a high-resolution original elsewhere.
-2. Add the image file to this folder, for example `mountain-precipitation-change.png`.
-3. Add one entry to `manifest.json` using the fields below.
+2. Add the image file to `assets/`, for example `mountain-precipitation-change.png`.
+3. Add one entry to `assets/manifest.json` using the fields below.
 4. Replace the example entry and image path. Do not leave placeholder captions in the public gallery.
 
 ## Manifest fields
 
-- `image`: relative path to the image inside this folder.
+- `image`: path to the image under `assets/`.
 - `alt`: factual description for accessibility.
 - `title`: figure title.
 - `topic`: research theme shown as a small label.
