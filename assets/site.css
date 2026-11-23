@@ -538,3 +538,9 @@
 .research-data-summary p{margin:6px 0;color:#596b74;font-size:11px;line-height:1.7}
 .research-data-summary b{color:#344d59}
 @media(max-width:760px){.research-paper-data{grid-template-columns:1fr;gap:0}.research-paper-data h4{font-size:13px}.research-paper-data p{font-size:11px}}
+
+/* Research figures now sit with their study text, immediately before each key paper */
+.research-story-copy .research-inline-figure{width:100%;min-height:0;height:auto;margin:8px 0 12px;padding:0;background:transparent;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;overflow:visible}
+.research-story-copy .research-inline-figure img{display:block;width:100%;height:auto;min-height:0;max-height:360px;object-fit:contain;object-position:left center;transition:transform .35s ease}
+.research-story-copy .research-inline-figure figcaption{width:100%;padding-top:7px;color:#718087;font-size:10px;line-height:1.55}
+@media(max-width:760px){.research-story-copy .research-inline-figure img{max-height:290px}}
