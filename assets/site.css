@@ -509,3 +509,13 @@
  .research-story-image:hover img,
  .research-story-image-right .research-story-image:hover img{transform:none;filter:none}
 }
+
+/* Compact dataset and model labels within the Research page */
+.research-data-label{margin:8px 0 0!important;font-size:11px!important;line-height:1.6!important;color:#667780!important}
+.research-data-label strong{color:#3e5663;font-weight:600}
+.research-data-block{max-width:790px;margin:30px auto 0;padding:20px 0;border-top:1px solid #e3e8eb;border-bottom:1px solid #e3e8eb}
+.research-data-heading{margin-bottom:11px;font-size:10px;font-weight:600;letter-spacing:.13em;color:#647985}
+.research-data-block p{margin:6px 0;color:#52636d;font-size:12px;line-height:1.7}
+.research-data-block p strong{color:#314955;font-weight:600}
+.research-data-block small{display:block;margin-top:11px;color:#7a878e;font-size:10px;line-height:1.6}
+@media(max-width:760px){.research-data-block{margin-top:22px;padding:16px 0}.research-data-block p{font-size:11px}}
