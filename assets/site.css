@@ -562,3 +562,49 @@
 .research-resource-content p{margin:0;color:#344f55;font-size:12px;line-height:1.8}
 .research-data-note{margin:15px 0 0;color:#718087;font-size:11px;line-height:1.65}
 @media(max-width:640px){.research-data-explorer{padding:42px 0}.research-resource-content{grid-template-columns:1fr;gap:3px 0;padding-left:8px}.research-resource-content p{margin-bottom:8px}.research-resource>summary{font-size:14px}}
+
+/* Editorial redesign: Outreach */
+.outreach-page{background:#fbfcfa}
+.outreach-writing{padding:76px 0 88px;background:linear-gradient(180deg,#f2f6f3 0%,#fbfcfa 100%)}
+.outreach-section-heading{grid-template-columns:1fr;gap:0;margin-bottom:30px}
+.outreach-section-heading h2{font-size:clamp(32px,4vw,46px);max-width:680px}
+.outreach-feature-grid{gap:16px;margin-bottom:24px}
+.story-feature,.story-card{border:1px solid #18394312;border-radius:9px;box-shadow:0 5px 20px #1839430a;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
+.story-feature{min-height:350px;padding:27px}
+.story-feature-lead{min-height:405px}
+.story-feature-side{min-height:405px}
+.story-feature:hover,.story-card:hover{transform:translateY(-4px);box-shadow:0 17px 38px #18394316;border-color:#477f7840}
+.story-feature:focus-visible,.story-card:focus-visible{outline:3px solid #338a82;outline-offset:3px}
+.story-feature h3{font-size:clamp(21px,2vw,27px);line-height:1.24;max-width:26ch}
+.story-card h3{font-size:19px;line-height:1.3}
+.story-theme{font-size:9px;letter-spacing:.13em}
+.story-meta{font-size:9px;line-height:1.5;color:#47616a}
+.story-arrow{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #17334120;padding-top:14px;font-size:11px;letter-spacing:.02em}
+.story-arrow b{font-size:17px;font-weight:500;transition:transform .2s ease}
+.story-feature:hover .story-arrow b,.story-card:hover .story-arrow b{transform:translate(3px,-3px)}
+.outreach-article-grid{gap:15px}
+.outreach-article-grid .story-card{min-height:245px;padding:22px}
+.outreach-coverage{padding:82px 0;background:#fff}
+.coverage-grid{gap:18px;margin-top:22px}
+.coverage-grid article{position:relative;min-height:265px;padding:29px;background:linear-gradient(145deg,#f4f8f5,#edf3f1);border:1px solid #dfe9e4;border-top:2px solid #4b9186;border-radius:8px;overflow:hidden}
+.coverage-grid article:after{content:"";position:absolute;width:180px;height:180px;border:1px solid #4b91861b;border-radius:50%;right:-75px;bottom:-90px;box-shadow:0 0 0 22px #4b918609,0 0 0 44px #4b918606;pointer-events:none}
+.coverage-grid h3{max-width:30ch;font-size:21px;line-height:1.3;color:#1d4149}
+.coverage-grid p{max-width:52ch;line-height:1.75;color:#607477}
+.coverage-links{position:relative;z-index:1;display:flex;gap:16px;flex-wrap:wrap;margin-top:20px}
+.coverage-grid a{font-size:11px;text-underline-offset:3px}
+.outreach-talks{padding:82px 0;background:radial-gradient(ellipse at 90% 5%,#2b666555,transparent 34%),linear-gradient(125deg,#122e39,#173e48 65%,#1c514e)}
+.outreach-talks .talk-grid{gap:14px}
+.talk-card{position:relative;min-height:260px;padding:25px;background:linear-gradient(145deg,#28535b,#204650);border:1px solid #b5d0cc2c;border-radius:8px;transition:transform .25s ease,background .25s ease}
+.talk-card:hover{transform:translateY(-3px);background:linear-gradient(145deg,#2e6065,#244d55)}
+.talk-index{font:9px 'DM Mono',monospace;letter-spacing:.12em;color:#a9c9c3}
+.talk-card h3{font-size:19px;line-height:1.3}
+.talk-card p{line-height:1.7}
+.outreach-conferences{padding:82px 0;background:#f5f7f4}
+.conference-list{column-gap:46px}
+.conference-entry{grid-template-columns:60px 1fr;gap:14px;padding:23px 0;border-bottom:1px solid #dce5e0}
+.conference-entry h3{font-size:15px;line-height:1.45;color:#1d3d47}
+.conference-content{min-width:0}
+.conference-doi{padding:6px 0;text-underline-offset:3px}
+@media(max-width:950px){.story-feature-lead,.story-feature-side{min-height:340px}.outreach-writing,.outreach-coverage,.outreach-talks,.outreach-conferences{padding-top:64px;padding-bottom:68px}}
+@media(max-width:680px){.outreach-writing,.outreach-coverage,.outreach-talks,.outreach-conferences{padding-top:48px;padding-bottom:54px}.outreach-feature-grid,.outreach-article-grid,.coverage-grid,.talk-grid,.conference-list{grid-template-columns:1fr}.story-feature-lead,.story-feature-side{min-height:280px}.story-feature{padding:23px}.outreach-article-grid .story-card{min-height:220px}.coverage-grid article{min-height:0}.talk-card{min-height:220px}.conference-entry{grid-template-columns:48px 1fr;gap:10px}}
+@media(prefers-reduced-motion:reduce){.story-feature,.story-card,.talk-card,.story-arrow b{transition:none}.story-feature:hover,.story-card:hover,.talk-card:hover{transform:none}}
