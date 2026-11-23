@@ -544,3 +544,21 @@
 .research-story-copy .research-inline-figure img{display:block;width:100%;height:auto;min-height:0;max-height:360px;object-fit:contain;object-position:left center;transition:transform .35s ease}
 .research-story-copy .research-inline-figure figcaption{width:100%;padding-top:7px;color:#718087;font-size:10px;line-height:1.55}
 @media(max-width:760px){.research-story-copy .research-inline-figure img{max-height:290px}}
+
+/* Compact expandable inventory of observations and model simulations */
+.research-data-explorer{padding:58px 0 64px;background:#f5f8f7;border-top:1px solid #e3ebe8}
+.research-data-explorer .eyebrow{margin-bottom:9px}
+.research-data-explorer h2{margin:0 0 8px;color:#183943;font-size:clamp(25px,3vw,34px);letter-spacing:-.025em}
+.research-data-intro{max-width:650px;margin:0 0 22px;color:#5a6c70;font-size:13px;line-height:1.7}
+.research-data-accordions{max-width:900px;border-top:1px solid #dce6e2}
+.research-resource{border-bottom:1px solid #dce6e2}
+.research-resource>summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:17px 4px;cursor:pointer;list-style:none;color:#244b52;font-size:15px;font-weight:600}
+.research-resource>summary::-webkit-details-marker{display:none}
+.research-resource>summary b{margin-right:13px;color:#6d928c;font:10px 'DM Mono',monospace;letter-spacing:.08em}
+.research-resource>summary i{color:#398277;font-size:19px;font-style:normal;font-weight:400;transition:transform .2s ease}
+.research-resource[open]>summary i{transform:rotate(45deg)}
+.research-resource-content{padding:0 4px 17px 38px;display:grid;grid-template-columns:190px 1fr;gap:9px 18px}
+.research-resource-content h3{margin:0;color:#526c6e;font-size:11px;font-weight:600;line-height:1.7}
+.research-resource-content p{margin:0;color:#344f55;font-size:12px;line-height:1.8}
+.research-data-note{margin:15px 0 0;color:#718087;font-size:11px;line-height:1.65}
+@media(max-width:640px){.research-data-explorer{padding:42px 0}.research-resource-content{grid-template-columns:1fr;gap:3px 0;padding-left:8px}.research-resource-content p{margin-bottom:8px}.research-resource>summary{font-size:14px}}
