@@ -1033,3 +1033,8 @@ a:hover{color:#174f50}
 .outreach-conferences .conference-entry{border-bottom-color:#d9e2df}
 .conference-year,.conference-doi{color:#286f6b}
 @media(max-width:680px){.footer{padding:25px 0}.publications-page .publication-page-title{font-size:30px}}
+
+
+/* Research highlights: one consistent category/date label, without item numbers */
+.editorial-latest .highlight-band{justify-content:flex-start;padding:0 17px;min-height:43px}
+.editorial-latest .highlight-band span:first-child{font-size:9px;opacity:1}
