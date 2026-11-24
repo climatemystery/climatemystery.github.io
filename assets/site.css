@@ -917,3 +917,25 @@
  .research-page .research-other-grid{grid-template-columns:1fr}
  .research-page .research-resource-content p{font-size:12px}
 }
+
+/* Clean, static research highlight cards */
+.editorial-latest{background:#f6f7f4;padding:72px 0 78px}
+.editorial-latest .section-head{align-items:end;margin-bottom:26px}
+.editorial-latest .section-head .eyebrow{color:#56736b;letter-spacing:.15em}
+.editorial-latest .section-head h2{color:#203b3c;font-size:clamp(30px,3.8vw,43px);letter-spacing:-.035em}
+.editorial-latest .section-more{color:#315f58}
+.editorial-latest .highlight-editorial-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:stretch}
+.editorial-latest .highlight-tile{display:flex;flex-direction:column;min-width:0;overflow:hidden;padding:0;border:1px solid #e0e6e0;border-radius:4px;background:#fff;color:#263b3b;text-decoration:none;box-shadow:0 3px 12px rgba(29,54,46,.045)}
+.editorial-latest .highlight-tile:hover{color:#263b3b;transform:none;box-shadow:0 3px 12px rgba(29,54,46,.045)}
+.highlight-band{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:43px;padding:0 15px;color:#fff;background:#28545a;font:9px 'DM Mono',monospace;letter-spacing:.09em}
+.highlight-band span:first-child{font-size:13px;opacity:.78}
+.highlight-hydro .highlight-band{background:#356d75}
+.highlight-mountain .highlight-band{background:#8b704e}
+.highlight-snow .highlight-band{background:#526d85}
+.highlight-content{display:flex;flex:1;flex-direction:column;padding:19px 17px 16px}
+.highlight-content h3{margin:0 0 12px;color:#263b3b;font:500 18px/1.34 Georgia,serif;letter-spacing:-.015em}
+.highlight-content p{margin:0 0 20px;color:#687773;font-size:12px;line-height:1.65}
+.highlight-read{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:auto;padding-top:12px;border-top:1px solid #e8ece8;color:#315f58;font-size:11px;font-weight:650}
+.highlight-read b{font-size:15px;font-weight:400}
+@media(max-width:1050px){.editorial-latest .highlight-editorial-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.editorial-latest{padding:52px 0 58px}.editorial-latest .highlight-editorial-grid{display:flex;overflow-x:auto;gap:12px;padding:0 0 8px;scroll-snap-type:x mandatory}.editorial-latest .highlight-tile{flex:0 0 min(82vw,330px);scroll-snap-align:start}.highlight-content{padding:18px 16px 15px}}
