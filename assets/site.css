@@ -950,3 +950,86 @@
 .editorial-latest .highlight-content h3{color:#263f3d}
 .editorial-latest .highlight-content p{color:#687873}
 .editorial-latest .highlight-read{color:#285b5b;border-top-color:#e4ebe6}
+
+
+/* Site-wide academic colour system: restrained, consistent and readable */
+:root{
+ --ink:#20343b;
+ --muted:#5e7074;
+ --paper:#f5f7f5;
+ --white:#ffffff;
+ --line:#d9e2df;
+ --teal:#286f6b;
+ --lime:#d5dfaa;
+ --navy:#18333d;
+ --serif:Georgia,serif;
+}
+body{background:#f5f7f5;color:#20343b}
+a{color:#286f6b}
+a:hover{color:#174f50}
+.eyebrow{color:#47736d}
+.topbar{background:#18333d;border-bottom-color:#ffffff20;color:#f7faf8}
+.brand{color:#fff}
+.nav{color:#e0e9e6}
+.nav a.active,.nav a:hover{color:#d5dfaa}
+.menu{border-color:#78938f;color:#fff}
+.btn{background:#286f6b;border-color:#286f6b;color:#fff}
+.btn:hover{background:#205b58;border-color:#205b58;color:#fff}
+.page-hero{background:#23444c;color:#fff}
+.page-hero p{color:#e0e9e6}
+.section{background:#f5f7f5}
+.section.white,.publications-page,.home-feature,.research-page{background:#fff}
+.section.dark{background:#18333d;color:#fff}
+.card,.publication,.figure-card{background:#fff;border-color:#d9e2df}
+.card p,.publication p,.muted{color:#5e7074}
+.tag{background:#e5efeb;color:#285f5b}
+.filters input,.filters select{border-color:#ccd9d5;color:#263b3f;border-radius:3px}
+.filters input:focus,.filters select:focus{outline:2px solid #6b9d95;outline-offset:1px}
+.small-link,.topic-footer a,.section-more{color:#286f6b}
+.footer{background:#e8efec;color:#334b4d;border-top:1px solid #d4e0db;padding:30px 0}
+.footer a{color:#245f5b}
+.footer a:hover{color:#123f43}
+.footer-inner>span:first-child{color:#40585a}
+.footer-links a{background:transparent}
+.footer-links img{opacity:1}
+.footer-links .footer-linkedin svg{fill:#0a66c2}
+.footer-links a:hover,.footer-links a:focus-visible{filter:drop-shadow(0 3px 4px rgba(24,51,61,.18))}
+.note{background:#edf3ef;border-left-color:#477f76;color:#405b58}
+.profile-link{border-color:#d9e2df;color:#20343b}
+.profile-link:hover{border-color:#6b9d95}
+.interest-tags span{background:#edf3f0;border-color:#dce7e1;color:#29434a}
+.portfolio-section{border-top-color:#d9e2df}
+.publications-page{background:#fff}
+.publications-page .publication-toolbar{border-bottom-color:#d9e2df}
+.publications-page .publication{border-top-color:#e2e9e5}
+.publications-page .publication:last-child{border-bottom-color:#e2e9e5}
+.publications-page .publication:hover{background:#f7faf8}
+.publications-page .publication h3{color:#203b40}
+.publications-page .publication-citation{color:#5d7072}
+.publications-page .publication .small-link{color:#286f6b}
+.publications-page .publication-metrics{border-left-color:#dce5e1}
+.publications-page .publication-page-title{font:600 clamp(29px,3.4vw,40px)/1.12 Manrope,sans-serif;letter-spacing:-.035em;color:#203b40;margin:7px 0 4px}
+.publications-page .publication-count p{margin:0;color:#5e7074;font-size:13px}
+.publications-page .scholar-button{color:#286f6b;border-color:#b9cec6}
+.publications-page .publication-results-line{color:#5e7074}
+.publications-page #pub-clear{color:#286f6b}
+.publications-page .manuscripts-section{background:#f3f7f4;border-top:1px solid #d9e2df;padding:28px;margin-top:40px}
+.publications-page .manuscript-card{background:#fff;border:1px solid #d9e2df;padding:22px}
+.outreach-stories,.outreach-writing,.outreach-conferences{background:#f5f7f5}
+.outreach-coverage{background:#fff}
+.story-forest{background:#dcebe2}
+.story-blue,.story-sky{background:#dce9ee}
+.story-ochre{background:#eee8d8}
+.story-coral{background:#f0e2dc}
+.story-violet{background:#e5e9e5}
+.story-feature,.story-card{color:#263f43;border-color:#d7e3dd}
+.story-feature:hover,.story-card:hover{color:#203b40}
+.story-theme{color:#356d68}
+.access-marker{color:#365d58;border-color:#a9c4b9}
+.access-marker.open{color:#176344;border-color:#79aa8b}
+.outreach-talks{background:#183b43}
+.talk-card{background:#244c52;border-color:#72938a55}
+.talk-date strong,.talk-kind{color:#d5dfaa}
+.outreach-conferences .conference-entry{border-bottom-color:#d9e2df}
+.conference-year,.conference-doi{color:#286f6b}
+@media(max-width:680px){.footer{padding:25px 0}.publications-page .publication-page-title{font-size:30px}}
