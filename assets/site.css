@@ -939,3 +939,14 @@
 .highlight-read b{font-size:15px;font-weight:400}
 @media(max-width:1050px){.editorial-latest .highlight-editorial-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.editorial-latest{padding:52px 0 58px}.editorial-latest .highlight-editorial-grid{display:flex;overflow-x:auto;gap:12px;padding:0 0 8px;scroll-snap-type:x mandatory}.editorial-latest .highlight-tile{flex:0 0 min(82vw,330px);scroll-snap-align:start}.highlight-content{padding:18px 16px 15px}}
+
+/* Use one consistent colour palette across all four research highlight cards */
+.editorial-latest .highlight-tile{background:#fff;border-color:#dce6e1}
+.editorial-latest .highlight-band,
+.editorial-latest .highlight-paleo .highlight-band,
+.editorial-latest .highlight-hydro .highlight-band,
+.editorial-latest .highlight-mountain .highlight-band,
+.editorial-latest .highlight-snow .highlight-band{background:#285b5b;color:#f5f8f4}
+.editorial-latest .highlight-content h3{color:#263f3d}
+.editorial-latest .highlight-content p{color:#687873}
+.editorial-latest .highlight-read{color:#285b5b;border-top-color:#e4ebe6}
