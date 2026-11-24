@@ -669,3 +669,20 @@
 .coverage-sakal{background:linear-gradient(145deg,#f1f6f1,#e9f1ed)!important}
 @media(max-width:900px){.outreach-uniform-grid,.outreach-talks .talk-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.outreach-story-image{height:160px}}
 @media(max-width:620px){.outreach-uniform-grid,.outreach-talks .talk-grid{grid-template-columns:1fr}.outreach-story-image{height:190px}.outreach-talks .talk-card{min-height:245px}}
+
+/* Homepage research highlights: bespoke scientific graphic panels */
+.editorial-latest .latest-grid{align-items:stretch;gap:18px}
+.editorial-latest .latest-paper{position:relative;overflow:hidden;min-height:360px;padding:0 25px 25px;border-radius:5px;background:#f5f7f4;border:1px solid #e0e8e2}
+.editorial-latest .latest-paper-main{background:#edf4ef;border-color:#d7e4dc}
+.editorial-latest .latest-paper>span:not(.highlight-art span){display:block;margin-top:23px}
+.editorial-latest .latest-paper h3{margin:16px 0 10px;font-family:Georgia,serif;font-weight:500;letter-spacing:-.02em}
+.editorial-latest .latest-paper p{line-height:1.7}
+.highlight-art{position:relative;height:142px;margin:0 -25px 2px;overflow:hidden;display:flex;align-items:flex-end;padding:0 20px 13px;color:#356d68;background:linear-gradient(125deg,#dcebe4,#eef3ed)}
+.highlight-art svg{position:absolute;inset:0;width:100%;height:100%;opacity:.8}
+.highlight-art>span{position:relative;z-index:1;font:9px 'DM Mono',monospace;letter-spacing:.13em;color:#315f59;background:#f6faf5d9;padding:5px 8px;border-radius:2px}
+.highlight-art-paleo{color:#547d83;background:linear-gradient(130deg,#e0ebec,#f0f3ef)}
+.highlight-art-hydro{color:#477d77;background:linear-gradient(130deg,#dcebe5,#f0f4ef)}
+.highlight-art-mountain{color:#8b7755;background:linear-gradient(130deg,#eee9dc,#f4f2e9)}
+.editorial-latest .latest-paper:hover .highlight-art svg{transform:scale(1.025);transition:transform .5s ease}
+@media(max-width:700px){.editorial-latest .latest-paper{min-height:320px}.highlight-art{height:125px}}
+@media(prefers-reduced-motion:reduce){.editorial-latest .latest-paper,.highlight-art svg{transition:none!important}}
