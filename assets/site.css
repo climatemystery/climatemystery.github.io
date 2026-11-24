@@ -1038,3 +1038,46 @@ a:hover{color:#174f50}
 /* Research highlights: one consistent category/date label, without item numbers */
 .editorial-latest .highlight-band{justify-content:flex-start;padding:0 17px;min-height:43px}
 .editorial-latest .highlight-band span:first-child{font-size:9px;opacity:1}
+
+
+/* Research highlights: remove decorative colour treatments and graphic effects */
+.editorial-latest{background:#fff!important}
+.editorial-latest .highlight-tile,
+.editorial-latest .highlight-tile:hover{
+  background:#fff!important;
+  color:#263b3b!important;
+  border:1px solid #dfe6e2!important;
+  border-radius:3px!important;
+  box-shadow:none!important;
+  transform:none!important;
+  transition:none!important;
+}
+.editorial-latest .highlight-band,
+.editorial-latest .highlight-paleo .highlight-band,
+.editorial-latest .highlight-hydro .highlight-band,
+.editorial-latest .highlight-mountain .highlight-band,
+.editorial-latest .highlight-snow .highlight-band{
+  background:#f1f4f2!important;
+  background-image:none!important;
+  color:#365c55!important;
+  border-bottom:1px solid #e1e8e4;
+}
+.editorial-latest .highlight-band:before,
+.editorial-latest .highlight-band:after,
+.editorial-latest .highlight-tile:before,
+.editorial-latest .highlight-tile:after{
+  content:none!important;
+  display:none!important;
+  background:none!important;
+  box-shadow:none!important;
+}
+.editorial-latest .highlight-content h3{color:#263b3b!important}
+.editorial-latest .highlight-content p{color:#65736e!important}
+.editorial-latest .highlight-read{
+  color:#315f58!important;
+  border-top:1px solid #e7ece8!important;
+}
+.editorial-latest .highlight-read b{color:inherit!important}
+@media(prefers-reduced-motion:no-preference){
+  .editorial-latest .highlight-tile:hover{outline:1px solid #cbd8d1!important}
+}
