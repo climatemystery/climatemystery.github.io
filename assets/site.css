@@ -1184,3 +1184,114 @@ a:hover{color:#174f50}
 .about-page .portfolio-contact p strong{font-weight:600}
 .about-page .portfolio-contact .btn{font-size:12px;padding:8px 13px}
 @media(max-width:760px){.about-page .portfolio-contact{padding:16px 17px;gap:12px}}
+
+
+/* Shared academic header and navigation — all pages */
+.topbar{
+  width:100%;max-width:none;height:auto;min-height:76px;padding:0;
+  background:#18333d;color:#fff;border-bottom:1px solid #35535c;
+  position:sticky;top:0;z-index:30;
+}
+.topbar .topbar-inner{
+  min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:28px;
+}
+.topbar .brand{
+  font:800 clamp(20px,2vw,24px)/1.15 Manrope,sans-serif;
+  letter-spacing:-.035em;color:#fff;white-space:nowrap;
+}
+.topbar .brand:hover{color:#e6f0e9}
+.topbar .nav{display:flex;align-items:center;gap:5px;color:#e6efed}
+.topbar .nav a{
+  display:inline-flex;align-items:center;min-height:44px;
+  padding:10px 14px;border-radius:3px;
+  color:#e6efed;font:650 13px/1.2 'DM Sans',sans-serif;
+  letter-spacing:.01em;border-bottom:2px solid transparent;
+  transition:background .2s,color .2s,border-color .2s;
+}
+.topbar .nav a:hover{background:#ffffff12;color:#fff}
+.topbar .nav a.active,.topbar .nav a[aria-current="page"]{
+  color:#fff;background:#ffffff12;border-bottom-color:#d5dfaa;
+}
+.topbar a:focus-visible,.topbar button:focus-visible{
+  outline:2px solid #e0e9ad;outline-offset:3px;
+}
+.topbar .menu{
+  display:none;border:1px solid #8baba7;border-radius:4px;
+  background:transparent;color:#fff;padding:10px 12px;
+  font:650 13px 'DM Sans',sans-serif;cursor:pointer;
+}
+@media(max-width:760px){
+  .topbar{min-height:65px}
+  .topbar .topbar-inner{min-height:65px;gap:12px}
+  .topbar .brand{font-size:21px}
+  .topbar .menu{display:inline-flex;gap:12px;align-items:center}
+  .topbar .nav{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    padding:10px max(15px,calc((100% - 1160px)/2)) 18px;
+    flex-direction:column;align-items:stretch;gap:4px;
+    background:#18333d;border-bottom:1px solid #42626b;
+  }
+  .topbar .nav.open{display:flex}
+  .topbar .nav a{font-size:14px;padding:12px 15px;min-height:44px}
+}
+
+/* Homepage hero. Add the user's own photograph at assets/home-hero-photo.jpg */
+.home-hero{
+  background:#edf3f0;color:#213940;
+  border-bottom:1px solid #d9e4de;
+  overflow:hidden;
+}
+.home-hero-inner{
+  display:grid;grid-template-columns:minmax(0,1.1fr) minmax(290px,.9fr);
+  gap:clamp(26px,5vw,72px);align-items:center;
+  min-height:470px;padding-top:60px;padding-bottom:60px;
+}
+.home-hero-copy{max-width:610px}
+.home-hero-eyebrow{
+  color:#306d68;font:650 11px/1.4 'DM Sans',sans-serif;
+  letter-spacing:.15em;
+}
+.home-hero h1{
+  margin:15px 0 22px;
+  font:750 clamp(42px,6vw,72px)/1.07 Manrope,sans-serif;
+  letter-spacing:-.055em;color:#1d353c;
+}
+.home-hero p{
+  color:#405a5c;font-size:clamp(15px,1.55vw,18px);
+  line-height:1.75;max-width:590px;margin:0;
+}
+.home-hero-actions{
+  display:flex;align-items:center;flex-wrap:wrap;gap:18px;margin-top:29px;
+}
+.home-hero-button{
+  display:inline-flex;align-items:center;justify-content:center;
+  background:#286f6b;color:#fff;border:1px solid #286f6b;
+  padding:11px 17px;border-radius:3px;font-size:13px;font-weight:700;
+}
+.home-hero-button:hover{background:#205a57;color:#fff}
+.home-hero-link{color:#285f5b;font-size:13px;font-weight:700}
+.home-hero-link:hover{text-decoration:underline;text-underline-offset:4px}
+.home-hero-photo{
+  width:100%;height:345px;justify-self:end;
+  border-radius:3px;border:1px solid #cbdad2;
+  background-color:#d5e4dc;
+  background-image:linear-gradient(145deg,rgba(27,53,57,.08),rgba(27,53,57,.01)),url('/assets/home-hero-photo.jpg');
+  background-position:center;background-size:cover;background-repeat:no-repeat;
+}
+@media(max-width:760px){
+  .home-hero-inner{grid-template-columns:1fr;min-height:0;gap:25px;padding-top:44px;padding-bottom:44px}
+  .home-hero h1{font-size:clamp(38px,10vw,55px)}
+  .home-hero-photo{justify-self:stretch;height:clamp(230px,58vw,360px);max-width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  .topbar .nav a{transition:none}
+}
+
+/* One shared footer including ResearchGate */
+.footer{background:#e8efec;color:#334b4d}
+.footer-inner{align-items:center}
+.footer-links{display:flex;align-items:center;flex-wrap:wrap;gap:14px}
+.footer-links a{width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center}
+.footer-links a:focus-visible{outline:2px solid #286f6b;outline-offset:3px}
+.footer-links img,.footer-links svg{width:21px;height:21px}
+.footer-links .footer-researchgate img{width:24px;height:24px}
