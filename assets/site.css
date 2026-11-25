@@ -1177,3 +1177,10 @@ a:hover{color:#174f50}
 }
 /* No decorative numbering for conference entries */
 .outreach-page .conference-year span{display:none}
+
+/* About contact: compact typography and button */
+.about-page .portfolio-contact{padding:18px 22px;gap:16px}
+.about-page .portfolio-contact p{font-size:13px;line-height:1.6}
+.about-page .portfolio-contact p strong{font-weight:600}
+.about-page .portfolio-contact .btn{font-size:12px;padding:8px 13px}
+@media(max-width:760px){.about-page .portfolio-contact{padding:16px 17px;gap:12px}}
